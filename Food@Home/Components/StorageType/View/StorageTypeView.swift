@@ -69,6 +69,10 @@ struct StorageTypeView: View {
                 }
                 
             }
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(.black, lineWidth: 1)
+            )
         }
     }
 }

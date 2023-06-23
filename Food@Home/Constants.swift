@@ -9,15 +9,17 @@ import Foundation
 import SwiftUI
 
 //Colors
-let freezerHead: Color = Color.init(hex: 0xC1E4E4)
+let defaultGray: Color = Color.init(hex: 0xE6E6E6)
+let defaultWhite: Color = Color.init(hex: 0xFAFAFA)
+
 let freezerBody: Color = Color.init(hex: 0xD8E7E7)
-
-let fridgeHead: Color = Color.init(hex: 0xCDEAB4)
+let freezerHead: Color = Color.init(hex: 0xC1E4E4)
 let fridgeBody: Color = Color.init(hex: 0xDEECD2)
-
-let pantryHead: Color = Color.init(hex: 0xF2EBA6)
+let fridgeHead: Color = Color.init(hex: 0xCDEAB4)
 let pantryBody: Color = Color.init(hex: 0xF4EECC)
+let pantryHead: Color = Color.init(hex: 0xF2EBA6)
 
+let toBuyBody: Color = Color.init(hex: 0xF4EECC)
 
 //Storage Types
 enum storageType {
