@@ -11,7 +11,7 @@ import SwiftUI
 struct Food_HomeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavBarView()
         }
     }
 }

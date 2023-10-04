@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct KitchenView: View {
     
     @State private var isAtHome: Bool = true
     @State private var showAddItemModal: Bool = false
@@ -64,11 +64,12 @@ struct ContentView: View {
                 AddItemModalView()
             }
         }
+        .background(.white)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        KitchenView()
     }
 }
