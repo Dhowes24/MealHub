@@ -21,13 +21,13 @@ struct ToBuyListView: View {
                 Group{
                         VStack(alignment: .leading, spacing: 18) {
                             
-                            FoodGroup(groupName: "Protein", groupItems: [])
+                            StorageType(groupName: "Protein", groupItems: [])
                             
-                            FoodGroup(groupName: "Starch", groupItems: [])
+                            StorageType(groupName: "Starch", groupItems: [])
                             
-                            FoodGroup(groupName: "Veg", groupItems: [])
+                            StorageType(groupName: "Veg", groupItems: [])
                             
-                            FoodGroup(groupName: "Others", groupItems: [])
+                            StorageType(groupName: "Others", groupItems: [])
                         }
                         .padding(.vertical, 18)
                         .frame(width: UIScreen.screenWidth - 40)

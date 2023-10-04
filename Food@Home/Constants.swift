@@ -20,8 +20,3 @@ let pantryBody: Color = Color.init(hex: 0xF4EECC)
 let pantryHead: Color = Color.init(hex: 0xF2EBA6)
 
 let toBuyBody: Color = Color.init(hex: 0xF4EECC)
-
-//Storage Types
-enum storageType {
-    case freezer, fridge, pantry
-}

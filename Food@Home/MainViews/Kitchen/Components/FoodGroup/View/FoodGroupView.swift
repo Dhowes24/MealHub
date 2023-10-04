@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StorageTypeView: View {
+struct FoodGroupView: View {
     @ObservedObject var viewModel: StorageTypeViewModel
     @Binding var collapsed: Bool
     
@@ -24,13 +24,12 @@ struct StorageTypeView: View {
                     if !collapsed {
                         VStack(alignment: .leading, spacing: 18) {
                             
-                            FoodGroup(groupName: "Protein", groupItems: [])
+                            StorageType(groupName: "Freezer", groupItems: [])
                             
-                            FoodGroup(groupName: "Starch", groupItems: [])
+                            StorageType(groupName: "Fridge", groupItems: [])
                             
-                            FoodGroup(groupName: "Veg", groupItems: [])
+                            StorageType(groupName: "Pantry", groupItems: [])
                             
-                            FoodGroup(groupName: "Others", groupItems: [])
                         }
                         .padding(.top, 38)
                         .padding(.bottom, 18)
@@ -77,8 +76,12 @@ struct StorageTypeView: View {
     }
 }
 
+enum storageType {
+    case protein, starch, veg, other
+}
+
 struct StorageType_Previews: PreviewProvider {
     static var previews: some View {
-        StorageTypeView(storageType: storageType.freezer, collapsed: .constant(true))
+        FoodGroupView(storageType: storageType.protein, collapsed: .constant(true))
     }
 }

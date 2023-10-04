@@ -35,11 +35,13 @@ struct KitchenView: View {
                     if isAtHome{
                         
                         VStack(spacing: 40) {
-                            StorageTypeView(storageType: storageType.freezer, collapsed: $freezerCollapsed)
+                            FoodGroupView(storageType: storageType.protein, collapsed: $freezerCollapsed)
                             
-                            StorageTypeView(storageType: storageType.fridge, collapsed: $fridgeCollapsed)
+                            FoodGroupView(storageType: storageType.starch, collapsed: $fridgeCollapsed)
                             
-                            StorageTypeView(storageType: storageType.pantry, collapsed: $pantryCollapsed)
+                            FoodGroupView(storageType: storageType.veg, collapsed: $pantryCollapsed)
+                            
+                            FoodGroupView(storageType: storageType.other, collapsed: $pantryCollapsed)
                         }
                     } else {
                         VStack(spacing: 40) {

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct FoodGroup: View {
+struct StorageType: View {
     var groupName: String
     var groupItems: [String]
     
@@ -49,6 +49,6 @@ struct FoodGroup: View {
 
 struct FoodGroup_Previews: PreviewProvider {
     static var previews: some View {
-        FoodGroup(groupName: "Protein", groupItems: [])
+        StorageType(groupName: "Freezer", groupItems: [])
     }
 }

@@ -16,18 +16,22 @@ class StorageTypeViewModel: ObservableObject {
     init(storageType: storageType) {
         
         switch storageType {
-        case .freezer:
+        case .protein:
             headerColor = freezerHead
             bodyColor = freezerBody
-            storageTypeName = "Freezer"
-        case .fridge:
+            storageTypeName = "Protein"
+        case .starch:
             headerColor = fridgeHead
             bodyColor = fridgeBody
-            storageTypeName = "Fridge"
-        case .pantry:
+            storageTypeName = "Starch"
+        case .veg:
             headerColor = pantryHead
             bodyColor = pantryBody
-            storageTypeName = "Pantry"
+            storageTypeName = "Veg"
+        case .other:
+            headerColor = pantryHead
+            bodyColor = pantryBody
+            storageTypeName = "Other"
         }
     }
 }
