@@ -12,11 +12,6 @@ extension RecipeDetailsView {
         
         @Published var recipeInfo: RecipeInfo?
         
-        let headers = [
-            "X-RapidAPI-Key": "33408008c4msh8819a116f83fedep1f022cjsnd3568f4366ce",
-            "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        ]
-        
         func fetchIndividualRecipe(id: Int) async throws {            
             let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/\(id)/information")! as URL,
                                               cachePolicy: .useProtocolCachePolicy,

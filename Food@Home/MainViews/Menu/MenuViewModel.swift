@@ -17,11 +17,6 @@ extension MenuView {
             return URLSession(configuration: configuration, delegate: nil, delegateQueue: .main)
         }()
         
-        let headers = [
-            "X-RapidAPI-Key": "33408008c4msh8819a116f83fedep1f022cjsnd3568f4366ce",
-            "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        ]
-        
         func fetchRecipes() async throws {
             let request = NSMutableURLRequest(url: NSURL(string: searchRecipes)! as URL,
                                                     cachePolicy: .useProtocolCachePolicy,

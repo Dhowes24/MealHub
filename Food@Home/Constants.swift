@@ -20,3 +20,10 @@ let pantryBody: Color = Color.init(hex: 0xF4EECC)
 let pantryHead: Color = Color.init(hex: 0xF2EBA6)
 
 let toBuyBody: Color = Color.init(hex: 0xF4EECC)
+
+
+//API Calls
+let headers = [
+    "X-RapidAPI-Key": Bundle.main.object(forInfoDictionaryKey: "API KEY") as! String,
+    "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+]

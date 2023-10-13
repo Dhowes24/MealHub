@@ -88,6 +88,7 @@
 		6B8877AE2AD72044002B9CDB /* RecipeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInfo.swift; sourceTree = "<group>"; };
 		6B8877B02AD7373C002B9CDB /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		6B8877B22AD7375B002B9CDB /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		6B8877B52AD9DCAF002B9CDB /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		6BA601112A38D65100F1D335 /* StorageTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTypeViewModel.swift; sourceTree = "<group>"; };
 		6BA601132A38EB5C00F1D335 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		6BA601182A3A25A200F1D335 /* ToBuyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBuyListView.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		6B7388072A2FC66E00EBCE7B = {
 			isa = PBXGroup;
 			children = (
+				6B8877B52AD9DCAF002B9CDB /* Secrets.xcconfig */,
 				6B7388122A2FC66E00EBCE7B /* Food@Home */,
 				6B7388242A2FC66F00EBCE7B /* Food@HomeTests */,
 				6B73882E2A2FC66F00EBCE7B /* Food@HomeUITests */,
