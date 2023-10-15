@@ -1,11 +1,9 @@
 //
-//  Secrets.xcconfig
+//  Config.xcconfig
 //  Food@Home
 //
-//  Created by Derek Howes on 10/13/23.
+//  Created by Derek Howes on 10/14/23.
 //
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-
-API_KEY = d7fbf34846msh147470fcf265ff4p1987b5jsn714801ae2cbf

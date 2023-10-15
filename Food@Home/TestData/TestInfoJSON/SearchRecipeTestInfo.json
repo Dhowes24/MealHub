@@ -1,0 +1,68 @@
+{
+    "number" : 10,
+    "offset" : 1,
+    "results" : [
+    {
+        "id" : 592479,
+        "image" : "https://spoonacular.com/recipeImages/592479-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Kale and Quinoa Salad with Black Beans",
+    },
+    {
+        "id" : 495111,
+        "image" : "https://spoonacular.com/recipeImages/495111-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Citrus Sesame Kale",
+    },
+    {
+        "id" : 582897,
+        "image" : "https://spoonacular.com/recipeImages/582897-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Mexican Salad with Lime Dressing",
+    },
+    {
+        "id" : 1009573,
+        "image" : "https://spoonacular.com/recipeImages/1009573-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Quinoa Kale Tomato Corn Salad",
+    },
+    {
+        "id" : 801710,
+        "image" : "https://spoonacular.com/recipeImages/801710-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Matcha Green Tea and Pineapple Smoothie",
+    },
+    {
+        "id" : 812966,
+        "image" : "https://spoonacular.com/recipeImages/812966-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Low Carb Frosty",
+    },
+    {
+        "id" : 621163,
+        "image" : "https://spoonacular.com/recipeImages/621163-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Pesto Pasta with Lemon, Spinach, Edamame & Toasted Almonds",
+    },
+    {
+        "id" : 547899,
+        "image" : "https://spoonacular.com/recipeImages/547899-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Sweet Potato and Black Bean Mexican Salad",
+    },
+    {
+        "id" : 584495,
+        "image" : "https://spoonacular.com/recipeImages/584495-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Chopped Kale Salad with Pomegranate & Avocado",
+    },
+    {
+        "id" : 613079,
+        "image" : "https://spoonacular.com/recipeImages/613079-312x231.jpg",
+        "imageType" : "jpg",
+        "title" : "Smashed White Bean and Avocado Sandwich",
+    }
+    ],
+    "totalResults" : 388195
+}
+
