@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response: Codable {
+struct SearchRecipesResults: Codable {
     var results: [Recipe]
 }
 

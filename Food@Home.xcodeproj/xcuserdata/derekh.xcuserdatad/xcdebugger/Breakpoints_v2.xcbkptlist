@@ -14,8 +14,8 @@
             filePath = "Food@Home/MainViews/Menu/MenuViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "fetchRecipes()"
             landmarkType = "7">
          </BreakpointContent>
