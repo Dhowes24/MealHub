@@ -14,7 +14,7 @@ struct NavBarView: View {
                 .tabItem {
                     Label("Kitchen", systemImage: "fork.knife")
                 }
-            Text("Menu")
+            MenuView()
                 .tabItem {
                     Label("Menu", systemImage: "graduationcap")
                 }
