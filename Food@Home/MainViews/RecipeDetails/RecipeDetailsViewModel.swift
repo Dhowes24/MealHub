@@ -12,7 +12,25 @@ extension RecipeDetailsView {
         
         @Published var recipeInfo: RecipeInfo?
         
-        func fetchIndividualRecipe(id: Int) async throws {            
+        func fetchTestData(id: Int) async throws {
+            do {
+                if let filePath = Bundle.main.path(forResource: "SearchRecipeDetailsTestInfo", ofType: "json") {
+                    let fileUrl = URL(fileURLWithPath: filePath)
+                    let data = try Data(contentsOf: fileUrl)
+                    
+                    if let decodedResponse = try? JSONDecoder().decode(RecipeInfo.self, from: data) {
+                        recipeInfo = decodedResponse
+                    }
+                    else {
+                        print("Error between Data Model and JSON schema")
+                    }
+                }
+            } catch {
+                print("error: \(error)")
+            }
+        }
+        
+        func fetchIndividualRecipe(id: Int) async throws {
             let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/\(id)/information")! as URL,
                                               cachePolicy: .useProtocolCachePolicy,
                                               timeoutInterval: 10.0)
@@ -27,12 +45,11 @@ extension RecipeDetailsView {
                     if let decodedResponse = try? JSONDecoder().decode(RecipeInfo.self, from: data!) {
                         Task {
                             await MainActor.run {
-                                print(decodedResponse.extendedIngredients)
                                 self.recipeInfo = decodedResponse
                             }
                         }
                     } else {
-                        print("Bad decode")
+                        print(String(describing: error))
                     }
                 }
             })

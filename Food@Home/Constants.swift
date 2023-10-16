@@ -24,6 +24,6 @@ let toBuyBody: Color = Color.init(hex: 0xF4EECC)
 
 //API Calls
 let headers = [
-    "X-RapidAPI-Key": Bundle.main.object(forInfoDictionaryKey: "API KEY") as! String,
+    "X-RapidAPI-Key": Bundle.main.infoDictionary?["API_KEY"] as! String,
     "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
 ]

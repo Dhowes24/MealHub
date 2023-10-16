@@ -23,9 +23,10 @@ struct MenuView: View {
                         }
                     }
                 }
-                Button("Call API") {
-                    Task { try? await viewModel.fetchRecipes() }
-                }
+            }
+            .onAppear {
+                Task { try? await viewModel.fetchTestData() }
+//                    Task { try? await viewModel.fetchRecipes() }
             }
         }
     }
