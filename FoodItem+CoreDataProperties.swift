@@ -1,5 +1,5 @@
 //
-//  FoodStuff+CoreDataProperties.swift
+//  FoodItem+CoreDataProperties.swift
 //  Food@Home
 //
 //  Created by Derek Howes on 10/18/23.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension FoodStuff {
+extension FoodItem {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<FoodStuff> {
-        return NSFetchRequest<FoodStuff>(entityName: "FoodStuff")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<FoodItem> {
+        return NSFetchRequest<FoodItem>(entityName: "FoodItem")
     }
 
     @NSManaged public var id: UUID?
@@ -23,6 +23,6 @@ extension FoodStuff {
 
 }
 
-extension FoodStuff : Identifiable {
+extension FoodItem : Identifiable {
 
 }
