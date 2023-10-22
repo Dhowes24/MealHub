@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct Food_HomeApp: App {
+    @Environment(\.scenePhase) var scenePhase
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             NavBarView()
+                .environment(\.managedObjectContext, persistenceController.persistentContainer.viewContext)
+        }
+        .onChange(of: scenePhase) { _ in
+            persistenceController.save()
         }
     }
 }

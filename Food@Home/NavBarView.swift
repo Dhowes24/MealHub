@@ -10,7 +10,7 @@ import SwiftUI
 struct NavBarView: View {
     var body: some View {
         TabView {
-            KitchenView()
+            KitchenTestView()
                 .tabItem {
                     Label("Kitchen", systemImage: "fork.knife")
                 }
