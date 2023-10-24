@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MenuView: View {
     @StateObject private var viewModel = ViewModel()
-    
+    @EnvironmentObject var tempFoodAccess: FoodItemsAccess
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -24,10 +25,10 @@ struct MenuView: View {
                     }
                 }
             }
-            .onAppear {
-                Task { try? await viewModel.fetchTestData() }
-//                    Task { try? await viewModel.fetchRecipes() }
-            }
+        }
+        .onAppear {
+            //                Task { try? await viewModel.fetchTestData() }
+            Task { try? await viewModel.fetchRecipes(ingredients: tempFoodAccess.foodItems) }
         }
     }
 }

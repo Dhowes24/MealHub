@@ -45,9 +45,10 @@
 		6BA601192A3A25A200F1D335 /* ToBuyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA601182A3A25A200F1D335 /* ToBuyListView.swift */; };
 		6BA6011B2A3A260500F1D335 /* ToBuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6011A2A3A260500F1D335 /* ToBuyViewModel.swift */; };
 		6BA6011F2A44DACC00F1D335 /* AddItemModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6011E2A44DACC00F1D335 /* AddItemModalView.swift */; };
-		6BEB950E2ACDE94D0006B0E8 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB950D2ACDE94D0006B0E8 /* NavBarView.swift */; };
+		6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB950D2ACDE94D0006B0E8 /* NavView.swift */; };
 		6BEB95112ACF0C690006B0E8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB95102ACF0C690006B0E8 /* MenuView.swift */; };
 		6BEB95132ACF0CED0006B0E8 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB95122ACF0CED0006B0E8 /* MenuViewModel.swift */; };
+		6BFF729E2AE576F900255DDA /* NavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF729D2AE576F900255DDA /* NavViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,9 +113,10 @@
 		6BA601182A3A25A200F1D335 /* ToBuyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBuyListView.swift; sourceTree = "<group>"; };
 		6BA6011A2A3A260500F1D335 /* ToBuyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBuyViewModel.swift; sourceTree = "<group>"; };
 		6BA6011E2A44DACC00F1D335 /* AddItemModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemModalView.swift; sourceTree = "<group>"; };
-		6BEB950D2ACDE94D0006B0E8 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		6BEB950D2ACDE94D0006B0E8 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		6BEB95102ACF0C690006B0E8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		6BEB95122ACF0CED0006B0E8 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		6BFF729D2AE576F900255DDA /* NavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +174,8 @@
 			children = (
 				6B7388452A2FD86100EBCE7B /* Food-Home-Info.plist */,
 				6B7388132A2FC66E00EBCE7B /* Food_HomeApp.swift */,
-				6BEB950D2ACDE94D0006B0E8 /* NavBarView.swift */,
+				6BEB950D2ACDE94D0006B0E8 /* NavView.swift */,
+				6BFF729D2AE576F900255DDA /* NavViewModel.swift */,
 				6BEB950B2ACDE8F70006B0E8 /* MainViews */,
 				6B7388432A2FD82800EBCE7B /* Khula */,
 				6B73883E2A2FC86900EBCE7B /* Extensions */,
@@ -550,6 +553,7 @@
 				6B7388542A30F6A600EBCE7B /* Color.swift in Sources */,
 				6BEB95112ACF0C690006B0E8 /* MenuView.swift in Sources */,
 				6B8877B12AD7373C002B9CDB /* RecipeDetailsView.swift in Sources */,
+				6BFF729E2AE576F900255DDA /* NavViewModel.swift in Sources */,
 				6B8877DC2AE0CDBF002B9CDB /* CoreDataModel.xcdatamodeld in Sources */,
 				6B7388142A2FC66E00EBCE7B /* Food_HomeApp.swift in Sources */,
 				6B8877E72AE0D1E3002B9CDB /* FoodItem+CoreDataClass.swift in Sources */,
@@ -560,7 +564,7 @@
 				6B8877B32AD7375B002B9CDB /* RecipeDetailsViewModel.swift in Sources */,
 				6B8877EC2AE2C28E002B9CDB /* FoodItemModel.swift in Sources */,
 				6B8877C42ADC6463002B9CDB /* SearchRecipes.swift in Sources */,
-				6BEB950E2ACDE94D0006B0E8 /* NavBarView.swift in Sources */,
+				6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */,
 				6B7388492A2FE29500EBCE7B /* UIScreen.swift in Sources */,
 				6B8877CE2ADCCF10002B9CDB /* KitchenTestViewModel.swift in Sources */,
 				6B7388502A30F56000EBCE7B /* KitchenToggle.swift in Sources */,
