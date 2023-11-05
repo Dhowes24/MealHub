@@ -34,9 +34,10 @@ extension MenuView {
             }
         }
         
-        func fetchRecipes(ingredients: [FoodItem]) async throws {
+        func fetchRecipes(queryData: FoodItemsAccess) async throws {
             let queryString = buildSearchRecipes(queryType: "dessert",
-                                                 includeIngredients: ingredients
+                                                 cuisine: queryData.cuisineTypes,
+                                                 includeIngredients: queryData.foodItems
                                                  )
 //            print("query: \n\(queryString)")
             let request = NSMutableURLRequest(url: NSURL(string: queryString)! as URL,

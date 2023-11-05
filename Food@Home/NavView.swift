@@ -24,7 +24,7 @@ struct NavView: View {
                 .tabItem {
                     Label("Planner", systemImage: "calendar")
                 }
-            Text("Account")
+            AccountTestView()
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }

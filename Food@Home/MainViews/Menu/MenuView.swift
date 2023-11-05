@@ -28,7 +28,7 @@ struct MenuView: View {
         }
         .onAppear {
             //                Task { try? await viewModel.fetchTestData() }
-            Task { try? await viewModel.fetchRecipes(ingredients: tempFoodAccess.foodItems) }
+            Task { try? await viewModel.fetchRecipes(queryData: tempFoodAccess) }
         }
     }
 }
