@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct KitchenTestView: View {
-    @StateObject private var viewModel = ViewModel()
+//    @StateObject private var viewModel = ViewModel()
+    @EnvironmentObject var viewModel: FoodItemsAccess
     
     var body: some View {
         

@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct NavBarView: View {
+struct NavView: View {
+    @StateObject var tempFoodAccess: FoodItemsAccess = FoodItemsAccess()
+
     var body: some View {
         TabView {
             KitchenTestView()
@@ -22,17 +24,17 @@ struct NavBarView: View {
                 .tabItem {
                     Label("Planner", systemImage: "calendar")
                 }
-            Text("Account")
+            AccountTestView()
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }
         }
-
         .padding(0)
         .ignoresSafeArea()
+        .environmentObject(tempFoodAccess)
     }
 }
 
 #Preview {
-    NavBarView()
+    NavView()
 }
