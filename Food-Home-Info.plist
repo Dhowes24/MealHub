@@ -6,11 +6,13 @@
 	<string>$(API_KEY)</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Khula-Bold.ttf</string>
-		<string>Khula-ExtraBold.ttf</string>
-		<string>Khula-Light.ttf</string>
-		<string>Khula-Regular.ttf</string>
-		<string>Khula-SemiBold.ttf</string>
+		<string>Noto/NotoSerifDisplay-Regular.ttf</string>
+		<string>Lora/Lora-Italic.ttf</string>
+		<string>Archivo/Archivo-Bold.ttf</string>
+		<string>Archivo/Archivo-ExtraBold.ttf</string>
+		<string>Archivo/Archivo-Regular.ttf</string>
+		<string>Archivo/Archivo-SemiBold.ttf</string>
+		<string>Archivo/Archivo-Light.ttf</string>
 	</array>
 </dict>
 </plist>
