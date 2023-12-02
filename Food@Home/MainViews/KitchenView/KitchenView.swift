@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct KitchenTestView: View {
-//    @StateObject private var viewModel = ViewModel()
+struct KitchenView: View {
     @EnvironmentObject var viewModel: FoodItemsAccess
     
     var body: some View {
@@ -60,6 +59,6 @@ struct KitchenTestView: View {
     }
 }
 
-#Preview {
-    KitchenTestView()
-}
+//#Preview {
+//    KitchenView()
+//}

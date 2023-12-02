@@ -14,7 +14,7 @@ struct Food_HomeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginSignupView()
+            NavView()
                 .environment(\.managedObjectContext, persistenceController.persistentContainer.viewContext)
         }
         .onChange(of: scenePhase) { _ in

@@ -10,9 +10,22 @@ struct RecipeDetailsView: View {
     var id: Int
     @State private var pullError: Bool = false
     @StateObject private var viewModel = ViewModel()
+    @State private var showingScheduler: Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
+            HStack {
+                Image(systemName: "arrow.backward")
+                    .frame(width: 24, height: 24)
+                    .onTapGesture {
+                        dismiss()
+                    }
+                Spacer()
+            }
+            .padding(.top, 31)
+            .padding(.bottom, 13)
+            
             ScrollView(.vertical, showsIndicators: false) {
                 if let recipeInfo = viewModel.recipeInfo {
                     AsyncImage(
@@ -20,13 +33,18 @@ struct RecipeDetailsView: View {
                         content: { image in
                             image
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .scaledToFill()
+                                .frame(width: 145, height: 145)
                                 .clipShape(
                                     RoundedRectangle(cornerRadius: 25.0)
                                 )
                         },
                         placeholder: {
                             ProgressView()
+                                .frame(width: 145, height: 145)
+                                .clipShape(
+                                    RoundedRectangle(cornerRadius: 25.0)
+                                )
                         }
                     )
                     Text(recipeInfo.title)
@@ -54,6 +72,12 @@ struct RecipeDetailsView: View {
 
                     }
                     
+                    Text("Schedule this meal")
+                        .button(color: "black")
+                        .onTapGesture {
+                            showingScheduler.toggle()
+                        }
+                    
                 } else {
                     if pullError {
                         Text("We encountered an error pulling that recipe :(")
@@ -62,6 +86,7 @@ struct RecipeDetailsView: View {
                     }
                 }
             }
+            .toolbar(.hidden, for: .navigationBar)
             .onAppear(perform: {
                 Task{
                     do {
@@ -72,6 +97,9 @@ struct RecipeDetailsView: View {
                         pullError = true
                     }
                 }
+            })
+            .sheet(isPresented: $showingScheduler, content: {
+                MealScheduler()
             })
         }
     }
