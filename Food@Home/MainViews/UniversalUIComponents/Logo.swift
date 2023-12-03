@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct Logo: View {
+    var frameSize: CGFloat
+    
     var body: some View {
         ZStack {
             Circle()
                 .fill(brandPink)
-                .frame(width: 180, height: 180)
+                .frame(width: frameSize, height: frameSize)
             VStack(spacing: 0) {
                 Text("RS")
-                    .font(.custom("NotoSerifDisplay-Regular", size: 64))
-                    .padding(.vertical, -10)
+                    .font(.custom("NotoSerifDisplay-Regular", size: frameSize * 0.35))
+                    .padding(.vertical, -frameSize * 0.05)
                 Text("RD")
-                    .font(.custom("NotoSerifDisplay-Regular", size: 64))
-                    .padding(.vertical, -10)
+                    .font(.custom("NotoSerifDisplay-Regular", size: frameSize * 0.35))
+                    .padding(.vertical, -frameSize * 0.05)
             }
-            .frame(width: 115, height: 90)
+            .frame(width: frameSize * 0.64, height: frameSize * 0.5)
             .foregroundStyle(brandPurple)
         }
-        .frame(width: 180,height: 180)
+        .frame(width: frameSize,height: frameSize)
     }
 }
 
 #Preview {
-    Logo()
+    Logo(frameSize: 180)
 }

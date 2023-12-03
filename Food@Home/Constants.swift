@@ -9,17 +9,15 @@ import Foundation
 import SwiftUI
 
 //Colors
-let defaultGray: Color = Color.init(hex: 0xE6E6E6)
-let defaultWhite: Color = Color.init(hex: 0xFAFAFA)
+let brandPink: Color = Color.init(hex: 0xE9BAD5)
+let brandPurple: Color = Color.init(hex: 0xA078B4)
+let brandWarm: Color = Color.init(hex: 0xFEF7D7)
+let brandOrange: Color = Color.init(hex: 0xEFAD5C)
 
-let freezerBody: Color = Color.init(hex: 0xD8E7E7)
-let freezerHead: Color = Color.init(hex: 0xC1E4E4)
-let fridgeBody: Color = Color.init(hex: 0xDEECD2)
-let fridgeHead: Color = Color.init(hex: 0xCDEAB4)
-let pantryBody: Color = Color.init(hex: 0xF4EECC)
-let pantryHead: Color = Color.init(hex: 0xF2EBA6)
+let textPink: Color = Color.init(hex: 0xFCDAE2)
 
-let toBuyBody: Color = Color.init(hex: 0xF4EECC)
+let offWhite: Color = Color.init(hex: 0xFDFCFC)
+let customGrey: Color = Color.init(hex: 0xC6CCD4)
 
 let opacityVal = 0.4
 

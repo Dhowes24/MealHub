@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AccountTestView: View {
+struct AccountView: View {
     @EnvironmentObject var viewModel: FoodItemsAccess
 
     var body: some View {
@@ -25,5 +25,5 @@ struct AccountTestView: View {
 }
 
 #Preview {
-    AccountTestView()
+    AccountView()
 }

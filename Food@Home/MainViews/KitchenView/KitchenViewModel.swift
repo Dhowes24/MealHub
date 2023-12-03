@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-extension KitchenTestView {
+extension KitchenView {
     @MainActor class ViewModel: ObservableObject {
         
         let mainContext: NSManagedObjectContext

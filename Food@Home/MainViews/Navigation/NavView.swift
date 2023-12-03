@@ -12,19 +12,19 @@ struct NavView: View {
 
     var body: some View {
         TabView {
-            KitchenTestView()
+            HomeView()
                 .tabItem {
-                    Label("Kitchen", systemImage: "fork.knife")
+                    Label("Home", systemImage: "house.fill")
                 }
-            MenuView()
+            Text("Groceries")
                 .tabItem {
-                    Label("Menu", systemImage: "graduationcap")
+                    Label("Groceries", systemImage: "takeoutbag.and.cup.and.straw")
                 }
-            Text("Planner")
+            Text("Resources")
                 .tabItem {
-                    Label("Planner", systemImage: "calendar")
+                    Label("Resources", systemImage: "fork.knife")
                 }
-            AccountTestView()
+            AccountView()
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }

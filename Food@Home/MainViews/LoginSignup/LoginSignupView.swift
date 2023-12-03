@@ -30,7 +30,7 @@ struct LoginSignupView: View {
                         .padding(8)
                 }
                 
-                Logo()
+                Logo(frameSize: 180)
                     .padding(.top, 60)
                 
                 if defaultStatus {

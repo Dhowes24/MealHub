@@ -18,18 +18,23 @@ struct RecipeThumbnail: View {
                 content: { image in
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150)
+                        .scaledToFill()
+                        .frame(width: 145, height: 145)
                         .clipShape(
                             RoundedRectangle(cornerRadius: 25.0)
                         )
                 },
                 placeholder: {
                     ProgressView()
+                        .frame(width: 145, height: 145)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        )
                 }
             )
             Text(recipe.title)
-                .frame(width: 100, height: 50)
+                .font(.customSystem(size: 17, weight: .regular))
+                .frame(width: 145, height: 45)
                 .clipped()
         }
     }
