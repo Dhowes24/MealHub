@@ -29,7 +29,6 @@ struct NavView: View {
                     Label("Account", systemImage: "person.fill")
                 }
         }
-        .padding(0)
         .ignoresSafeArea()
         .environmentObject(tempFoodAccess)
     }

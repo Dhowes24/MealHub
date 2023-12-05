@@ -12,13 +12,12 @@ class FoodItemsAccess: ObservableObject {
     
     let mainContext: NSManagedObjectContext
 
-    @Published var foodItems: [FoodItem] = []
-    @Published var showEditor: Bool = false
-    
     @Published var cuisineTypes: [cuisineType] = []
-    @Published var mealTypes: [mealType] = []
-    @Published var intoleranceTypes: [intoleranceType] = []
     @Published var dietTypes: [dietType] = []
+    @Published var foodItems: [FoodItem] = []
+    @Published var intoleranceTypes: [intoleranceType] = []
+    @Published var mealTypes: [mealType] = []
+    @Published var showEditor: Bool = false
 
     init(mainContext: NSManagedObjectContext = PersistenceController.shared.mainContext) {
         self.mainContext = mainContext

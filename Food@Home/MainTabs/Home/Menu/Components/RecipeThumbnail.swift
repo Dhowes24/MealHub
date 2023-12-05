@@ -11,7 +11,6 @@ struct RecipeThumbnail: View {
     var recipe: Recipe
     
     var body: some View {
-        
         VStack(alignment: .center) {
             AsyncImage(
                 url: URL(string: recipe.image),
@@ -43,6 +42,6 @@ struct RecipeThumbnail: View {
 #Preview {
     RecipeThumbnail(recipe: Recipe(
         id: 1,
-        title: "Healthy Meal Healthy MealHealthy MealHealthy Meal",
+        title: "Healthy Meal Healthy Meal Healthy Meal Healthy Meal",
         image: "https://spoonacular.com/recipeImages/592479-312x231.jpg"))
 }

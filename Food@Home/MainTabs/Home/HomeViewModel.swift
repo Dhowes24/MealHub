@@ -27,7 +27,6 @@ extension HomeView {
                     dates.append(date)
                 }
             }
-            
             return dates
         }
         

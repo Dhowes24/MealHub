@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct BlackButton: ViewModifier {
-    
     func body(content: Content) -> some View {
         content
             .font(.customSystem(size: 18, weight: .bold))
@@ -23,7 +22,6 @@ struct BlackButton: ViewModifier {
 }
 
 struct WhiteButton: ViewModifier {
-    
     func body(content: Content) -> some View {
         content
             .font(.customSystem(size: 18, weight: .bold))

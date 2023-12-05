@@ -11,6 +11,7 @@ struct MenuView: View {
     @StateObject private var viewModel = ViewModel()
     @EnvironmentObject var tempFoodAccess: FoodItemsAccess
     @Environment(\.dismiss) private var dismiss
+    
     var date: Date
     @State private var showTabBar: Bool  = false
     
@@ -65,8 +66,8 @@ struct MenuView: View {
                 }
             }
             .padding(.horizontal, 17)
-            .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
             .toolbar(.hidden, for: .navigationBar)
+            .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
         }
         .onAppear {
             Task { try? await viewModel.fetchTestData() }

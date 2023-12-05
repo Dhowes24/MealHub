@@ -236,17 +236,18 @@
 			children = (
 				6B5F76282B1925730082CC4E /* HomeView.swift */,
 				6B5F762A2B19257D0082CC4E /* HomeViewModel.swift */,
-				6B5F762E2B1929310082CC4E /* components */,
+				6B5F762E2B1929310082CC4E /* Components */,
+				6BEB950F2ACF0C530006B0E8 /* Menu */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		6B5F762E2B1929310082CC4E /* components */ = {
+		6B5F762E2B1929310082CC4E /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				6B5F762F2B1929420082CC4E /* dateBubble.swift */,
 			);
-			path = components;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6B7388072A2FC66E00EBCE7B = {
@@ -280,11 +281,16 @@
 			children = (
 				6B7388452A2FD86100EBCE7B /* Food-Home-Info.plist */,
 				6B7388132A2FC66E00EBCE7B /* Food_HomeApp.swift */,
-				6BEB950B2ACDE8F70006B0E8 /* MainViews */,
-				6B73883E2A2FC86900EBCE7B /* Extensions */,
+				6BFF72A92AF8294000255DDA /* Navigation */,
+				6BFF72AA2AF8294D00255DDA /* LoginSignup */,
+				6BEB950B2ACDE8F70006B0E8 /* MainTabs */,
+				6B75CE412B1FB7F100323037 /* ReuseableViews */,
+				6B5F76062AF842950082CC4E /* UniversalUIComponents */,
 				6B7388172A2FC66F00EBCE7B /* Assets.xcassets */,
 				6B7388192A2FC66F00EBCE7B /* Food_Home.entitlements */,
 				6B7388512A30F66C00EBCE7B /* Constants.swift */,
+				6B73883E2A2FC86900EBCE7B /* Extensions */,
+				6B75CE422B1FB84600323037 /* TempMockViews */,
 				6B8877C02ADC5EC5002B9CDB /* TestData */,
 				6B73881A2A2FC66F00EBCE7B /* Preview Content */,
 			);
@@ -334,6 +340,22 @@
 				6B75CE3D2B1ACE1E00323037 /* MealScheduler.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		6B75CE412B1FB7F100323037 /* ReuseableViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B8877CA2ADCC389002B9CDB /* RecipeDetails */,
+			);
+			path = ReuseableViews;
+			sourceTree = "<group>";
+		};
+		6B75CE422B1FB84600323037 /* TempMockViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B5F761B2B16A2100082CC4E /* KitchenView */,
+			);
+			path = TempMockViews;
 			sourceTree = "<group>";
 		};
 		6B8877AD2AD72020002B9CDB /* DataModels */ = {
@@ -390,19 +412,13 @@
 			path = RecipeDetails;
 			sourceTree = "<group>";
 		};
-		6BEB950B2ACDE8F70006B0E8 /* MainViews */ = {
+		6BEB950B2ACDE8F70006B0E8 /* MainTabs */ = {
 			isa = PBXGroup;
 			children = (
-				6BFF72A92AF8294000255DDA /* Navigation */,
-				6B5F76062AF842950082CC4E /* UniversalUIComponents */,
-				6BFF72AA2AF8294D00255DDA /* LoginSignup */,
-				6BFF729F2AE8298300255DDA /* Account */,
 				6B5F76272B1925650082CC4E /* Home */,
-				6BEB950F2ACF0C530006B0E8 /* Menu */,
-				6B8877CA2ADCC389002B9CDB /* RecipeDetails */,
-				6B5F761B2B16A2100082CC4E /* KitchenView */,
+				6BFF729F2AE8298300255DDA /* Account */,
 			);
-			path = MainViews;
+			path = MainTabs;
 			sourceTree = "<group>";
 		};
 		6BEB950F2ACF0C530006B0E8 /* Menu */ = {

@@ -45,8 +45,6 @@ struct MealScheduler: View {
                 .padding(.vertical, 24)
             
             SeparatorLine()
-            
-            
         }
         .padding(.horizontal, 17)
         

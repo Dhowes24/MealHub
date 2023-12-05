@@ -10,10 +10,9 @@ import SwiftUI
 struct LoginSignupView: View {
     @Namespace private var animation
     @State private var defaultStatus: Bool = true
+    @State private var email: String = ""
     @State private var loggingIn: Bool = false
     @State private var signingUp: Bool = false
-    
-    @State private var email: String = ""
     
     var body: some View {
         GeometryReader { geometry in
@@ -27,7 +26,7 @@ struct LoginSignupView: View {
                     Text("Rita Stegman")
                         .font(.customSystem(size: 18, weight: .bold))
                         .frame(height: 18)
-                        .padding(8)
+                        .padding(.vertical, 8)
                 }
                 
                 Logo(frameSize: 180)
