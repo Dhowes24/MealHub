@@ -11,7 +11,7 @@ struct SearchRecipesResults: Codable {
     var results: [Recipe]
 }
 
-struct Recipe: Codable, Identifiable {
+struct Recipe: Codable, Identifiable, Hashable {
     var id: Int
     var title: String
     var image: String

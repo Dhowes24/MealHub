@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct RecipeGroupScroll: View {
+    var selectedDate: Date
     var groupName: String
     var recipeList: [Recipe]
     
+    @Binding var path: NavigationPath
     var body: some View {
         Group {
             HStack {
@@ -25,9 +27,11 @@ struct RecipeGroupScroll: View {
                 
                 HStack(spacing: 20) {
                     ForEach(recipeList) {recipe in
-                        NavigationLink(destination: RecipeDetailsView(id: recipe.id)) {
+                        Button(action: {
+                            path.append(recipe)
+                        }, label: {
                             RecipeThumbnail(recipe: recipe)
-                        }
+                        })
                         .buttonStyle(.plain)
                     }
                 }

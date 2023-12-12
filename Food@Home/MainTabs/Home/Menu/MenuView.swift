@@ -12,11 +12,13 @@ struct MenuView: View {
     @EnvironmentObject var tempFoodAccess: FoodItemsAccess
     @Environment(\.dismiss) private var dismiss
     
-    var date: Date
+    var selectedDate: Date
     @State private var showTabBar: Bool  = false
     
+    @Binding var path: NavigationPath
+    
     var body: some View {
-        NavigationStack {
+        VStack {
             VStack {
                 HStack {
                     Image(systemName: "arrow.backward")
@@ -38,7 +40,7 @@ struct MenuView: View {
                 .padding(.bottom, 13)
                 
                 HStack {
-                    Text ("\(date.formatted(.dateTime.day().month())), \(date.formatted(.dateTime.weekday(.wide)))")
+                    Text ("\(selectedDate.formatted(.dateTime.day().month())), \(selectedDate.formatted(.dateTime.weekday(.wide)))")
                         .font(.customSystem(size: 16, weight: .semibold))
                     
                     Spacer()
@@ -59,9 +61,9 @@ struct MenuView: View {
                 VStack {
                     
                     ScrollView(.vertical, showsIndicators: false) {
-                        RecipeGroupScroll(groupName: "Breakfast Foods", recipeList: viewModel.recipes)
+                     RecipeGroupScroll(selectedDate: selectedDate, groupName: "Breakfast Foods", recipeList: viewModel.recipes, path: $path)
                         
-                        RecipeGroupScroll(groupName: "Lunch-friendly", recipeList: viewModel.recipes)
+                        RecipeGroupScroll(selectedDate: selectedDate, groupName: "Lunch-friendly", recipeList: viewModel.recipes, path: $path)
                     }
                 }
             }
@@ -77,5 +79,5 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView(date: Date())
+    MenuView(selectedDate: Date(), path: Binding.constant(NavigationPath()))
 }

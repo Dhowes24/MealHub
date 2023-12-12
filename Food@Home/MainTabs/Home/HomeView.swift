@@ -9,9 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = ViewModel()
+    @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationStack {
+//        NavigationStack() {
+            NavigationStack(path: $path) {
+            
             VStack {
                 Header(headerText: "Welcome!")
                 
@@ -53,17 +56,24 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                NavigationLink {
-                    MenuView(date: viewModel.selectedDate)
-                } label: {
+                Button(action: {
+                    path.append(1)
+                }, label: {
                     Text("Plan your meal")
                         .button(color: "black")
                         .padding(.bottom, 38)
-                }
+                })
                 .buttonStyle(.plain)
-                
+
                 SeparatorLine()
             }
+            .navigationDestination(for: Int.self) { int in
+                MenuView(selectedDate: viewModel.selectedDate, path: $path)
+            }
+            .navigationDestination(for: Recipe.self) { recipe in
+                RecipeDetailsView(id: recipe.id, path: $path)
+            }
+
         }
     }
 }

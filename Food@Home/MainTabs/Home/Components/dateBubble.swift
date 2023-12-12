@@ -14,9 +14,16 @@ struct dateBubble: View {
     var body: some View {
         VStack {
             ZStack{
-                Circle()
-                    .fill(day == selectedDate ? brandOrange : brandWarm)
-                    .frame(width: 40, height: 40)
+                if day.formatted(.dateTime.day().month()) == Date().formatted(.dateTime.day().month()) {
+                    Circle()
+                        .strokeBorder(.red, lineWidth: 2)
+                        .background(Circle().fill(day == selectedDate ? brandOrange : brandWarm))
+                        .frame(width: 40, height: 40)
+                } else {
+                    Circle()
+                        .fill(day == selectedDate ? brandOrange : brandWarm)
+                        .frame(width: 40, height: 40)
+                }
                 
                 Text(day.formatted(.dateTime.day()))
                     .font(.customSystem(size: 14, weight: .semibold))
