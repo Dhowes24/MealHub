@@ -5,54 +5,47 @@
 //  Created by Derek Howes on 11/30/23.
 //
 
+import CoreData
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var viewModel = HomeViewModel()
     @State private var path = NavigationPath()
     
+    @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
+    @Environment(\.managedObjectContext) var moc
+    
     var body: some View {
-//        NavigationStack() {
-            NavigationStack(path: $path) {
+        NavigationStack(path: $path) {
             
             VStack {
                 Header(headerText: "Welcome!")
+                    .onTapGesture {
+                        meals.forEach{ meal in
+                            moc.delete(meal)
+                        }
+                        try? moc.save()
+                    }
                 
-                HStack {
-                    Text(viewModel.dateLineup[0].formatted(.dateTime.month()))
-                        .font(.customSystem(size: 16, weight: .bold))
-                    
-                    Spacer()
-                    
-                    Group {
-                        Image(systemName: "arrow.backward")
-                            .frame(width: 24, height: 24)
-                        Text("Previous")
-                            .font(.customSystem(size: 14, weight: .bold))
-                            .padding(.trailing, 24)
-                    }
-                    .onTapGesture {
-                        viewModel.updateWeekLineup(direction: -1)
-                    }
-                    
-                    Group {
-                        Text("Next")
-                            .font(.customSystem(size: 14, weight: .bold))
-                        Image(systemName: "arrow.forward")
-                            .frame(width: 24, height: 24)
-                    }
-                    .onTapGesture {
-                        viewModel.updateWeekLineup(direction: 1)
-                    }
-                }
-                .padding(.horizontal, 17)
-                .padding(.bottom, 22)
+                dateLineup(viewModel: viewModel)
                 
                 HStack {
                     ForEach(viewModel.dateLineup, id:  \.self) { day in
                         dateBubble(day: day, selectedDate: viewModel.selectedDate, updatedSelectedDate: viewModel.updateSelectedDate)
                     }
                 }
+                
+                ScrollView {
+                    VStack {
+                        homeMealThumbnail(mealTime: "Breakfast", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                        homeMealThumbnail(mealTime: "Lunch", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                        homeMealThumbnail(mealTime: "Snack", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                        homeMealThumbnail(mealTime: "Dinner", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .padding(.horizontal, 30)
+                .padding(.top, 16)
                 
                 Spacer()
                 
@@ -64,7 +57,7 @@ struct HomeView: View {
                         .padding(.bottom, 38)
                 })
                 .buttonStyle(.plain)
-
+                
                 SeparatorLine()
             }
             .navigationDestination(for: Int.self) { int in
@@ -73,7 +66,7 @@ struct HomeView: View {
             .navigationDestination(for: Recipe.self) { recipe in
                 RecipeDetailsView(id: recipe.id, path: $path)
             }
-
+            
         }
     }
 }

@@ -14,9 +14,25 @@ struct TimeSelector: View {
         VStack {
             Group{
                 HStack {
-                    Text ("\(timeSelectorObject.date.formatted(.dateTime.day().month())), \(timeSelectorObject.date.formatted(.dateTime.weekday()))")
-                        .font(.customSystem(size: 16, weight: .semibold))
-                        .frame(width: 100)
+                    Group {
+                        Text ("\(timeSelectorObject.date.formatted(.dateTime.day().month())), \(timeSelectorObject.date.formatted(.dateTime.weekday()))")
+                            .font(.customSystem(size: 16, weight: .semibold))
+                            .frame(width: 100)
+                        
+                        Image(systemName: "pencil")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .offset(x: -5)
+                    }
+                        .overlay{
+                                DatePicker(
+                                    "",
+                                    selection: $timeSelectorObject.date,
+                                    displayedComponents: [.date]
+                                )
+                                .blendMode(.destinationOver)
+                        }
                     
                     Spacer()
                     
@@ -57,6 +73,7 @@ struct TimeSelector: View {
                                     Text(key)
                                 }
                                 .toggleStyle(CheckboxStyle())
+                                .disabled(!timeSelectorObject.isDisclosed)
                                 
                                 Spacer()
                             }
@@ -86,6 +103,12 @@ struct TimeSelector: View {
     private func selectedTimes() -> String {
         let trueKeys = timeSelectorObject.mealTimes.filter { $0.value == true }.map { $0.key }
         return (trueKeys.isEmpty ? "Select meal times" : trueKeys.joined(separator: ", "))
+    }
+    
+    func areTimesSelected() -> Bool {
+        return timeSelectorObject.mealTimes.contains(where: { (_, selected) in
+            return selected
+        })
     }
 }
 

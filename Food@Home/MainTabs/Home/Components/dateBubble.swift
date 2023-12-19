@@ -35,7 +35,9 @@ struct dateBubble: View {
 
         }
         .onTapGesture {
-            updatedSelectedDate(day)
+            withAnimation {
+                updatedSelectedDate(day)
+            }
         }
     }
 }

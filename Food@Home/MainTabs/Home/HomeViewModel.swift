@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension HomeView {
-    @MainActor class ViewModel: ObservableObject {
+//extension HomeView {
+    @MainActor class HomeViewModel: ObservableObject {
         
         @Published var dateLineup: [Date] = []
         @Published var selectedDate: Date = Date()
@@ -43,5 +43,5 @@ extension HomeView {
             }
         }
     }
-}
+//}
 

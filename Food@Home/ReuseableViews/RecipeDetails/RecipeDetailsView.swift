@@ -80,7 +80,9 @@ struct RecipeDetailsView: View {
                         .onTapGesture {
                             showingScheduler.toggle()
                         }
-                    
+                        .sheet(isPresented: $showingScheduler, content: {
+                            MealScheduler(selectedDate: selectedDate, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)) ,path: $path)
+                        })
                 } else {
                     if pullError {
                         Text("We encountered an error pulling that recipe :(")
@@ -100,9 +102,6 @@ struct RecipeDetailsView: View {
                         pullError = true
                     }
                 }
-            })
-            .sheet(isPresented: $showingScheduler, content: {
-                MealScheduler(selectedDate: selectedDate, path: $path)
             })
         }
     }
