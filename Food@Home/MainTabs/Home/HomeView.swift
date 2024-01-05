@@ -11,7 +11,6 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @State private var path = NavigationPath()
-    
     @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
     @Environment(\.managedObjectContext) var moc
     
@@ -35,14 +34,35 @@ struct HomeView: View {
                     }
                 }
                 
-                ScrollView {
-                    VStack {
-                        homeMealThumbnail(mealTime: "Breakfast", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
-                        homeMealThumbnail(mealTime: "Lunch", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
-                        homeMealThumbnail(mealTime: "Snack", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
-                        homeMealThumbnail(mealTime: "Dinner", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                ZStack {
+                    ScrollView {
+                        VStack {
+                            homeMealThumbnail(mealTime: "Breakfast", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                            homeMealThumbnail(mealTime: "Lunch", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                            homeMealThumbnail(mealTime: "Snack", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                            homeMealThumbnail(mealTime: "Dinner", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                        }
+                        .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
+                    
+                    VStack {
+                        HStack {
+                            Spacer()
+                            
+                            Button(action: {
+                                path.append(viewModel.selectedDate)
+                            }, label: {
+                                Text("See week view")
+                                    .font(.customSystem(size: 11, weight: .bold))
+                                    .foregroundStyle(.black)
+                                    .frame(width: 100, height: 25)
+                                .background(Capsule().fill(Color.init(hex: 0xE2E5E9)))
+                            })
+                            .buttonStyle(.plain)
+                        }
+                        
+                        Spacer()
+                    }
                 }
                 .padding(.horizontal, 30)
                 .padding(.top, 16)
@@ -66,7 +86,9 @@ struct HomeView: View {
             .navigationDestination(for: Recipe.self) { recipe in
                 RecipeDetailsView(id: recipe.id, path: $path)
             }
-            
+            .navigationDestination(for: Date.self) { date in
+                WeekReviewView(date: date, meals: meals, path: $path)
+            }
         }
     }
 }

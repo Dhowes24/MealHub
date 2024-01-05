@@ -51,6 +51,8 @@
 		6B8877E82AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8877E62AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift */; };
 		6B9140012B34D4580095D80C /* TrashDragLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9140002B34D4580095D80C /* TrashDragLabel.swift */; };
 		6BA601142A38EB5C00F1D335 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA601132A38EB5C00F1D335 /* Transition.swift */; };
+		6BCE75932B47C93A005BCF42 /* WeekReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE75922B47C93A005BCF42 /* WeekReviewView.swift */; };
+		6BCE75962B488DFB005BCF42 /* WeekReviewRecipeThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE75952B488DFB005BCF42 /* WeekReviewRecipeThumbnail.swift */; };
 		6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB950D2ACDE94D0006B0E8 /* NavView.swift */; };
 		6BEB95112ACF0C690006B0E8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB95102ACF0C690006B0E8 /* MenuView.swift */; };
 		6BEB95132ACF0CED0006B0E8 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB95122ACF0CED0006B0E8 /* MenuViewModel.swift */; };
@@ -147,6 +149,8 @@
 		6B8877E62AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B9140002B34D4580095D80C /* TrashDragLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDragLabel.swift; sourceTree = "<group>"; };
 		6BA601132A38EB5C00F1D335 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		6BCE75922B47C93A005BCF42 /* WeekReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekReviewView.swift; sourceTree = "<group>"; };
+		6BCE75952B488DFB005BCF42 /* WeekReviewRecipeThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekReviewRecipeThumbnail.swift; sourceTree = "<group>"; };
 		6BEB950D2ACDE94D0006B0E8 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		6BEB95102ACF0C690006B0E8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		6BEB95122ACF0CED0006B0E8 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				6B5F762A2B19257D0082CC4E /* HomeViewModel.swift */,
 				6B5F762E2B1929310082CC4E /* Components */,
 				6BEB950F2ACF0C530006B0E8 /* Menu */,
+				6BCE75912B47C913005BCF42 /* WeekReview */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -464,6 +469,23 @@
 			path = RecipeDetails;
 			sourceTree = "<group>";
 		};
+		6BCE75912B47C913005BCF42 /* WeekReview */ = {
+			isa = PBXGroup;
+			children = (
+				6BCE75922B47C93A005BCF42 /* WeekReviewView.swift */,
+				6BCE75942B488DD1005BCF42 /* Components */,
+			);
+			path = WeekReview;
+			sourceTree = "<group>";
+		};
+		6BCE75942B488DD1005BCF42 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6BCE75952B488DFB005BCF42 /* WeekReviewRecipeThumbnail.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		6BEB950B2ACDE8F70006B0E8 /* MainTabs */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +693,7 @@
 				6B5F76302B1929420082CC4E /* dateBubble.swift in Sources */,
 				6B5F76222B16A21E0082CC4E /* FoodItemModel.swift in Sources */,
 				6B5F76082AF842A60082CC4E /* Logo.swift in Sources */,
+				6BCE75962B488DFB005BCF42 /* WeekReviewRecipeThumbnail.swift in Sources */,
 				6B75CE542B2BA29100323037 /* dateLineup.swift in Sources */,
 				6BEB95132ACF0CED0006B0E8 /* MenuViewModel.swift in Sources */,
 				6B8877E82AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift in Sources */,
@@ -694,6 +717,7 @@
 				6B8877C42ADC6463002B9CDB /* SearchRecipes.swift in Sources */,
 				6B9140012B34D4580095D80C /* TrashDragLabel.swift in Sources */,
 				6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */,
+				6BCE75932B47C93A005BCF42 /* WeekReviewView.swift in Sources */,
 				6B5F762D2B1928DA0082CC4E /* Header.swift in Sources */,
 				6B7388492A2FE29500EBCE7B /* UIScreen.swift in Sources */,
 				6B75CE462B20F5E100323037 /* TimeSelector.swift in Sources */,

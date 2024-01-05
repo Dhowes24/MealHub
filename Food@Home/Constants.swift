@@ -18,6 +18,7 @@ let textPink: Color = Color.init(hex: 0xFCDAE2)
 
 let offWhite: Color = Color.init(hex: 0xFDFCFC)
 let customGrey: Color = Color.init(hex: 0xC6CCD4)
+let darkGrey: Color = Color.init(hex: 0x657589)
 
 let opacityVal = 0.4
 

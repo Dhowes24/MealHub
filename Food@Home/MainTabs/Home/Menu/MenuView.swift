@@ -61,7 +61,7 @@ struct MenuView: View {
                 VStack {
                     
                     ScrollView(.vertical, showsIndicators: false) {
-                     RecipeGroupScroll(selectedDate: selectedDate, groupName: "Breakfast Foods", recipeList: viewModel.recipes, path: $path)
+                        RecipeGroupScroll(selectedDate: selectedDate, groupName: "Breakfast Foods", recipeList: viewModel.recipes, path: $path)
                         
                         RecipeGroupScroll(selectedDate: selectedDate, groupName: "Lunch-friendly", recipeList: viewModel.recipes, path: $path)
                     }
