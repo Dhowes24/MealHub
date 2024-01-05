@@ -9,6 +9,11 @@ import SwiftUI
 
 struct TimeSelector: View {
     @Binding var timeSelectorObject: timeSelectorObject
+    let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
+    let firstSelector: Bool = false
+    
+    @State var delete: Bool = false
+    @State private var dragAmount = CGSize.zero
     
     var body: some View {
         VStack {
@@ -66,11 +71,10 @@ struct TimeSelector: View {
                         .frame(width: 100, height: 1)
                     
                     VStack() {
-                        ForEach(Array(timeSelectorObject.mealTimes.keys), id: \.self) { key in
+                        ForEach(mealTimeArray, id: \.self) { time in
                             HStack {
-                                
-                                Toggle(isOn: binding(for: key)) {
-                                    Text(key)
+                                Toggle(isOn: binding(for: time)) {
+                                    Text(time)
                                 }
                                 .toggleStyle(CheckboxStyle())
                                 .disabled(!timeSelectorObject.isDisclosed)
@@ -89,7 +93,9 @@ struct TimeSelector: View {
             }
             .padding(.top, 3)
         }
-        .padding(.horizontal, 25)
+        .padding(.horizontal, 10)
+        
+        Spacer()
     }
     
     private func binding(for key: String) -> Binding<Bool> {
@@ -124,7 +130,7 @@ struct TimeSelector: View {
 }
 
 
-struct timeSelectorObject: Identifiable {
+struct timeSelectorObject: Identifiable, Equatable {
     var id = UUID()
     var isDisclosed: Bool = false
     var mealTimes = ["Breakfast": false, "Lunch": false, "Dinner": false, "Snack": false]

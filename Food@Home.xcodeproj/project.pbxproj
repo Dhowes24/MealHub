@@ -49,6 +49,7 @@
 		6B8877DC2AE0CDBF002B9CDB /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B8877DA2AE0CDBF002B9CDB /* CoreDataModel.xcdatamodeld */; };
 		6B8877E72AE0D1E3002B9CDB /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8877E52AE0D1E3002B9CDB /* FoodItem+CoreDataClass.swift */; };
 		6B8877E82AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8877E62AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift */; };
+		6B9140012B34D4580095D80C /* TrashDragLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9140002B34D4580095D80C /* TrashDragLabel.swift */; };
 		6BA601142A38EB5C00F1D335 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA601132A38EB5C00F1D335 /* Transition.swift */; };
 		6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB950D2ACDE94D0006B0E8 /* NavView.swift */; };
 		6BEB95112ACF0C690006B0E8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB95102ACF0C690006B0E8 /* MenuView.swift */; };
@@ -144,6 +145,7 @@
 		6B8877DB2AE0CDBF002B9CDB /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		6B8877E52AE0D1E3002B9CDB /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6B8877E62AE0D1E3002B9CDB /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6B9140002B34D4580095D80C /* TrashDragLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDragLabel.swift; sourceTree = "<group>"; };
 		6BA601132A38EB5C00F1D335 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		6BEB950D2ACDE94D0006B0E8 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		6BEB95102ACF0C690006B0E8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				6B5F760B2AF9AEFF0082CC4E /* TextInputModifier.swift */,
 				6B5F762C2B1928DA0082CC4E /* Header.swift */,
 				6B75CE3F2B1AD47D00323037 /* SeparatorLine.swift */,
+				6B9140002B34D4580095D80C /* TrashDragLabel.swift */,
 			);
 			path = UniversalUIComponents;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				6B7388402A2FD63F00EBCE7B /* Font.swift in Sources */,
 				6B8877B32AD7375B002B9CDB /* RecipeDetailsViewModel.swift in Sources */,
 				6B8877C42ADC6463002B9CDB /* SearchRecipes.swift in Sources */,
+				6B9140012B34D4580095D80C /* TrashDragLabel.swift in Sources */,
 				6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */,
 				6B5F762D2B1928DA0082CC4E /* Header.swift in Sources */,
 				6B7388492A2FE29500EBCE7B /* UIScreen.swift in Sources */,
