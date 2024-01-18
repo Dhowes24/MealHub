@@ -16,13 +16,9 @@ struct NavView: View {
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
-            Text("Groceries")
+            ProvisionsView()
                 .tabItem {
-                    Label("Groceries", systemImage: "takeoutbag.and.cup.and.straw")
-                }
-            Text("Resources")
-                .tabItem {
-                    Label("Resources", systemImage: "fork.knife")
+                    Label("Provisions", systemImage: "takeoutbag.and.cup.and.straw")
                 }
             AccountView()
                 .tabItem {

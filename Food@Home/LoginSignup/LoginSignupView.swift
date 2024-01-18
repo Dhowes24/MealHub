@@ -65,12 +65,15 @@ struct LoginSignupView: View {
                             .padding(.bottom, 9)
                         TextField("Enter your email address", text: $email)
                             .textInputMod()
+                            .padding(.bottom, 24)
                         
                         Text("Password")
                             .font(.customSystem(size: 16, weight: .bold))
                             .padding(.bottom, 9)
                         TextField("Enter your password", text: $email)
                             .textInputMod()
+                            .padding(.bottom, 24)
+
                     }
                     .frame(height: 300)
                     .padding(.horizontal, 16)
@@ -92,18 +95,21 @@ struct LoginSignupView: View {
                             .padding(.bottom, 9)
                         TextField("Enter your email address", text: $email)
                             .textInputMod()
+                            .padding(.bottom, 24)
                         
                         Text("Password")
                             .font(.customSystem(size: 16, weight: .bold))
                             .padding(.bottom, 9)
                         TextField("Enter your password", text: $email)
                             .textInputMod()
+                            .padding(.bottom, 24)
                         
                         Text("Re-enter Password")
                             .font(.customSystem(size: 16, weight: .bold))
                             .padding(.bottom, 9)
                         TextField("Re-enter your password", text: $email)
                             .textInputMod()
+                            .padding(.bottom, 24)
                     }
                     .frame(height: 300)
                     .padding(.horizontal, 16)

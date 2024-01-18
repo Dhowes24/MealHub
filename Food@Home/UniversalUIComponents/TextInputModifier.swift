@@ -20,7 +20,7 @@ struct TextInputModifier: ViewModifier {
                             .stroke(customGrey, lineWidth: 1)
                     )
             )
-            .padding(.bottom, 24)
+//            .padding(.bottom, 24)
     }
 }
 
