@@ -21,7 +21,7 @@ import SwiftUI
             fetchItems()
         }
         
-        func addItem(dateAdded: Date = Date(), name: String, owned: Bool) {
+        func addItem(dateAdded: Date, name: String, owned: Bool) {
             let item = FoodItem(context: mainContext)
             item.dateAdded = dateAdded
             item.id = UUID()

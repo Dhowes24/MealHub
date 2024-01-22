@@ -10,18 +10,23 @@ import SwiftUI
 import SwiftUI
 
 struct ListToggle: View {
+    var colored: Bool = false
     @Binding var listToggle: Bool
     @Namespace private var animation
+    var optionOne: String
+    var optionTwo: String
     
     var body: some View {
         VStack {
             HStack() {
                 ZStack() {
-                    Text("My Kitchen")
+                    Text(optionOne)
                         .fontWeight(listToggle ? .bold : .regular)
+                        .foregroundStyle(colored ? .green : .black)
                     
                     if listToggle {
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(colored ? .green : .black)
                             .frame(width: 100, height: 2)
                             .offset(y:20)
                             .matchedGeometryEffect(id: "Selector", in: animation)
@@ -31,11 +36,14 @@ struct ListToggle: View {
                 .padding(.horizontal, 24)
                 
                 ZStack() {
-                    Text("Grocery List")
+                    Text(optionTwo)
                         .fontWeight(listToggle ? .regular : .bold)
+                        .foregroundStyle(colored ? .red : .black)
+
                     
                     if !listToggle {
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(colored ? .red : .black)
                             .frame(width: 100, height: 2)
                             .offset(y:20)
                             .matchedGeometryEffect(id: "Selector", in: animation)
@@ -56,5 +64,13 @@ struct ListToggle: View {
 }
 
 #Preview {
-    ListToggle(listToggle: .constant(true))
+    struct PreviewWrapper: View {
+        @State var binding: Bool = true
+        var body: some View {
+            ListToggle(colored: true, listToggle: $binding, optionOne: "Kitchen", optionTwo: "Grocery List")
+
+        }
+    }
+    return PreviewWrapper()
 }
+
