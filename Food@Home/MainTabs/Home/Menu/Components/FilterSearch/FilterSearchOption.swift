@@ -8,21 +8,31 @@
 import SwiftUI
 
 struct FilterSearchOption: View {
-    var title: String
     
     @State private var filterDict: [String: Bool] = [:]
-    
-    init(title: String) {
-        self.title = title
+    var title: String
         
+    init(title: String) {
+        
+        self.title = title
         _filterDict = State(initialValue: decodeUserDefaults())
         
     }
     
     var body: some View {
         HStack {
-            Text(title)
-                .font(.customSystem(size: 16, weight: .semibold))
+            VStack(alignment: .leading){
+                let subtext = retrieveSelectedItems()
+                Text(title)
+                    .font(.customSystem(size: 16, weight: .semibold))
+                    .frame(height: 24)
+                    .offset(y: subtext.isEmpty ? 14: 0 )
+                
+                    Text(subtext)
+                        .font(.customSystem(size: 13, weight: .regular))
+                        .foregroundStyle(darkGrey)
+                        .frame(width: 290, height: 16, alignment: .leading)
+            }
             
             Spacer()
             
@@ -37,16 +47,83 @@ struct FilterSearchOption: View {
         
         SeparatorLine()
     }
+        
+    private func chooseView() -> some View {
+        switch title {
+        case "Ready In":
+            return AnyView(ReadyInFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+        case "Include/Exclude":
+            return AnyView(IncludeExcludeFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+        case "Dietary Need":
+            return AnyView(DietaryNeedFilter(dict: $filterDict, decodeUserDefaults: decodeUserDefaults, encodeUserDefaults: encodeUserDefaults))
+        case "Cuisine":
+            return AnyView(CuisineFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+        default:
+            return AnyView(ReadyInFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+        }
+    }
     
     private func decodeUserDefaults() -> [String: Bool] {
         if let data = UserDefaults.standard.data(forKey: title),
            let decodedDictionary = try? PropertyListDecoder().decode([String: Bool].self, from: data) {
             return decodedDictionary
         } else {
-            return ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
+            return dictionaryDefaults()
         }
     }
     
+    private func dictionaryDefaults() -> [String: Bool] {
+        switch title {
+        case "Ready In":
+            return [
+                "15": false,
+                "30": false,
+                "45": false,
+                "60": false,
+                "120": false,
+                "180": true]
+        case "Include/Exclude":
+            return [:]
+        case "Dietary Need":
+            return [
+                "Pescatarian": false,
+                "Lacto Vegetarian": false,
+                "OVO Vegetarian": false,
+                "Vegan": false,
+                "Paleo": false,
+                "Primal": false,
+                "Vegetarian": false
+            ]
+        case "Cuisine":
+            return [
+                "African": false,
+                "Chinese": false,
+                "Japanese": false,
+                "Korean": false,
+                "Vietnamese": false,
+                "Thai": false,
+                "Indian": false,
+                "French": false,
+                "Italian": false,
+                "Mexican": false,
+                "Spanish": false,
+                "Middle Eastern": false,
+                "Jewish": false,
+                "American": false,
+                "Cajun": false,
+                "Southern": false,
+                "Greek": false,
+                "German": false,
+                "Nordic": false,
+                "Eastern European": false,
+                "Caribbean": false,
+                "Latin American": false
+            ]
+        default:
+            return ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
+        }
+    }
+
     private func encodeUserDefaults() {
         if let data = try? PropertyListEncoder().encode(filterDict) {
             UserDefaults.standard.set(data, forKey: title)
@@ -55,28 +132,60 @@ struct FilterSearchOption: View {
         }
     }
     
-    private func chooseView() -> some View {
+    private func retrieveSelectedItems() -> String {
+        let trueValues = filterDict.filter { $0.value }.map { $0.key }
+        let falseValues = filterDict.filter { !$0.value }.map { $0.key }
+        var returnString: String = ""
         switch title {
         case "Ready In":
-            return AnyView(ReadyIn(dict: $filterDict, decodeUserDefaults: decodeUserDefaults, encodeUserDefaults: encodeUserDefaults))
+            var minuteCount = trueValues.first ?? "180"
+            return "\(minuteCount) minutes"
         case "Include/Exclude":
-            return AnyView(IncludeExcludeFilter(dict: $filterDict, decodeUserDefaults: decodeUserDefaults, encodeUserDefaults: encodeUserDefaults))
+            for (index, element) in trueValues.enumerated() {
+                if index == 0 {
+                    returnString += "Include: \(element)"
+                } else {
+                    returnString += ", \(element)"
+                }
+            }
+            for (index, element) in falseValues.enumerated() {
+                if index == 0 {
+                    if !trueValues.isEmpty { returnString += " | " }
+                    returnString += "Exclude: \(element)"
+                } else {
+                    returnString += ", \(element)"
+                }
+            }
+            return returnString
+        case "Dietary Need":
+            for (index, element) in trueValues.enumerated() {
+                if index == 0 {
+                    returnString += "\(element)"
+                } else {
+                    returnString += ", \(element)"
+                }
+            }
+            return returnString
+        case "Cuisine":
+            for (index, element) in trueValues.enumerated() {
+                if index == 0 {
+                    returnString += "\(element)"
+                } else {
+                    returnString += ", \(element)"
+                }
+            }
+            return returnString
         default:
-            return AnyView(ReadyIn(dict: $filterDict, decodeUserDefaults: decodeUserDefaults, encodeUserDefaults: encodeUserDefaults))
+            return ""
         }
     }
 }
 
-//#Preview {
-//    struct PreviewWrapper: View {
-//        @State var bindingDict: [String: Bool] = ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
-//        var body: some View {
-//            FilterSearchOption(title: "Ready In") {
-//                ReadyIn(dict: $bindingDict, decodeUserDefaults: {
-//                    return ["15": true, "30": false, "45": true, "60": false, "120": true, "180": false]
-//                }, encodeUserDefaults: {})            }
-//
-//        }
-//    }
-//    return PreviewWrapper()
-//}
+#Preview {
+    struct PreviewWrapper: View {
+        var body: some View {
+            FilterSearchOption(title: "Ready In")
+        }
+    }
+    return PreviewWrapper()
+}

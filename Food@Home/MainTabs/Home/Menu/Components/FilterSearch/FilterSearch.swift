@@ -9,81 +9,11 @@ import SwiftUI
 import WaterfallGrid
 
 struct FilterSearch: View {
-    @State private var search: String = ""
-    @State private var filtersShowing: Bool = true
     
+    @State private var filtersShowing: Bool = false
     @Binding var path: NavigationPath
-
-    init(path: Binding<NavigationPath>) {
-        _path = path
+    @State private var search: String = ""
         
-        // create on this on onboarding
-//        var tempDefaults = UserDefaults.standard
-//
-//        let readyIn: [Int: Bool] = [ 15: false, 30: false, 45: false, 1 : false, 2: false, 3: false, 0: true]
-//        tempDefaults.set(readyIn, forKey: "readyIn")
-//
-//        defaults = tempDefaults
-//        let includeExclude: [String : Bool] = [:]
-//        defaults.set(includeExclude, forKey: "includeExclude")
-//        
-//        let diet: [String: Bool] = [
-//            "pescetarian" : false,
-//            "lacto%20vegetarian" : false,
-//            "ovo%20vegetarian" : false,
-//            "vegan" : false,
-//            "paleo" : false,
-//            "primal" : false,
-//            "vegetarian" : false
-//        ]
-//        defaults.set(diet, forKey: "diet")
-//        
-//        let intolerances: [String: Bool] = [
-//            "dairy" : false,
-//            "egg" : false,
-//            "gluten" : false,
-//            "peanut": false,
-//            "sesame": false,
-//            "seafood" : false,
-//            "shellfish" : false,
-//            "soy" : false,
-//            "sulfite" : false,
-//            "tree%20nut" : false,
-//            "wheat" : false
-//        ]
-//        defaults.set(intolerances, forKey: "intolerances")
-//
-//        let cuisine: [String : Bool] = [
-//            "african" : false,
-//            "chinese" : false,
-//            "japanese" : false,
-//            "korean" : false,
-//            "vietnamese" : false,
-//            "thai" : false,
-//            "indian" : false,
-//            "british" : false,
-//            "irish" : false,
-//            "french" : false,
-//            "italian" : false,
-//            "mexican" : false,
-//            "spanish" : false,
-//            "middle%20eastern" : false,
-//            "jewish" : false,
-//            "american" : false,
-//            "cajun" : false,
-//            "southern" : false,
-//            "greek" : false,
-//            "german" : false,
-//            "nordic" : false,
-//            "eastern%20european" : false,
-//            "caribbean" : false,
-//            "latin%20american" : false
-//        ]
-//        defaults.set(cuisine, forKey: "cuisine")
-
-        //
-    }
-    
     var body: some View {
         Group {
             
@@ -114,6 +44,10 @@ struct FilterSearch: View {
                 
                 FilterSearchOption(title: "Include/Exclude")
                 
+                FilterSearchOption(title: "Dietary Need")
+
+                FilterSearchOption(title: "Cuisine")
+
             }
             .frame(height: filtersShowing ? nil : 0, alignment: .top)
             .disabled(!filtersShowing)
