@@ -37,28 +37,3 @@ let rowHeight: CGFloat = 40
 let taskNameFontSize: CGFloat = 20
 let taskWidthAvailable: CGFloat = UIScreen.screenWidth - 80
 
-
-//CoreDataDecoding
-func nutritionTypeToString(type: Int16) -> String {
-    switch type {
-    case 1:
-        return "Protein"
-    case 2:
-        return "Starch"
-    case 3:
-        return "Veg"
-    default:
-        return "Other"
-    }
-}
-
-func storageTypeToString(type: Int16) -> String {
-    switch type {
-    case 1:
-        return "Freezer"
-    case 2:
-        return "Fridge"
-    default:
-        return "Pantry"
-    }
-}

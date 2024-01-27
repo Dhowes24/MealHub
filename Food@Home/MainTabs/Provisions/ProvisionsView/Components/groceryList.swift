@@ -48,20 +48,7 @@ struct groceryList: View {
                         SeparatorLine()
                     }
                     
-                    HStack {
-                        Text(item.name ?? "Something else")
-                            .font(.customSystem(size: 16, weight: .semibold))
-                            .padding(.vertical, 16)
-                        
-                        Spacer()
-                        
-                        Toggle(isOn: binding(for: item)) {
-                            
-                        }
-                        .toggleStyle(CheckboxStyle())
-                        
-                    }
-                    .frame(height: 55)
+                    ToggleListItem(controlKey: item, displayString: item.name ?? "Something else", dict: $toggleItems)
                 }
                 
             }
@@ -121,14 +108,6 @@ struct groceryList: View {
     
     private func allItemsSelected() -> Bool {
         !toggleItems.values.contains { Bool in Bool == false }
-    }
-    
-    private func binding(for key: FoodItem) -> Binding<Bool> {
-        return Binding(get: {
-            return toggleItems[key] ?? false
-        }, set: {
-            toggleItems[key] = $0
-        })
     }
     
     private func itemsSelected() -> Bool {

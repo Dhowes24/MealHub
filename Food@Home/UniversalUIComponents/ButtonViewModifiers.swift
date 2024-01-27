@@ -35,6 +35,15 @@ struct WhiteButton: ViewModifier {
     }
 }
 
+struct GreyButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.customSystem(size: 11, weight: .bold))
+            .foregroundStyle(.black)
+            .background(Capsule().fill(Color.init(hex: 0xE2E5E9)))
+    }
+}
+
 extension View {
     func button(color: String) -> some View {
         switch color {
@@ -42,6 +51,8 @@ extension View {
             return AnyView(modifier(BlackButton()))
         case "white" :
             return AnyView(modifier(WhiteButton()))
+        case "grey" :
+            return AnyView(modifier(GreyButton()))
         default:
             return AnyView(modifier(BlackButton()))
         }

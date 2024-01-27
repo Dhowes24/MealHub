@@ -30,22 +30,15 @@ struct MenuView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "magnifyingglass")
-                        .frame(width: 24, height: 24)
-                    
-                    Image(systemName: "slider.horizontal.3")
-                        .frame(width: 24, height: 24)
+                    Text ("\(selectedDate.formatted(.dateTime.weekday())), \(selectedDate.formatted(.dateTime.day().month()))")
+                        .font(.customSystem(size: 16, weight: .bold))
                 }
                 .padding(.top, 31)
                 .padding(.bottom, 13)
                 
-                HStack {
-                    Text ("\(selectedDate.formatted(.dateTime.day().month())), \(selectedDate.formatted(.dateTime.weekday(.wide)))")
-                        .font(.customSystem(size: 16, weight: .semibold))
-                    
-                    Spacer()
-                }
-                .frame(height: 23)
+                
+                FilterSearch(path: $path)
+                
                 
                 HStack {
                     Text ("Pick your meals")

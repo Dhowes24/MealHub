@@ -53,10 +53,8 @@ struct HomeView: View {
                                 path.append(viewModel.selectedDate)
                             }, label: {
                                 Text("See week view")
-                                    .font(.customSystem(size: 11, weight: .bold))
-                                    .foregroundStyle(.black)
                                     .frame(width: 100, height: 25)
-                                .background(Capsule().fill(Color.init(hex: 0xE2E5E9)))
+                                    .button(color: "grey")
                             })
                             .buttonStyle(.plain)
                         }
