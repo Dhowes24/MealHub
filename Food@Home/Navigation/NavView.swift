@@ -20,9 +20,9 @@ struct NavView: View {
                 .tabItem {
                     Label("Provisions", systemImage: "takeoutbag.and.cup.and.straw")
                 }
-            AccountView()
+            ProfileView()
                 .tabItem {
-                    Label("Account", systemImage: "person.fill")
+                    Label("Profile", systemImage: "person.fill")
                 }
         }
         .ignoresSafeArea()
