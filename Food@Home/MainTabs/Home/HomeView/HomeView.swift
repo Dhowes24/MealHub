@@ -29,8 +29,11 @@ struct HomeView: View {
                 dateLineup(viewModel: viewModel)
                 
                 HStack {
+                    Spacer()
                     ForEach(viewModel.dateLineup, id:  \.self) { day in
                         dateBubble(day: day, selectedDate: viewModel.selectedDate, updatedSelectedDate: viewModel.updateSelectedDate)
+                        
+                        Spacer()
                     }
                 }
                 

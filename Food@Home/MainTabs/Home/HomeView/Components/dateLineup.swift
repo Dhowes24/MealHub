@@ -12,7 +12,10 @@ struct dateLineup: View {
     
     var body: some View {
         HStack {
-            Text(viewModel.dateLineup[0].formatted(.dateTime.month()))
+            let thisWeekMonth = viewModel.dateLineup[0].formatted(.dateTime.month())
+            let nextWeekMonth = viewModel.dateLineup[6].formatted(.dateTime.month())
+            
+            Text("\(thisWeekMonth) \(thisWeekMonth != nextWeekMonth ? "- \(nextWeekMonth)" : "")")
                 .font(.customSystem(size: 16, weight: .bold))
             
             Spacer()
@@ -25,7 +28,9 @@ struct dateLineup: View {
                     .padding(.trailing, 24)
             }
             .onTapGesture {
-                viewModel.updateWeekLineup(direction: -1)
+                withAnimation {
+                    viewModel.updateWeekLineup(direction: -1)
+                }
             }
             
             Group {
@@ -35,7 +40,9 @@ struct dateLineup: View {
                     .frame(width: 24, height: 24)
             }
             .onTapGesture {
-                viewModel.updateWeekLineup(direction: 1)
+                withAnimation {
+                    viewModel.updateWeekLineup(direction: 1)
+                }
             }
         }
         .padding(.horizontal, 17)

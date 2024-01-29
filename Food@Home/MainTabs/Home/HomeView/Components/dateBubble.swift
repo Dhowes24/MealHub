@@ -16,7 +16,7 @@ struct dateBubble: View {
             ZStack{
                 if day.formatted(.dateTime.day().month()) == Date().formatted(.dateTime.day().month()) {
                     Circle()
-                        .strokeBorder(.red, lineWidth: 2)
+                        .strokeBorder(brandGreen, lineWidth: 2)
                         .background(Circle().fill(day == selectedDate ? brandOrange : brandWarm))
                         .frame(width: 40, height: 40)
                 } else {

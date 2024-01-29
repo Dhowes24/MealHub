@@ -13,6 +13,7 @@ let brandPink: Color = Color.init(hex: 0xE9BAD5)
 let brandPurple: Color = Color.init(hex: 0xA078B4)
 let brandWarm: Color = Color.init(hex: 0xFEF7D7)
 let brandOrange: Color = Color.init(hex: 0xEFAD5C)
+let brandGreen: Color = Color.init(hex: 0x036E5B)
 
 let textPink: Color = Color.init(hex: 0xFCDAE2)
 
