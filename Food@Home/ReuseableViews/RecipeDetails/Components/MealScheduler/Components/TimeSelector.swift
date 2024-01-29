@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TimeSelector: View {
-    @Binding var timeSelectorObject: timeSelectorObject
-    let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
-    let firstSelector: Bool = false
     
     @State var delete: Bool = false
     @State private var dragAmount = CGSize.zero
-    
+    let firstSelector: Bool = false
+    let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
+    let specificDateSelect: () -> [Date]
+    @Binding var timeSelectorObject: TimeSelectorObject
+        
     var body: some View {
         VStack {
             Group{
@@ -34,6 +35,7 @@ struct TimeSelector: View {
                                 DatePicker(
                                     "",
                                     selection: $timeSelectorObject.date,
+                                    in: Date()...Date().addingTimeInterval(TimeInterval(86400 * 13)),
                                     displayedComponents: [.date]
                                 )
                                 .blendMode(.destinationOver)
@@ -120,17 +122,17 @@ struct TimeSelector: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State var object = timeSelectorObject( date: Date())
+        @State var object = TimeSelectorObject( date: Date())
         var body: some View {
             
-            TimeSelector(timeSelectorObject: $object)
+            TimeSelector(specificDateSelect: {[Date()]}, timeSelectorObject: $object)
         }
     }
     return PreviewWrapper()
 }
 
 
-struct timeSelectorObject: Identifiable, Equatable {
+struct TimeSelectorObject: Identifiable, Equatable {
     var id = UUID()
     var isDisclosed: Bool = false
     var mealTimes = ["Breakfast": false, "Lunch": false, "Dinner": false, "Snack": false]

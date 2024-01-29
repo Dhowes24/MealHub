@@ -10,7 +10,7 @@ import SwiftUI
 struct MealScheduler: View {
     @Environment(\.dismiss) var dismiss
     var selectedDate: Date
-    @State private var timeSelectors: [timeSelectorObject] = []
+    @State private var timeSelectors: [TimeSelectorObject] = []
     var recipe: Recipe
     
     @Binding var path: NavigationPath
@@ -62,7 +62,7 @@ struct MealScheduler: View {
                             
                             ZStack{
                                 Group {
-                                    TimeSelector(timeSelectorObject: selector)
+                                    TimeSelector(specificDateSelect: specificDatePickerList, timeSelectorObject: selector)
                                     VStack {
                                         TrashLabel(offset: geo.size)
                                             .padding(.top, 10)
@@ -77,8 +77,9 @@ struct MealScheduler: View {
                             }
                         }
                         Button("Click to add another meal time") {
-                            timeSelectors.append(timeSelectorObject(date: selectedDate))
+                            timeSelectors.append(TimeSelectorObject(date: nextAvaliableDate()))
                         }
+                        .disabled(timeSelectors.count > 14)
                     }
                 }
                 .padding(.horizontal, 17)
@@ -88,7 +89,6 @@ struct MealScheduler: View {
                 SeparatorLine()
                 
                 Button(action: {
-                    
                     timeSelectors.forEach { daySelected in
                         daySelected.mealTimes.forEach { (time: String, selected: Bool) in
                             if selected {
@@ -114,7 +114,7 @@ struct MealScheduler: View {
                 
             }
             .onAppear {
-                self.timeSelectors.append(timeSelectorObject(date: selectedDate))
+                self.timeSelectors.append(TimeSelectorObject(date: selectedDate))
             }
         }
     }
@@ -129,10 +129,44 @@ struct MealScheduler: View {
         return returnValue
     }
     
-    func deleteTimeSelector(selector: timeSelectorObject) {
+    func deleteTimeSelector(selector: TimeSelectorObject) {
         timeSelectors.removeAll { toRemove in
             toRemove == selector
         }
+    }
+    
+    func nextAvaliableDate() -> Date {
+        for selectors in 0...timeSelectors.count {
+            var dateTaken = false
+            let avaliableDate = Date().addingTimeInterval(TimeInterval(86400 * selectors))
+            timeSelectors.forEach { TimeSelectorObject in
+                if areSameDate(TimeSelectorObject.date, avaliableDate) {
+                    dateTaken = true
+                }
+            }
+            if !dateTaken {
+                return avaliableDate
+            }
+        }
+        return Date()
+    }
+    
+    func specificDatePickerList() -> [Date] {
+        var currentDate = Date()
+        var choosableDates: [Date] = []
+        
+        while currentDate <= Date().addingTimeInterval(TimeInterval(86400 * 13)) {
+            choosableDates.append(currentDate)
+            currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+        }
+        
+        timeSelectors.forEach { TimeSelectorObject in
+            choosableDates.removeAll { Date in
+                areSameDate(Date, TimeSelectorObject.date)
+            }
+        }
+        
+        return choosableDates
     }
 }
 
@@ -142,10 +176,10 @@ struct MealScheduler: View {
 }
 
 struct timeSelectorViewModifier: ViewModifier {
-    var deleteItem: ((timeSelectorObject) -> Void)?
+    var deleteItem: ((TimeSelectorObject) -> Void)?
     @State var drag: CGSize = CGSize.zero
     var isFirst: Bool
-    var selectorReference: timeSelectorObject
+    var selectorReference: TimeSelectorObject
     
     func body(content: Content) -> some View {
         if isFirst {

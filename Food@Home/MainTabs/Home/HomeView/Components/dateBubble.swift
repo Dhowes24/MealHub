@@ -21,7 +21,7 @@ struct dateBubble: View {
                         .frame(width: 40, height: 40)
                 } else {
                     Circle()
-                        .fill(day == selectedDate ? brandOrange : brandWarm)
+                        .fill(day == selectedDate ? brandOrange : withinDateRange(day) ? brandWarm : disabledWarm)
                         .frame(width: 40, height: 40)
                 }
                 
