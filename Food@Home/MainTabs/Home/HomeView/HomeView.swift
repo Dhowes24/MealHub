@@ -73,11 +73,12 @@ struct HomeView: View {
                 Button(action: {
                     path.append(1)
                 }, label: {
-                    Text("Plan your meal")
+                    Text(withinDateRange(viewModel.selectedDate) ? "Plan your meal" : "Date unavailable for planning")
                         .button(color: "black")
                         .padding(.bottom, 38)
                 })
                 .buttonStyle(.plain)
+                .disabled(!withinDateRange(viewModel.selectedDate))
                 
                 SeparatorLine()
             }
@@ -85,7 +86,7 @@ struct HomeView: View {
                 MenuView(selectedDate: viewModel.selectedDate, path: $path)
             }
             .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetailsView(id: recipe.id, path: $path)
+                RecipeDetailsView(selectedDate: viewModel.selectedDate,id: recipe.id, path: $path)
             }
             .navigationDestination(for: Date.self) { date in
                 WeekReviewView(date: date, meals: meals, path: $path)
