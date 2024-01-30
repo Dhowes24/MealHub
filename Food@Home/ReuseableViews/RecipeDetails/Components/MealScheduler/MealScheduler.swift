@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct MealScheduler: View {
+    @State var dragAmount: CGSize = CGSize.zero
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var moc
+    @Binding var path: NavigationPath
+    var recipe: Recipe
     var selectedDate: Date
     @State private var timeSelectors: [TimeSelectorObject] = []
-    var recipe: Recipe
-    
-    @Binding var path: NavigationPath
-    @Environment(\.managedObjectContext) var moc
-    
-    @State var dragAmount: CGSize = CGSize.zero
-    
+        
     var body: some View {
         
         GeometryReader { geo in
@@ -171,8 +169,7 @@ struct MealScheduler: View {
 }
 
 #Preview {
-    MealScheduler(selectedDate: Date(), recipe: Recipe(id: 1, title: "Recipe Name", image: ""), path: Binding.constant(NavigationPath()))
-    
+    MealScheduler(path: Binding.constant(NavigationPath()), recipe: Recipe(id: 1, title: "Recipe Name", image: ""), selectedDate: Date())
 }
 
 struct timeSelectorViewModifier: ViewModifier {

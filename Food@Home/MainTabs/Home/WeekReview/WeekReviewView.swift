@@ -5,10 +5,12 @@
 //  Created by Derek Howes on 1/5/24.
 //
 
+import CoreData
 import SwiftUI
 
 struct WeekReviewView: View {
     var date: Date
+    var deleteScheduledMeals: @MainActor (NSManagedObjectContext, RecipeCD) -> Void
     @Environment(\.dismiss) private var dismiss
     var meals: FetchedResults<RecipeCD>
     let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
@@ -60,7 +62,7 @@ struct WeekReviewView: View {
                             ForEach(mealTimeArray, id: \.self) { mealTime in
                                 ForEach(meals) { meal in
                                     if meal.mealTime ?? "nil" == mealTime && isSameDay(meal.dateAssigned ?? Date(), dateRow) {
-                                        WeekReviewRecipeThumbnail(meal: meal, path: $path)
+                                        LongRecipeThumbnail(deleteScheduledMeals: deleteScheduledMeals, meal: meal, path: $path)
                                     }
                                 }
                             }
@@ -104,9 +106,12 @@ struct WeekReviewView: View {
     struct PreviewWrapper: View {
         @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
         var body: some View {
-            WeekReviewView(date: Calendar.current.date(byAdding: .day, value: 0, to: Date())!,
-                           meals: meals,
-                           path: Binding.constant(NavigationPath()))
+            WeekReviewView(
+                date: Calendar.current.date(byAdding: .day, value: 0, to: Date())!,
+                deleteScheduledMeals: {_,_ in },
+                meals: meals,
+                path: Binding.constant(NavigationPath())
+            )
         }
     }
     return PreviewWrapper()

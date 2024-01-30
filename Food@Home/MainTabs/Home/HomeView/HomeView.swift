@@ -10,20 +10,18 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    @State private var path = NavigationPath()
     @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $viewModel.path) {
             
             VStack {
                 Header(headerText: "Welcome!")
                     .onTapGesture {
                         meals.forEach{ meal in
-                            moc.delete(meal)
+                            viewModel.deleteScheduledMeal(moc: moc, meal: meal)
                         }
-                        try? moc.save()
                     }
                 
                 dateLineup(viewModel: viewModel)
@@ -40,10 +38,10 @@ struct HomeView: View {
                 ZStack {
                     ScrollView {
                         VStack {
-                            homeMealThumbnail(mealTime: "Breakfast", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
-                            homeMealThumbnail(mealTime: "Lunch", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
-                            homeMealThumbnail(mealTime: "Snack", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
-                            homeMealThumbnail(mealTime: "Dinner", meals: meals, selectedDate: viewModel.selectedDate, path: $path)
+                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Breakfast", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
+                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Lunch", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
+                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Snack", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
+                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Dinner", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
                         }
                         .frame(maxWidth: .infinity)
                     }
@@ -53,7 +51,7 @@ struct HomeView: View {
                             Spacer()
                             
                             Button(action: {
-                                path.append(viewModel.selectedDate)
+                                viewModel.path.append(viewModel.selectedDate)
                             }, label: {
                                 Text("See week view")
                                     .frame(width: 100, height: 25)
@@ -71,7 +69,7 @@ struct HomeView: View {
                 Spacer()
                 
                 Button(action: {
-                    path.append(1)
+                    viewModel.path.append(1)
                 }, label: {
                     Text(withinDateRange(viewModel.selectedDate) ? "Plan your meal" : "Date unavailable for planning")
                         .button(color: "black")
@@ -83,13 +81,16 @@ struct HomeView: View {
                 SeparatorLine()
             }
             .navigationDestination(for: Int.self) { int in
-                MenuView(selectedDate: viewModel.selectedDate, path: $path)
+                MenuView(path: $viewModel.path, selectedDate: viewModel.selectedDate)
             }
             .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetailsView(selectedDate: viewModel.selectedDate,id: recipe.id, path: $path)
+                RecipeDetailsView(selectedDate: viewModel.selectedDate,id: recipe.id, path: $viewModel.path)
             }
             .navigationDestination(for: Date.self) { date in
-                WeekReviewView(date: date, meals: meals, path: $path)
+                WeekReviewView(date: date, 
+                               deleteScheduledMeals: viewModel.deleteScheduledMeal,
+                               meals: meals,
+                               path: $viewModel.path)
             }
         }
     }

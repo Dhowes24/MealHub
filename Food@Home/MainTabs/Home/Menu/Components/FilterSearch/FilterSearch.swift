@@ -16,7 +16,6 @@ struct FilterSearch: View {
         
     var body: some View {
         Group {
-            
             HStack(alignment: .center) {
                 HStack {
                     Image(systemName: "magnifyingglass")

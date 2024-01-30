@@ -1,13 +1,15 @@
 //
-//  homeMealThumbnail.swift
+//  homeMealSection.swift
 //  Food@Home
 //
 //  Created by Derek Howes on 12/19/23.
 //
 
+import CoreData
 import SwiftUI
 
-struct homeMealThumbnail: View {
+struct homeMealSection: View {
+    var deleteScheduledMeals: @MainActor (NSManagedObjectContext, RecipeCD) -> Void
     var mealTime: String
     var meals: FetchedResults<RecipeCD>
     var selectedDate: Date
@@ -23,7 +25,9 @@ struct homeMealThumbnail: View {
                     Button(action: {
                         path.append(Recipe(id: Int(meal.apiID), title: meal.name ?? "No Name", image: meal.imageURL ?? ""))
                     }, label: {
-                        RecipeThumbnail(recipe: Recipe(id: Int(meal.apiID), title: meal.name ?? "No Name", image: meal.imageURL ?? ""))
+                        
+                        LongRecipeThumbnail(deleteScheduledMeals: deleteScheduledMeals, homeTab: true, meal: meal, path: $path)
+                        
                     })
                     .buttonStyle(.plain)
                     .padding(.top, 24)
@@ -40,7 +44,7 @@ struct homeMealThumbnail: View {
     struct PreviewWrapper: View {
         @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
         var body: some View {
-            homeMealThumbnail(mealTime: "Breakfast", meals: meals, selectedDate: Date(), path: Binding.constant(NavigationPath()))        }
+            homeMealSection(deleteScheduledMeals: {_,_ in }, mealTime: "Breakfast", meals: meals, selectedDate: Date(), path: Binding.constant(NavigationPath()))        }
     }
     return PreviewWrapper()
 }

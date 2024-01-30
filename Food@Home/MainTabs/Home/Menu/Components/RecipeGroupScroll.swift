@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RecipeGroupScroll: View {
-    var selectedDate: Date
     var groupName: String
     var recipeList: [Recipe]
+    var selectedDate: Date
     
     @Binding var path: NavigationPath
     var body: some View {
@@ -30,7 +30,7 @@ struct RecipeGroupScroll: View {
                         Button(action: {
                             path.append(recipe)
                         }, label: {
-                            RecipeThumbnail(recipe: recipe)
+                            ShortRecipeThumbnail(recipe: recipe)
                         })
                         .buttonStyle(.plain)
                     }

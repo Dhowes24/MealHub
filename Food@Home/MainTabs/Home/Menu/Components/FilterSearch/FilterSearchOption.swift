@@ -138,7 +138,7 @@ struct FilterSearchOption: View {
         var returnString: String = ""
         switch title {
         case "Ready In":
-            var minuteCount = trueValues.first ?? "180"
+            let minuteCount = trueValues.first ?? "180"
             return "\(minuteCount) minutes"
         case "Include/Exclude":
             for (index, element) in trueValues.enumerated() {

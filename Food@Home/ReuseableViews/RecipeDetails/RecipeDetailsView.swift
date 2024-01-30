@@ -81,7 +81,7 @@ struct RecipeDetailsView: View {
                             showingScheduler.toggle()
                         }
                         .sheet(isPresented: $showingScheduler, content: {
-                            MealScheduler(selectedDate: selectedDate, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)) ,path: $path)
+                            MealScheduler(path: $path, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)), selectedDate: selectedDate)
                         })
                 } else {
                     if pullError {

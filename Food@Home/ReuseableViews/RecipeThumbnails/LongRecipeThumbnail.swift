@@ -5,11 +5,16 @@
 //  Created by Derek Howes on 1/5/24.
 //
 
+import CoreData
 import SwiftUI
 
-struct WeekReviewRecipeThumbnail: View {
+struct LongRecipeThumbnail: View {
+    var deleteScheduledMeals: @MainActor (NSManagedObjectContext, RecipeCD) -> Void
+    var homeTab: Bool = false
     var meal: RecipeCD
+    @Environment(\.managedObjectContext) var moc
     @Binding var path: NavigationPath
+
     
     var body: some View {
         HStack {
@@ -41,9 +46,11 @@ struct WeekReviewRecipeThumbnail: View {
                     VStack (alignment: .leading) {
                         Text(meal.name ?? "Unknown")
                             .font(.customSystem(size: 16, weight: .regular))
-                        Text(meal.mealTime ?? "Unknown")
-                            .foregroundStyle(darkGrey)
-                            .font(.customSystem(size: 12, weight: .semibold))
+                        if(!homeTab) {
+                            Text(meal.mealTime ?? "Unknown")
+                                .foregroundStyle(darkGrey)
+                                .font(.customSystem(size: 12, weight: .semibold))
+                        }
                         
                         Spacer()
                     }
@@ -52,6 +59,13 @@ struct WeekReviewRecipeThumbnail: View {
                 .padding(.bottom, 16)
             })
             .buttonStyle(.plain)
+            
+            Image(systemName: "trash")
+                .onTapGesture {
+                    withAnimation {
+                        deleteScheduledMeals(moc, meal)
+                    }
+                }
         }
     }
 }
