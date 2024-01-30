@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipeThumbnail: View {
+struct ShortRecipeThumbnail: View {
     var recipe: Recipe
 
     var body: some View {
@@ -40,7 +40,7 @@ struct RecipeThumbnail: View {
 }
 
 #Preview {
-    RecipeThumbnail(
+    ShortRecipeThumbnail(
         recipe: Recipe(
         id: 1,
         title: "Healthy Meal Healthy Meal Healthy Meal Healthy Meal",

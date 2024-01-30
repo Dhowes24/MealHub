@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct MenuView: View {
-    @StateObject private var viewModel = ViewModel()
-    @EnvironmentObject var tempFoodAccess: FoodItemsAccess
     @Environment(\.dismiss) private var dismiss
-    
+    @Binding var path: NavigationPath
     var selectedDate: Date
     @State private var showTabBar: Bool  = false
-    
-    @Binding var path: NavigationPath
-    
+    @EnvironmentObject var tempFoodAccess: FoodItemsAccess
+    @StateObject private var viewModel = ViewModel()
+
     var body: some View {
         VStack {
             VStack {
@@ -54,9 +52,11 @@ struct MenuView: View {
                 VStack {
                     
                     ScrollView(.vertical, showsIndicators: false) {
-                        RecipeGroupScroll(selectedDate: selectedDate, groupName: "Breakfast Foods", recipeList: viewModel.recipes, path: $path)
                         
-                        RecipeGroupScroll(selectedDate: selectedDate, groupName: "Lunch-friendly", recipeList: viewModel.recipes, path: $path)
+                        RecipeGroupScroll(groupName: "Breakfast Foods", recipeList: viewModel.recipes, selectedDate: selectedDate, path: $path)
+                        
+                        RecipeGroupScroll(groupName: "Lunch-friendly", recipeList: viewModel.recipes, selectedDate: selectedDate, path: $path)
+                        
                     }
                 }
             }
@@ -72,5 +72,5 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView(selectedDate: Date(), path: Binding.constant(NavigationPath()))
+    MenuView(path: Binding.constant(NavigationPath()), selectedDate: Date())
 }
