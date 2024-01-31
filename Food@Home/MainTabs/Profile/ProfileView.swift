@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @EnvironmentObject var viewModel: FoodItemsAccess
     
     var body: some View {
         NavigationStack {

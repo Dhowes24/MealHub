@@ -8,11 +8,8 @@ import WaterfallGrid
 import SwiftUI
 
 struct ReadyInFilter: View {
-    
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
     
     var body: some View {
         
@@ -79,13 +76,13 @@ struct ReadyInFilter: View {
                         }
                         dict[element.key] = !element.value
                         
-                        encodeUserDefaults()
+                        encodeUserDefaults(filterDict: dict, keyString: "Ready In")
                     }
                 }
             }
             .onAppear(
                 perform: {
-                    self.dict = decodeUserDefaults()
+                    self.dict = decodeUserDefaults("Ready In")
                 }
             )
             .navigationBarBackButtonHidden(true)
@@ -97,9 +94,7 @@ struct ReadyInFilter: View {
     struct PreviewWrapper: View {
         @State var bindingDict: [String: Bool] = ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
         var body: some View {
-            ReadyInFilter(decodeUserDefaults: {
-                return ["15": true, "30": false, "45": true, "60": false, "120": true, "180": false]
-            }, dict: $bindingDict, encodeUserDefaults: {})
+            ReadyInFilter(dict: $bindingDict)
 
         }
     }

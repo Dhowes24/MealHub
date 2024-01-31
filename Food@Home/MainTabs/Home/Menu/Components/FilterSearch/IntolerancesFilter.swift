@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct IntolerancesFilter: View {
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
 
     var body: some View {
         VStack {
@@ -56,7 +54,7 @@ struct IntolerancesFilter: View {
             .padding(.horizontal, 16)
         }
         .onChange(of: dict) { _ in
-            encodeUserDefaults()
+            encodeUserDefaults(filterDict: dict, keyString: "Intolerances")
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -78,21 +76,7 @@ struct IntolerancesFilter: View {
             "Wheat": false
         ]
         var body: some View {
-            IntolerancesFilter(decodeUserDefaults: {
-                return [
-                    "Dairy": false,
-                    "Egg": false,
-                    "Gluten": false,
-                    "Peanut": false,
-                    "Sesame": false,
-                    "Seafood": false,
-                    "Shellfish": false,
-                    "Soy": false,
-                    "Sulfite": false,
-                    "Tree nut": false,
-                    "Wheat": false
-                ]
-            }, dict: $bindingDict, encodeUserDefaults: {})
+            IntolerancesFilter(dict: $bindingDict)
         }
     }
     return PreviewWrapper()

@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct CuisineFilter: View {
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
 
     var body: some View {
         VStack {
@@ -56,7 +54,7 @@ struct CuisineFilter: View {
             .padding(.horizontal, 16)
         }
         .onChange(of: dict) { _ in
-            encodeUserDefaults()
+            encodeUserDefaults(filterDict: dict, keyString: "Cuisine")
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -89,32 +87,7 @@ struct CuisineFilter: View {
             "Latin American": false
         ]
         var body: some View {
-            CuisineFilter(decodeUserDefaults: {
-                return [
-                    "African": false,
-                    "Chinese": false,
-                    "Japanese": false,
-                    "Korean": false,
-                    "Vietnamese": false,
-                    "Thai": true,
-                    "Indian": false,
-                    "French": false,
-                    "Italian": false,
-                    "Mexican": false,
-                    "Spanish": false,
-                    "Middle Eastern": false,
-                    "Jewish": true,
-                    "American": false,
-                    "Cajun": false,
-                    "Southern": false,
-                    "Greek": false,
-                    "German": false,
-                    "Nordic": false,
-                    "Eastern European": true,
-                    "Caribbean": false,
-                    "Latin American": false
-                ]
-            }, dict: $bindingDict, encodeUserDefaults: {})
+            CuisineFilter( dict: $bindingDict)
         }
     }
     return PreviewWrapper()

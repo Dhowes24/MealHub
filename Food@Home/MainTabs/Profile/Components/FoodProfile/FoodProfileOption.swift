@@ -15,7 +15,7 @@ struct FoodProfileOption: View {
     init(title: String) {
         
         self.title = title
-        _filterDict = State(initialValue: decodeUserDefaults())
+        _filterDict = State(initialValue: decodeUserDefaults(title))
         
     }
     
@@ -51,69 +51,69 @@ struct FoodProfileOption: View {
     private func chooseView() -> some View {
         switch title {
         case "Intolerances":
-            return AnyView(IntolerancesFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(IntolerancesFilter(dict: $filterDict))
         case "Dietary Need":
-            return AnyView(DietaryNeedFilter(dict: $filterDict, decodeUserDefaults: decodeUserDefaults, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(DietaryNeedFilter(dict: $filterDict))
         default:
-            return AnyView(IntolerancesFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(IntolerancesFilter(dict: $filterDict))
         }
     }
     
-    private func decodeUserDefaults() -> [String: Bool] {
-        if let data = UserDefaults.standard.data(forKey: title),
-           let decodedDictionary = try? PropertyListDecoder().decode([String: Bool].self, from: data) {
-            return decodedDictionary
-        } else {
-            return dictionaryDefaults()
-        }
-    }
-    
-    private func dictionaryDefaults() -> [String: Bool] {
-        switch title {
-        case "Dietary Need":
-            return [
-                "Pescatarian": false,
-                "Lacto Vegetarian": false,
-                "OVO Vegetarian": false,
-                "Vegan": false,
-                "Paleo": false,
-                "Primal": false,
-                "Vegetarian": false
-            ]
-        case "Intolerances":
-            return [
-                "Dairy": false,
-                "Egg": false,
-                "Gluten": false,
-                "Peanut": false,
-                "Sesame": false,
-                "Seafood": false,
-                "Shellfish": false,
-                "Soy": false,
-                "Sulfite": false,
-                "Tree nut": false,
-                "Wheat": false
-            ]
-        default:
-            return [
-                "Pescatarian": false,
-                "Lacto Vegetarian": false,
-                "OVO Vegetarian": false,
-                "Vegan": false,
-                "Paleo": false,
-                "Primal": false,
-                "Vegetarian": false
-            ]
-        }
-    }
-
-    private func encodeUserDefaults() {
-        if let data = try? PropertyListEncoder().encode(filterDict) {
-            UserDefaults.standard.set(data, forKey: title)
-        } else {
-            print("no worky")
-        }
-    }
+//    private func decodeUserDefaults() -> [String: Bool] {
+//        if let data = UserDefaults.standard.data(forKey: title),
+//           let decodedDictionary = try? PropertyListDecoder().decode([String: Bool].self, from: data) {
+//            return decodedDictionary
+//        } else {
+//            return dictionaryDefaults()
+//        }
+//    }
+//    
+//    private func dictionaryDefaults() -> [String: Bool] {
+//        switch title {
+//        case "Dietary Need":
+//            return [
+//                "Pescatarian": false,
+//                "Lacto Vegetarian": false,
+//                "OVO Vegetarian": false,
+//                "Vegan": false,
+//                "Paleo": false,
+//                "Primal": false,
+//                "Vegetarian": false
+//            ]
+//        case "Intolerances":
+//            return [
+//                "Dairy": false,
+//                "Egg": false,
+//                "Gluten": false,
+//                "Peanut": false,
+//                "Sesame": false,
+//                "Seafood": false,
+//                "Shellfish": false,
+//                "Soy": false,
+//                "Sulfite": false,
+//                "Tree nut": false,
+//                "Wheat": false
+//            ]
+//        default:
+//            return [
+//                "Pescatarian": false,
+//                "Lacto Vegetarian": false,
+//                "OVO Vegetarian": false,
+//                "Vegan": false,
+//                "Paleo": false,
+//                "Primal": false,
+//                "Vegetarian": false
+//            ]
+//        }
+//    }
+//
+//    private func encodeUserDefaults() {
+//        if let data = try? PropertyListEncoder().encode(filterDict) {
+//            UserDefaults.standard.set(data, forKey: title)
+//        } else {
+//            print("no worky")
+//        }
+//    }
     
     private func retrieveSelectedItems() -> String {
         let trueValues = filterDict.filter { $0.value }.map { $0.key }

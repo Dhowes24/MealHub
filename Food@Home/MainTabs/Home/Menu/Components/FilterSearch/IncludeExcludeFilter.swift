@@ -9,10 +9,8 @@ import SwiftUI
 
 struct IncludeExcludeFilter: View {
     
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
     @State var include: Bool = true
     @State var itemString: String = ""
     
@@ -91,11 +89,12 @@ struct IncludeExcludeFilter: View {
     
     private func addItemToList(date: Date, itemName: String, include: Bool) {
         dict[itemName] = include
-        encodeUserDefaults()
+        encodeUserDefaults(filterDict: dict, keyString: "Include/Exclude")
     }
     
     private func deleteItemFromList(itemName: String) {
         dict.removeValue(forKey: itemName)
+        encodeUserDefaults(filterDict: dict, keyString: "Include/Exclude")
     }
 }
 
@@ -103,11 +102,7 @@ struct IncludeExcludeFilter: View {
     struct PreviewWrapper: View {
         @State var bindingDict: [String: Bool] = ["Eggs": false, "Bacon": false, "Dirt": false, "Pizza": true, "Ice Cream": true, "Corn Dogs": true]
         var body: some View {
-            
-            IncludeExcludeFilter(decodeUserDefaults: {
-                return ["Eggs": false, "Bacon": false, "Dirt": false, "Pizza": true, "Ice Cream": true, "Corn Dogs": true]
-            }, dict: $bindingDict, encodeUserDefaults: {})
-
+            IncludeExcludeFilter(dict: $bindingDict)
         }
     }
     return PreviewWrapper()

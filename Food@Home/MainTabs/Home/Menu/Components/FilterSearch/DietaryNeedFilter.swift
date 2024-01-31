@@ -8,19 +8,12 @@
 import SwiftUI
 
 struct DietaryNeedFilter: View {
-    
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
     var oldDictVal: [String: Bool]
     
-    init(dict: Binding<[String : Bool]>,
-         decodeUserDefaults: @escaping () -> [String : Bool],
-         encodeUserDefaults: @escaping () -> Void) {
-        self.decodeUserDefaults = decodeUserDefaults
+    init(dict: Binding<[String : Bool]>) {
         _dict = dict
-        self.encodeUserDefaults = encodeUserDefaults
         self.oldDictVal = dict.wrappedValue
     }
 
@@ -71,7 +64,7 @@ struct DietaryNeedFilter: View {
             trueValues.forEach { value in
                 dict[value] = false
             }
-            encodeUserDefaults()
+            encodeUserDefaults(filterDict: dict, keyString: "Dietary Need")
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -89,17 +82,7 @@ struct DietaryNeedFilter: View {
             "Vegetarian": false
         ]
         var body: some View {
-            DietaryNeedFilter(dict: $bindingDict, decodeUserDefaults: {
-                return [
-                    "Pescatarian": false,
-                    "Lacto Vegetarian": false,
-                    "OVO Vegetarian": false,
-                    "Vegan": false,
-                    "Paleo": false,
-                    "Primal": true,
-                    "Vegetarian": false
-                ]
-            }, encodeUserDefaults: {})
+            DietaryNeedFilter(dict: $bindingDict)
         }
     }
     return PreviewWrapper()

@@ -12,9 +12,8 @@ struct MenuView: View {
     @Binding var path: NavigationPath
     var selectedDate: Date
     @State private var showTabBar: Bool  = false
-    @EnvironmentObject var tempFoodAccess: FoodItemsAccess
     @StateObject private var viewModel = ViewModel()
-
+    
     var body: some View {
         VStack {
             VStack {
@@ -34,12 +33,10 @@ struct MenuView: View {
                 .padding(.top, 31)
                 .padding(.bottom, 13)
                 
-                
                 FilterSearch(path: $path)
                 
-                
                 HStack {
-                    Text ("Pick your meals")
+                    Text ("Pick your meal")
                         .font(.customSystem(size: 32, weight: .semibold))
                     
                     Spacer()
@@ -50,12 +47,22 @@ struct MenuView: View {
                 Spacer()
                 
                 VStack {
-                    
                     ScrollView(.vertical, showsIndicators: false) {
                         
-                        RecipeGroupScroll(groupName: "Breakfast Foods", recipeList: viewModel.recipes, selectedDate: selectedDate, path: $path)
+                        RecipeGroupScroll(fetchRecipes: viewModel.fetchRecipes, 
+                                          groupName: "Breakfast Foods",
+                                          path: $path, queryType: "breakfast",
+                                          selectedDate: selectedDate)
                         
-                        RecipeGroupScroll(groupName: "Lunch-friendly", recipeList: viewModel.recipes, selectedDate: selectedDate, path: $path)
+                        RecipeGroupScroll(fetchRecipes: viewModel.fetchRecipes, 
+                                          groupName: "Lunch-friendly",
+                                          path: $path, queryType: "lunch",
+                                          selectedDate: selectedDate)
+                        
+                        RecipeGroupScroll(fetchRecipes: viewModel.fetchRecipes, 
+                                          groupName: "Dinner Meals",
+                                          path: $path, queryType: "dinner",
+                                          selectedDate: selectedDate)
                         
                     }
                 }
@@ -63,10 +70,6 @@ struct MenuView: View {
             .padding(.horizontal, 17)
             .toolbar(.hidden, for: .navigationBar)
             .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
-        }
-        .onAppear {
-            Task { try? await viewModel.fetchTestData() }
-            //            Task { try? await viewModel.fetchRecipes(queryData: tempFoodAccess) }
         }
     }
 }

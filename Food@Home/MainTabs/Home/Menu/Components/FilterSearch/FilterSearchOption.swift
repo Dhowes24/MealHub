@@ -15,7 +15,7 @@ struct FilterSearchOption: View {
     init(title: String) {
         
         self.title = title
-        _filterDict = State(initialValue: decodeUserDefaults())
+        _filterDict = State(initialValue: decodeUserDefaults(title))
         
     }
     
@@ -51,86 +51,86 @@ struct FilterSearchOption: View {
     private func chooseView() -> some View {
         switch title {
         case "Ready In":
-            return AnyView(ReadyInFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(ReadyInFilter(dict: $filterDict))
         case "Include/Exclude":
-            return AnyView(IncludeExcludeFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(IncludeExcludeFilter(dict: $filterDict))
         case "Dietary Need":
-            return AnyView(DietaryNeedFilter(dict: $filterDict, decodeUserDefaults: decodeUserDefaults, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(DietaryNeedFilter(dict: $filterDict))
         case "Cuisine":
-            return AnyView(CuisineFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(CuisineFilter(dict: $filterDict))
         default:
-            return AnyView(ReadyInFilter(decodeUserDefaults: decodeUserDefaults, dict: $filterDict, encodeUserDefaults: encodeUserDefaults))
+            return AnyView(ReadyInFilter(dict: $filterDict))
         }
     }
     
-    private func decodeUserDefaults() -> [String: Bool] {
-        if let data = UserDefaults.standard.data(forKey: title),
-           let decodedDictionary = try? PropertyListDecoder().decode([String: Bool].self, from: data) {
-            return decodedDictionary
-        } else {
-            return dictionaryDefaults()
-        }
-    }
-    
-    private func dictionaryDefaults() -> [String: Bool] {
-        switch title {
-        case "Ready In":
-            return [
-                "15": false,
-                "30": false,
-                "45": false,
-                "60": false,
-                "120": false,
-                "180": true]
-        case "Include/Exclude":
-            return [:]
-        case "Dietary Need":
-            return [
-                "Pescatarian": false,
-                "Lacto Vegetarian": false,
-                "OVO Vegetarian": false,
-                "Vegan": false,
-                "Paleo": false,
-                "Primal": false,
-                "Vegetarian": false
-            ]
-        case "Cuisine":
-            return [
-                "African": false,
-                "Chinese": false,
-                "Japanese": false,
-                "Korean": false,
-                "Vietnamese": false,
-                "Thai": false,
-                "Indian": false,
-                "French": false,
-                "Italian": false,
-                "Mexican": false,
-                "Spanish": false,
-                "Middle Eastern": false,
-                "Jewish": false,
-                "American": false,
-                "Cajun": false,
-                "Southern": false,
-                "Greek": false,
-                "German": false,
-                "Nordic": false,
-                "Eastern European": false,
-                "Caribbean": false,
-                "Latin American": false
-            ]
-        default:
-            return ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
-        }
-    }
-
-    private func encodeUserDefaults() {
-        if let data = try? PropertyListEncoder().encode(filterDict) {
-            UserDefaults.standard.set(data, forKey: title)
-        } else {
-            print("no worky")
-        }
-    }
+//    private func decodeUserDefaults() -> [String: Bool] {
+//        if let data = UserDefaults.standard.data(forKey: title),
+//           let decodedDictionary = try? PropertyListDecoder().decode([String: Bool].self, from: data) {
+//            return decodedDictionary
+//        } else {
+//            return dictionaryDefaults()
+//        }
+//    }
+//    
+//    private func dictionaryDefaults() -> [String: Bool] {
+//        switch title {
+//        case "Ready In":
+//            return [
+//                "15": false,
+//                "30": false,
+//                "45": false,
+//                "60": false,
+//                "120": false,
+//                "180": true]
+//        case "Include/Exclude":
+//            return [:]
+//        case "Dietary Need":
+//            return [
+//                "Pescatarian": false,
+//                "Lacto Vegetarian": false,
+//                "OVO Vegetarian": false,
+//                "Vegan": false,
+//                "Paleo": false,
+//                "Primal": false,
+//                "Vegetarian": false
+//            ]
+//        case "Cuisine":
+//            return [
+//                "African": false,
+//                "Chinese": false,
+//                "Japanese": false,
+//                "Korean": false,
+//                "Vietnamese": false,
+//                "Thai": false,
+//                "Indian": false,
+//                "French": false,
+//                "Italian": false,
+//                "Mexican": false,
+//                "Spanish": false,
+//                "Middle Eastern": false,
+//                "Jewish": false,
+//                "American": false,
+//                "Cajun": false,
+//                "Southern": false,
+//                "Greek": false,
+//                "German": false,
+//                "Nordic": false,
+//                "Eastern European": false,
+//                "Caribbean": false,
+//                "Latin American": false
+//            ]
+//        default:
+//            return ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
+//        }
+//    }
+//
+//    private func encodeUserDefaults() {
+//        if let data = try? PropertyListEncoder().encode(filterDict) {
+//            UserDefaults.standard.set(data, forKey: title)
+//        } else {
+//            print("no worky")
+//        }
+//    }
     
     private func retrieveSelectedItems() -> String {
         let trueValues = filterDict.filter { $0.value }.map { $0.key }
