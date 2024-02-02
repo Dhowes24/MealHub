@@ -92,6 +92,9 @@ struct HomeView: View {
                                meals: meals,
                                path: $viewModel.path)
             }
+            .navigationDestination(for: RecipeDisplayModel.self) { recipeDisplayModel in
+                LargeRecipeDisplay(recipeDisplayModel: recipeDisplayModel, path: $viewModel.path)
+            }
         }
     }
 }

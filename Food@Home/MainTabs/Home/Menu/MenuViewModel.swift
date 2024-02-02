@@ -34,8 +34,8 @@ extension MenuView {
             }
         }
         
-        func fetchRecipes(queryType: String, offset: String,  completion: @escaping ([Recipe]) -> Void) {
-            let queryString = buildSearchRecipes(queryType: queryType, offset: offset)
+        func fetchRecipes(queryType: String, offset: String, returnNumber: Int,  completion: @escaping ([Recipe]) -> Void) {
+            let queryString = buildSearchRecipes(queryType: queryType, returnNumber: returnNumber, offset: offset)
                             
             let request = NSMutableURLRequest(url: NSURL(string: queryString)! as URL,
                                               cachePolicy: .useProtocolCachePolicy,

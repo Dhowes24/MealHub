@@ -49,21 +49,26 @@ struct MenuView: View {
                 VStack {
                     ScrollView(.vertical, showsIndicators: false) {
                         
-                        RecipeGroupScroll(fetchRecipes: viewModel.fetchRecipes, 
-                                          groupName: "Breakfast Foods",
-                                          path: $path, queryType: "breakfast",
-                                          selectedDate: selectedDate)
+                        SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
+                            fetchRecipes: viewModel.fetchRecipes,
+                            groupName: "Breakfast Foods",
+                            queryType: "breakfast",
+                            selectedDate: selectedDate),
+                                          path: $path)
                         
-                        RecipeGroupScroll(fetchRecipes: viewModel.fetchRecipes, 
-                                          groupName: "Lunch-friendly",
-                                          path: $path, queryType: "lunch",
-                                          selectedDate: selectedDate)
+                        SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
+                            fetchRecipes: viewModel.fetchRecipes,
+                            groupName: "Lunch-friendly",
+                            queryType: "lunch",
+                            selectedDate: selectedDate),
+                                          path: $path)
                         
-                        RecipeGroupScroll(fetchRecipes: viewModel.fetchRecipes, 
-                                          groupName: "Dinner Meals",
-                                          path: $path, queryType: "dinner",
-                                          selectedDate: selectedDate)
-                        
+                        SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
+                            fetchRecipes: viewModel.fetchRecipes,
+                            groupName: "Dinner Meals",
+                            queryType: "dinner",
+                            selectedDate: selectedDate), 
+                                          path: $path)
                     }
                 }
             }

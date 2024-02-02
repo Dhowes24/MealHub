@@ -5,11 +5,12 @@
 //  Created by Derek Howes on 10/9/23.
 //
 
+import CoreData
 import Foundation
 
 func buildSearchRecipes(queryType: String,
                         courseType: String = "main course",
-                        returnNumber: Int = 6,
+                        returnNumber: Int,
                         offset: String) -> String {
     
     var courseType = dictToString(dict: [courseType: true], parameterName: "type")
@@ -21,7 +22,7 @@ func buildSearchRecipes(queryType: String,
     
     let includeCuisine = dictToString(dict: decodeUserDefaults("Cuisine"), parameterName: "cuisine")
     
-    let includeIngredients = dictToString(dict: decodeUserDefaults("Include/Exclude"), parameterName: "includeIngredients")
+    let includeIngredients = pullKitchenIngredients()
     let excludeIngredients = dictToString(dict: decodeUserDefaults("Include/Exclude"), include: false, parameterName: "excludeIngredients")
 
     let dietaryNeed = dictToString(dict: decodeUserDefaults("Dietary Need"), parameterName: "diet")
@@ -59,4 +60,29 @@ func dictToString(dict: [String: Bool], include: Bool = true, parameterName: Str
     }
     
     return returnString
+}
+
+func pullKitchenIngredients() -> String{
+    let mainContext: NSManagedObjectContext = PersistenceController.shared.mainContext
+    let request = NSFetchRequest<FoodItem>(entityName: "FoodItem")
+    
+    var returnItems: [String: Bool] = [:]
+    var pullItems: [FoodItem] = []
+    
+    do {
+        pullItems = try mainContext.fetch(request)
+
+    } catch let error {
+        print("Error fetching. \(error)")
+    }
+    
+    pullItems.forEach { FoodItem in
+        if FoodItem.owned {
+            returnItems[FoodItem.name ?? "Default"] = true
+        }
+    }
+    
+    let fullIngredientList = returnItems.merging(decodeUserDefaults("Include/Exclude")) { (_, new) in new }
+    
+    return dictToString(dict: fullIngredientList, parameterName: "includeIngredients")
 }
