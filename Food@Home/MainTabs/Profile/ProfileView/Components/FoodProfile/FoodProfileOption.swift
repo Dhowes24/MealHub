@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FoodProfileOption: View {
-    
     @State private var filterDict: [String: Bool] = [:]
     var title: String
         

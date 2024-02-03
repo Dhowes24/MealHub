@@ -14,7 +14,7 @@ struct IntolerancesFilter: View {
     var body: some View {
         VStack {
             
-            filterHeader(headerText: "Select Food Intolerances")
+            subViewHeader(headerText: "Select Food Intolerances")
             
             SeparatorLine()
             

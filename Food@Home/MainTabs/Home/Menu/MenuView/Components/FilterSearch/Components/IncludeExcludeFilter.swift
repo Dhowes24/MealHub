@@ -17,7 +17,7 @@ struct IncludeExcludeFilter: View {
         VStack {
             VStack(alignment: .leading) {
                 
-                filterHeader(headerText: "Include and Exclude")
+                subViewHeader(headerText: "Include and Exclude")
                 
                 ListToggle(colored: true, listToggle: $include, optionOne: "Include", optionTwo: "Exclude")
                 

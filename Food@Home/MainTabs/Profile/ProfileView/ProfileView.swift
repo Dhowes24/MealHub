@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
+    @State var path = NavigationPath()
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack {
                 HStack {
                     Text("Profile")
@@ -35,6 +36,9 @@ struct ProfileView: View {
                 
             }
             .padding(.horizontal, 16)
+            .navigationDestination(for: ArticleInformation.self) { articleInformation in
+                GuideTemplate(articleInfo: articleInformation)
+            }
             
             SeparatorLine()
         }
