@@ -20,7 +20,7 @@ struct DietaryNeedFilter: View {
     var body: some View {
         VStack {
             
-            filterHeader(headerText: "Select Dietary Needs")
+            subViewHeader(headerText: "Select Dietary Needs")
             
             SeparatorLine()
             

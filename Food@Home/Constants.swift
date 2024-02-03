@@ -19,6 +19,7 @@ let brandGreen: Color = Color.init(hex: 0x036E5B)
 let textPink: Color = Color.init(hex: 0xFCDAE2)
 
 let offWhite: Color = Color.init(hex: 0xFDFCFC)
+let lightGrey: Color = Color.init(hex: 0xF6F7F8)
 let customGrey: Color = Color.init(hex: 0xC6CCD4)
 let darkGrey: Color = Color.init(hex: 0x657589)
 

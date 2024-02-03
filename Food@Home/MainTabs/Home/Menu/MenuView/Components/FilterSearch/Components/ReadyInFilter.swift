@@ -16,7 +16,7 @@ struct ReadyInFilter: View {
         GeometryReader { geo in
             VStack(alignment: .leading) {
                 
-                filterHeader(headerText: "Pick time")
+                subViewHeader(headerText: "Pick time")
 
                 Text("Ready in less than")
                     .font(.customSystem(size: 14, weight: .bold))

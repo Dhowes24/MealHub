@@ -8,40 +8,27 @@
 import SwiftUI
 
 struct ResourcesView: View {
-    
-    @Environment(\.dismiss) private var dismiss
     @State private var showTabBar: Bool  = false
 
     var body: some View {
+        subViewHeader(headerText: "Resources")
+
         VStack {
-            HStack {
-                Image(systemName: "arrow.backward")
-                    .frame(width: 24, height: 24)
-                    .onTapGesture {
-                        showTabBar = true
-                        dismiss()
-                    }
-                
-                Spacer()
-                
-                Text ("Resources")
-                    .font(.customSystem(size: 32, weight: .bold))
-                
-                Spacer()
-                
-                Rectangle()
-                    .frame(width: 24, height: 24)
-                    .opacity(0.0)
-            }
-            .padding(.top, 31)
-            .padding(.bottom, 13)
-            
             VStack(spacing: 24) {
-                ResourceOptionView(title: "How to use the meal prep guide", subText: "3 simple steps")
+                NavigationLink(destination: GuideTemplate(articleInfo: mealPrepGuide)) {
+                    ResourceOptionView(title: "How to use the meal prep guide", subText: "3 simple steps")
+                }
+                .buttonStyle(.plain)
                 
-                ResourceOptionView(title: "What makes a meal?", subText: "Some tips on balancing your food categories")
+                NavigationLink(destination: GuideTemplate(articleInfo: makeAMealGuide)) {
+                    ResourceOptionView(title: "What makes a meal?", subText: "Some tips on balancing your food categories")
+                }
+                .buttonStyle(.plain)
                 
-                ResourceOptionView(title: "Create a well balanced meal", subText: "Check out my plate resources")
+                NavigationLink(destination: GuideTemplate(articleInfo: wellBalancedMeal)) {
+                    ResourceOptionView(title: "Create a well balanced meal", subText: "Check out my plate resources")
+                }
+                .buttonStyle(.plain)
             }
             
             Spacer()

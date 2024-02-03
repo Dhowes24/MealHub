@@ -26,7 +26,7 @@ struct Header: View {
     }
 }
 
-struct filterHeader: View {
+struct subViewHeader: View {
     var headerText: String
     @Environment(\.dismiss) private var dismiss
 
