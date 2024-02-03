@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct IncludeExcludeFilter: View {
-    
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
     @State var include: Bool = true
     @State var itemString: String = ""
     
@@ -20,27 +17,7 @@ struct IncludeExcludeFilter: View {
         VStack {
             VStack(alignment: .leading) {
                 
-                HStack {
-                    Image(systemName: "arrow.backward")
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            dismiss()
-                        }
-                    
-                    Spacer()
-                    
-                    Text("Include and Exclude")
-                        .font(.customSystem(size: 30, weight: .bold))
-                    
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(width: 24, height: 24)
-                        .opacity(0.0)
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 8)
-                
+                filterHeader(headerText: "Include and Exclude")
                 
                 ListToggle(colored: true, listToggle: $include, optionOne: "Include", optionTwo: "Exclude")
                 
@@ -91,11 +68,12 @@ struct IncludeExcludeFilter: View {
     
     private func addItemToList(date: Date, itemName: String, include: Bool) {
         dict[itemName] = include
-        encodeUserDefaults()
+        encodeUserDefaults(filterDict: dict, keyString: "Include/Exclude")
     }
     
     private func deleteItemFromList(itemName: String) {
         dict.removeValue(forKey: itemName)
+        encodeUserDefaults(filterDict: dict, keyString: "Include/Exclude")
     }
 }
 
@@ -103,11 +81,7 @@ struct IncludeExcludeFilter: View {
     struct PreviewWrapper: View {
         @State var bindingDict: [String: Bool] = ["Eggs": false, "Bacon": false, "Dirt": false, "Pizza": true, "Ice Cream": true, "Corn Dogs": true]
         var body: some View {
-            
-            IncludeExcludeFilter(decodeUserDefaults: {
-                return ["Eggs": false, "Bacon": false, "Dirt": false, "Pizza": true, "Ice Cream": true, "Corn Dogs": true]
-            }, dict: $bindingDict, encodeUserDefaults: {})
-
+            IncludeExcludeFilter(dict: $bindingDict)
         }
     }
     return PreviewWrapper()

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct NavView: View {
-    @StateObject var tempFoodAccess: FoodItemsAccess = FoodItemsAccess()
-
     var body: some View {
         TabView {
             HomeView()
@@ -26,7 +24,6 @@ struct NavView: View {
                 }
         }
         .ignoresSafeArea()
-        .environmentObject(tempFoodAccess)
     }
 }
 

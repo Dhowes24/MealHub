@@ -9,11 +9,11 @@ import SwiftUI
 import WaterfallGrid
 
 struct FilterSearch: View {
-    
     @State private var filtersShowing: Bool = false
+    @Binding var isKeyboardVisible: Bool
     @Binding var path: NavigationPath
-    @State private var search: String = ""
-        
+    @Binding var search: String
+
     var body: some View {
         Group {
             HStack(alignment: .center) {
@@ -22,9 +22,15 @@ struct FilterSearch: View {
                         .frame(width: 24, height: 24)
                         .padding(.horizontal, 8)
                     
-                    TextField("Search Placeholder", text: $search)
+                    TextField("Looking for something specific?", text: $search)
                 }
                 .SearchInputMod()
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                    self.isKeyboardVisible = true
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                    self.isKeyboardVisible = false
+                }
                 
                 Image(systemName: filtersShowing ? "chevron.down" : "chevron.up")
                     .frame(width: 24, height: 24)
@@ -51,12 +57,11 @@ struct FilterSearch: View {
             .frame(height: filtersShowing ? nil : 0, alignment: .top)
             .disabled(!filtersShowing)
             .clipped()
-            
         }
     }
 }
 
 #Preview {
-    FilterSearch(path: Binding.constant(NavigationPath()))
+    FilterSearch(isKeyboardVisible: .constant(false), path: Binding.constant(NavigationPath()), search: .constant(""))
 }
 

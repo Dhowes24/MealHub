@@ -8,36 +8,15 @@ import WaterfallGrid
 import SwiftUI
 
 struct ReadyInFilter: View {
-    
-    var decodeUserDefaults: () -> [String: Bool]
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
-    var encodeUserDefaults: () -> Void
     
     var body: some View {
         
         GeometryReader { geo in
             VStack(alignment: .leading) {
                 
-                HStack {
-                    Image(systemName: "arrow.backward")
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            dismiss()
-                        }
-                    
-                    Spacer()
-                    
-                    Text("Pick time")
-                        .font(.customSystem(size: 23, weight: .bold))
-                    
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(width: 24, height: 24)
-                        .opacity(0.0)
-                }
-                .padding(.vertical, 16)
+                filterHeader(headerText: "Pick time")
 
                 Text("Ready in less than")
                     .font(.customSystem(size: 14, weight: .bold))
@@ -79,13 +58,13 @@ struct ReadyInFilter: View {
                         }
                         dict[element.key] = !element.value
                         
-                        encodeUserDefaults()
+                        encodeUserDefaults(filterDict: dict, keyString: "Ready In")
                     }
                 }
             }
             .onAppear(
                 perform: {
-                    self.dict = decodeUserDefaults()
+                    self.dict = decodeUserDefaults("Ready In")
                 }
             )
             .navigationBarBackButtonHidden(true)
@@ -97,9 +76,7 @@ struct ReadyInFilter: View {
     struct PreviewWrapper: View {
         @State var bindingDict: [String: Bool] = ["15": false, "30": false, "45": false, "60": false, "120": false, "180": true]
         var body: some View {
-            ReadyInFilter(decodeUserDefaults: {
-                return ["15": true, "30": false, "45": true, "60": false, "120": true, "180": false]
-            }, dict: $bindingDict, encodeUserDefaults: {})
+            ReadyInFilter(dict: $bindingDict)
 
         }
     }

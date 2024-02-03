@@ -26,6 +26,7 @@ struct ShortRecipeThumbnail: View {
                 placeholder: {
                     ProgressView()
                         .frame(width: 145, height: 145)
+                        .background(customGrey)
                         .clipShape(
                             RoundedRectangle(cornerRadius: 25.0)
                         )

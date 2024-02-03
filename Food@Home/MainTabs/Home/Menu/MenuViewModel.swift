@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension MenuView {
     @MainActor class ViewModel: ObservableObject {
         @Published var recipes = [Recipe]()
+        @Binding var path: NavigationPath
+        var selectedDate: Date
+        @Published var searchCriteria: String = ""
+        @Published var searchKeyboardVisible: Bool = false
+        @Published var showTabBar: Bool  = false
+        
+        init(path: Binding<NavigationPath>, selectedDate: Date) {
+            self._path = path
+            self.selectedDate = selectedDate
+        }
         
         private lazy var downloadSession: URLSession = {
             let configuration = URLSessionConfiguration.default
@@ -30,16 +41,13 @@ extension MenuView {
                     }
                 }
             } catch {
-                print("error: \(error)")
+                print(String(describing: error))
             }
         }
         
-        func fetchRecipes(queryData: FoodItemsAccess) async throws {
-            let queryString = buildSearchRecipes(queryType: "dessert",
-                                                 cuisine: queryData.cuisineTypes,
-                                                 includeIngredients: queryData.foodItems
-                                                 )
-//            print("query: \n\(queryString)")
+        func fetchRecipes(queryType: String, offset: String, returnNumber: Int,  completion: @escaping ([Recipe]) -> Void) {
+            let queryString = buildSearchRecipes(queryType: queryType, returnNumber: returnNumber, offset: offset)
+                            
             let request = NSMutableURLRequest(url: NSURL(string: queryString)! as URL,
                                               cachePolicy: .useProtocolCachePolicy,
                                               timeoutInterval: 10.0)
@@ -48,19 +56,15 @@ extension MenuView {
             
             let session = URLSession.shared
             let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                if (error != nil) {
-                    print(error as Any)
+                if let error = error {
+                    print("Error in data task:", error)
+                    completion([])
                 } else {
-                    
                     if let decodedResponse = try? JSONDecoder().decode(SearchRecipesResults.self, from: data!) {
-                        Task {
-                            await MainActor.run {
-                                self.recipes = decodedResponse.results
-//                                print("results: \n\(decodedResponse.results)")
-                            }
-                        }
+                        completion(decodedResponse.results)
                     } else {
                         print("Error between Data Model and JSON schema")
+                        completion([])
                     }
                 }
             })

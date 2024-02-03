@@ -84,22 +84,6 @@ struct WeekReviewView: View {
         .toolbar(.hidden, for: .navigationBar)
         .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
     }
-    
-    func isSameDay(_ date1: Date, _ date2: Date) -> Bool {
-        let calendar = Calendar.current
-        let components1 = calendar.dateComponents([.month, .day], from: date1)
-        let components2 = calendar.dateComponents([.month, .day], from: date2)
-        
-        return components1.month == components2.month && components1.day == components2.day
-    }
-    
-    func isSameMonth(_ date1: Date, _ date2: Date) -> Bool {
-        let calendar = Calendar.current
-        let components1 = calendar.dateComponents([.month], from: date1)
-        let components2 = calendar.dateComponents([.month], from: date2)
-        
-        return components1.month == components2.month
-    }
 }
 
 #Preview {

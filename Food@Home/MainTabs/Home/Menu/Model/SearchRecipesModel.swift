@@ -1,5 +1,5 @@
 //
-//  Recipe.swift
+//  SearchRecipeModel.swift
 //  Food@Home
 //
 //  Created by Derek Howes on 10/10/23.

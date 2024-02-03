@@ -95,8 +95,8 @@ struct RecipeDetailsView: View {
             .onAppear(perform: {
                 Task{
                     do {
-                        try await viewModel.fetchTestData(id: id)
-                        //                        try await viewModel.fetchIndividualRecipe(id: id)
+//                        try await viewModel.fetchTestData(id: id)
+                        try await viewModel.fetchIndividualRecipe(id: id)
                     }
                     catch {
                         pullError = true
