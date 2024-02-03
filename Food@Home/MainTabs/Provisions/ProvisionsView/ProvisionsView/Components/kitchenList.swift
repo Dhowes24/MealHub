@@ -117,7 +117,7 @@ struct kitchenList: View {
         let tempItems = toggleItems
         toggleItems.removeAll()
         
-        let filteredItems = items.filter { !$0.owned }
+        let filteredItems = items.filter { $0.owned }
         filteredItems.forEach { item in
             if tempItems.keys.contains(item) {
                 toggleItems[item] = tempItems[item]
