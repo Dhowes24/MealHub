@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct IncludeExcludeFilter: View {
-    
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
     @State var include: Bool = true
@@ -18,27 +17,7 @@ struct IncludeExcludeFilter: View {
         VStack {
             VStack(alignment: .leading) {
                 
-                HStack {
-                    Image(systemName: "arrow.backward")
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            dismiss()
-                        }
-                    
-                    Spacer()
-                    
-                    Text("Include and Exclude")
-                        .font(.customSystem(size: 30, weight: .bold))
-                    
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(width: 24, height: 24)
-                        .opacity(0.0)
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 8)
-                
+                filterHeader(headerText: "Include and Exclude")
                 
                 ListToggle(colored: true, listToggle: $include, optionOne: "Include", optionTwo: "Exclude")
                 

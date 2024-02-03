@@ -13,27 +13,8 @@ struct CuisineFilter: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "arrow.backward")
-                    .frame(width: 24, height: 24)
-                    .onTapGesture {
-                        dismiss()
-                    }
-                
-                Spacer()
-                
-                Text ("Select Preferred Cuisine")
-                    .font(.customSystem(size: 18, weight: .bold))
-                
-                Spacer()
-                
-                Rectangle()
-                    .frame(width: 24, height: 24)
-                    .opacity(0.0)
-            }
-            .padding(.top, 31)
-            .padding(.bottom, 13)
-            .padding(.horizontal, 16)
+            
+            filterHeader(headerText: "Select Preferred Cuisine")
             
             SeparatorLine()
             

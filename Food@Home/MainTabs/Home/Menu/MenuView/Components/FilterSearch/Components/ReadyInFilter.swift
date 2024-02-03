@@ -16,25 +16,7 @@ struct ReadyInFilter: View {
         GeometryReader { geo in
             VStack(alignment: .leading) {
                 
-                HStack {
-                    Image(systemName: "arrow.backward")
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            dismiss()
-                        }
-                    
-                    Spacer()
-                    
-                    Text("Pick time")
-                        .font(.customSystem(size: 23, weight: .bold))
-                    
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(width: 24, height: 24)
-                        .opacity(0.0)
-                }
-                .padding(.vertical, 16)
+                filterHeader(headerText: "Pick time")
 
                 Text("Ready in less than")
                     .font(.customSystem(size: 14, weight: .bold))

@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension MenuView {
     @MainActor class ViewModel: ObservableObject {
         @Published var recipes = [Recipe]()
+        @Binding var path: NavigationPath
+        var selectedDate: Date
+        @Published var searchCriteria: String = ""
+        @Published var searchKeyboardVisible: Bool = false
+        @Published var showTabBar: Bool  = false
+        
+        init(path: Binding<NavigationPath>, selectedDate: Date) {
+            self._path = path
+            self.selectedDate = selectedDate
+        }
         
         private lazy var downloadSession: URLSession = {
             let configuration = URLSessionConfiguration.default

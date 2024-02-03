@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SmallRecipeDisplay: View {
-    
     @StateObject var recipeDisplayViewModel: RecipeDisplayViewModel
     @Binding var path: NavigationPath
     let recipeDisplayModel: RecipeDisplayModel

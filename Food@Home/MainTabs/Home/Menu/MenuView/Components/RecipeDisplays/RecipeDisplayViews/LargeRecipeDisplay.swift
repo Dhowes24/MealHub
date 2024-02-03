@@ -14,34 +14,47 @@ struct LargeRecipeDisplay: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject var recipeDisplayViewModel: RecipeDisplayViewModel
     @Binding var path: NavigationPath
+    var specificSearch: Bool
     
-    init(recipeDisplayModel: RecipeDisplayModel, path: Binding<NavigationPath>) {
+    init(recipeDisplayModel: RecipeDisplayModel, path: Binding<NavigationPath>, specificSearch: Bool = false) {
         _recipeDisplayViewModel = StateObject(wrappedValue: RecipeDisplayViewModel(recipeDisplayModel: recipeDisplayModel))
         self._path = path
+        self.specificSearch = specificSearch
     }
     
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "arrow.backward")
-                    .frame(width: 24, height: 24)
-                    .onTapGesture {
-                        dismiss()
-                    }
-
-                Spacer()
+            if specificSearch {
+                HStack {
+                    Text(recipeDisplayViewModel.groupName)
+                        .font(.customSystem(size: 24, weight: .semibold))
+                    Spacer()
+                }
+                .frame(height: 30)
+                .padding(.bottom, 24)
+            } else {
+                HStack {
+                    Image(systemName: "arrow.backward")
+                        .frame(width: 24, height: 24)
+                        .onTapGesture {
+                            dismiss()
+                        }
+                    
+                    Spacer()
+                    
+                    Text(recipeDisplayViewModel.groupName)
+                        .font(.customSystem(size: 24, weight: .semibold))
+                    
+                    Spacer()
+                    
+                    Rectangle()
+                        .frame(width: 24, height: 24)
+                        .opacity(0.0)
+                }
+                .padding(.top, 31)
+                .padding(.bottom, 13)
                 
-                Text(recipeDisplayViewModel.groupName)
-                    .font(.customSystem(size: 24, weight: .semibold))
-                
-                Spacer()
-                
-                Rectangle()
-                    .frame(width: 24, height: 24)
-                    .opacity(0.0)
             }
-            .padding(.top, 31)
-            .padding(.bottom, 13)
                         
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {

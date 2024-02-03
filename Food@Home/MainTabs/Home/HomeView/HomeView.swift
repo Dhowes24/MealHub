@@ -80,21 +80,7 @@ struct HomeView: View {
                 
                 SeparatorLine()
             }
-            .navigationDestination(for: Int.self) { int in
-                MenuView(path: $viewModel.path, selectedDate: viewModel.selectedDate)
-            }
-            .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetailsView(selectedDate: viewModel.selectedDate,id: recipe.id, path: $viewModel.path)
-            }
-            .navigationDestination(for: Date.self) { date in
-                WeekReviewView(date: date, 
-                               deleteScheduledMeals: viewModel.deleteScheduledMeal,
-                               meals: meals,
-                               path: $viewModel.path)
-            }
-            .navigationDestination(for: RecipeDisplayModel.self) { recipeDisplayModel in
-                LargeRecipeDisplay(recipeDisplayModel: recipeDisplayModel, path: $viewModel.path)
-            }
+            .modifier(NavigationDestinationsModifier(meals: meals, path: $viewModel.path, viewModel: viewModel))
         }
     }
 }
