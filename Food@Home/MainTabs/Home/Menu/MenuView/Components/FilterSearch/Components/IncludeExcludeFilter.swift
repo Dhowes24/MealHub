@@ -16,18 +16,15 @@ struct IncludeExcludeFilter: View {
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                
                 subViewHeader(headerText: "Include and Exclude")
                 
                 ListToggle(colored: true, listToggle: $include, optionOne: "Include", optionTwo: "Exclude")
-                
             }
             
             let enumeratedItems = Array(dict.sorted(by: { $0.key < $1.key })).enumerated()
             let arrayEnumeratedItems = Array(enumeratedItems)
             
             VStack {
-                
                 addItemInput(optionOne: "Include",
                              optionTwo: "Exclude",
                              optionOneSelected: include,

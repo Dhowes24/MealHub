@@ -25,7 +25,6 @@ struct ProvisionsView: View {
             ListToggle(listToggle: $viewModel.myKitchenShowing, optionOne: "Kitchen", optionTwo: "Grocery List")
             
             Group {
-                
                 addItemInput(
                     optionOne: "Kitchen",
                     optionTwo: "Grocery List", optionOneSelected: viewModel.myKitchenShowing,
