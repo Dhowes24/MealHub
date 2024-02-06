@@ -80,7 +80,7 @@ struct HomeView: View {
                 
                 SeparatorLine()
             }
-            .modifier(NavigationDestinationsModifier(meals: meals, path: $viewModel.path, viewModel: viewModel))
+            .modifier(HomeNavStackViewMod(meals: meals, path: $viewModel.path, viewModel: viewModel))
         }
     }
 }

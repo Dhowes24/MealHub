@@ -4,30 +4,32 @@
 //
 //  Created by Derek Howes on 10/11/23.
 //
+import Combine
 import SwiftUI
 
 struct RecipeDetailsView: View {
-    var selectedDate: Date = Date()
-    var id: Int
-    @State private var pullError: Bool = false
-    @StateObject private var viewModel = ViewModel()
-    @State private var showingScheduler: Bool = false
-    @Environment(\.dismiss) private var dismiss
-    
-    @Binding var path: NavigationPath
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var savedRecipes: FetchedResults<SavedRecipes>
+    @StateObject private var viewModel: ViewModel
+
+    init(selectedDate: Date = Date(), id: Int, path: Binding<NavigationPath>) {
+        self._viewModel = StateObject(wrappedValue: ViewModel(selectedDate: selectedDate, id: id, path: path))
+    }
         
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "arrow.backward")
+                subViewHeader(headerText: "")
+                
+                Spacer()
+                
+                Image(systemName: viewModel.saved ? "heart.fill" : "heart")
                     .frame(width: 24, height: 24)
                     .onTapGesture {
-                        dismiss()
+                        viewModel.saveButtonTapped(savedRecipes: savedRecipes, moc: moc)
                     }
-                Spacer()
+                    .padding(.trailing, 16)
             }
-            .padding(.top, 31)
-            .padding(.bottom, 13)
             
             ScrollView(.vertical, showsIndicators: false) {
                 if let recipeInfo = viewModel.recipeInfo {
@@ -50,6 +52,7 @@ struct RecipeDetailsView: View {
                                 )
                         }
                     )
+                    
                     Text(recipeInfo.title)
                     
                     ForEach(recipeInfo.extendedIngredients) {ingredient in
@@ -64,6 +67,7 @@ struct RecipeDetailsView: View {
                         .frame(width: 300, alignment: .center)
                         
                     }
+                    
                     HStack {
                         Text("Ready in \(recipeInfo.readyInMinutes) Minutes")
                             .frame(width: 150, alignment: .trailing)
@@ -72,19 +76,18 @@ struct RecipeDetailsView: View {
                         
                         Text("Servings \(recipeInfo.servings)")
                             .frame(width: 150, alignment: .leading)
-                        
                     }
                     
                     Text("Schedule this meal")
                         .button(color: "black")
                         .onTapGesture {
-                            showingScheduler.toggle()
+                            viewModel.showingScheduler.toggle()
                         }
-                        .sheet(isPresented: $showingScheduler, content: {
-                            MealScheduler(path: $path, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)), selectedDate: selectedDate)
+                        .sheet(isPresented: $viewModel.showingScheduler, content: {
+                            MealScheduler(path: $viewModel.path, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)), selectedDate: viewModel.selectedDate)
                         })
                 } else {
-                    if pullError {
+                    if viewModel.pullError {
                         Text("We encountered an error pulling that recipe :(")
                     } else {
                         ProgressView()
@@ -96,13 +99,19 @@ struct RecipeDetailsView: View {
                 Task{
                     do {
 //                        try await viewModel.fetchTestData(id: id)
-                        try await viewModel.fetchIndividualRecipe(id: id)
+                        try await viewModel.fetchIndividualRecipe(id: viewModel.id)
                     }
                     catch {
-                        pullError = true
+                        viewModel.pullError = true
                     }
                 }
             })
+            .onReceive(viewModel.$recipeInfo) { newVal in
+                viewModel.saved = savedRecipes.contains(where: { savedRecipe in
+                    savedRecipe.apiID == Int32(newVal?.id ?? 0)
+                })
+            }
+            
         }
     }
 }

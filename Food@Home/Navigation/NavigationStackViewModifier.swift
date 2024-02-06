@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct NavigationDestinationsModifier: ViewModifier {
+struct HomeNavStackViewMod: ViewModifier {
     var meals: FetchedResults<RecipeCD>
     @Binding var path: NavigationPath
     @StateObject var viewModel: HomeViewModel
@@ -32,3 +32,37 @@ struct NavigationDestinationsModifier: ViewModifier {
             }
     }
 }
+
+struct ProfileNavStackViewMod: ViewModifier {
+    @Binding var path: NavigationPath
+
+    func body(content: Content) -> some View {
+        content
+            .navigationDestination(for: ArticleInformation.self) { articleInformation in
+                GuideTemplate(articleInfo: articleInformation)
+            }
+            .navigationDestination(for: Recipe.self) { recipe in
+                RecipeDetailsView(selectedDate: Date(), id: recipe.id, path: $path)
+            }
+            .navigationDestination(for: ProfileOptionDetails.self) { details in
+                chooseView(viewTitle: details.title)
+            }
+
+    }
+    
+    private func chooseView(viewTitle: String) -> some View {
+        switch viewTitle {
+        case "Food Profile":
+            return AnyView(FoodProfileView())
+        case "Saved Recipes":
+            return AnyView(SavedRecipesView(path: $path))
+        case "Resources":
+            return AnyView(ResourcesView())
+        case "Preferences":
+            return AnyView(PreferencesView())
+        default:
+            return AnyView(FoodProfileView())
+        }
+    }
+}
+

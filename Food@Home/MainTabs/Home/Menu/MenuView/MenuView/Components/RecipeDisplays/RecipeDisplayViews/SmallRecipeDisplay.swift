@@ -48,12 +48,7 @@ struct SmallRecipeDisplay: View {
                         
                     } else {
                         ForEach(recipeDisplayViewModel.recipeList) {recipe in
-                            Button(action: {
-                                path.append(recipe)
-                            }, label: {
-                                ShortRecipeThumbnail(recipe: recipe)
-                            })
-                            .buttonStyle(.plain)
+                            ShortRecipeThumbnail(recipe: recipe, path: $path)
                         }
                     }
                 }

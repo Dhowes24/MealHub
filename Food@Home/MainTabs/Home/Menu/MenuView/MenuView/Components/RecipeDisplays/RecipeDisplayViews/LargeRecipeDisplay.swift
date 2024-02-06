@@ -33,38 +33,13 @@ struct LargeRecipeDisplay: View {
                 .frame(height: 30)
                 .padding(.bottom, 24)
             } else {
-                HStack {
-                    Image(systemName: "arrow.backward")
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            dismiss()
-                        }
-                    
-                    Spacer()
-                    
-                    Text(recipeDisplayViewModel.groupName)
-                        .font(.customSystem(size: 24, weight: .semibold))
-                    
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(width: 24, height: 24)
-                        .opacity(0.0)
-                }
-                .padding(.top, 31)
-                .padding(.bottom, 13)
-                
+                subViewHeader(headerText: recipeDisplayViewModel.groupName)
             }
                         
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(recipeDisplayViewModel.recipeList, id: \.self) { recipe in
-                        Button(action: {
-                            path.append(recipe)
-                        }, label: {
-                            ShortRecipeThumbnail(recipe: recipe)
-                        })
-                        .buttonStyle(.plain)
+                        ShortRecipeThumbnail(recipe: recipe, path: $path)
                     }
                 }
                 .padding(.horizontal)
@@ -77,8 +52,8 @@ struct LargeRecipeDisplay: View {
                 .padding(16)
 
             }
+            .padding(.horizontal, 16)
         }
-        .padding(.horizontal, 16)
         .onAppear {
             recipeDisplayViewModel.loadRecipes(returnNumber:16)
         }

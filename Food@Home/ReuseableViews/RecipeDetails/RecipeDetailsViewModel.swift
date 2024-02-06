@@ -5,12 +5,35 @@
 //  Created by Derek Howes on 10/11/23.
 //
 
+import CoreData
 import Foundation
+import SwiftUI
 
 extension RecipeDetailsView {
     @MainActor class ViewModel: ObservableObject {
-        
         @Published var recipeInfo: RecipeInfo?
+        var selectedDate: Date
+        var id: Int
+        @Published var pullError: Bool
+        @Published var showingScheduler: Bool
+        @Published var saved: Bool
+        @Binding var path: NavigationPath
+        
+        init(recipeInfo: RecipeInfo? = nil,
+             selectedDate:Date,
+             id: Int,
+             pullError: Bool = false,
+             showingScheduler: Bool = false,
+             saved: Bool = false,
+             path: Binding<NavigationPath>) {
+            self.recipeInfo = recipeInfo
+            self.selectedDate = selectedDate
+            self.id = id
+            self.pullError = pullError
+            self.showingScheduler = showingScheduler
+            self.saved = saved
+            self._path = path
+        }
         
         func fetchTestData(id: Int) async throws {
             do {
@@ -54,6 +77,28 @@ extension RecipeDetailsView {
                 }
             })
             dataTask.resume()
+        }
+        
+        func saveButtonTapped(savedRecipes: FetchedResults<SavedRecipes>, moc: NSManagedObjectContext) {
+            if saved {
+                if let recipeToDelete =
+                    savedRecipes.first(where: { savedRecipe in
+                        savedRecipe.apiID == Int32(recipeInfo?.id ?? 0)
+                    }) {
+                    moc.delete(recipeToDelete)
+                }
+                saved.toggle()
+            } else {
+                let savedRecipe = SavedRecipes(context: moc)
+                savedRecipe.apiID = Int32(id)
+                savedRecipe.dateSaved = Date()
+                savedRecipe.imageURL = recipeInfo?.image
+                savedRecipe.name = recipeInfo?.title
+                savedRecipe.uuid = UUID()
+                
+                try? moc.save()
+                saved.toggle()
+            }
         }
     }
 }

@@ -22,23 +22,20 @@ struct ProfileView: View {
                 .padding(.vertical, 40)
                 
                 VStack(alignment: .leading) {
+                    ProfileOption(ProfileOptionDetails(title: "Food Profile", subText: "Nutrition goals, intolerances, dietary types"), path: $path)
                     
-                    ProfileOption(title: "Food Profile", subText: "Nutrition goals, intolerances, dietary types")
+                    ProfileOption(ProfileOptionDetails(title: "Saved Recipes", subText: "Your favorited"), path: $path)
                     
-                    ProfileOption(title: "Saved Recipes", subText: "Your favorited")
-                    
-                    ProfileOption(title: "Resources", subText: "Guides and articles on how to meal plan")
+                    ProfileOption(ProfileOptionDetails(title: "Resources", subText: "Guides and articles on how to meal plan"), path: $path)
 
-                    ProfileOption(title: "Preferences", subText: "Edit what you see when meal planning")
+                    ProfileOption(ProfileOptionDetails(title: "Preferences", subText: "Edit what you see when meal planning"), path: $path)
                 }
                 
                 Spacer()
                 
             }
             .padding(.horizontal, 16)
-            .navigationDestination(for: ArticleInformation.self) { articleInformation in
-                GuideTemplate(articleInfo: articleInformation)
-            }
+            .modifier(ProfileNavStackViewMod(path: $path))
             
             SeparatorLine()
         }

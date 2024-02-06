@@ -17,23 +17,14 @@ struct MenuView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                HStack {
-                    Image(systemName: "arrow.backward")
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            viewModel.showTabBar = true
-                            dismiss()
-                        }
-                    
-                    Spacer()
-                    
-                    Text ("\(viewModel.selectedDate.formatted(.dateTime.weekday())), \(viewModel.selectedDate.formatted(.dateTime.day().month()))")
-                        .font(.customSystem(size: 16, weight: .bold))
-                }
-                .padding(.top, 31)
-                .padding(.bottom, 13)
+            HStack {
+                subViewHeader(headerText: "")
                 
+                Text ("\(viewModel.selectedDate.formatted(.dateTime.weekday())), \(viewModel.selectedDate.formatted(.dateTime.day().month()))")
+                    .font(.customSystem(size: 16, weight: .bold))
+                    .padding(.trailing, 16)
+            }
+            VStack {
                 FilterSearch(isKeyboardVisible: $viewModel.searchKeyboardVisible, path: $viewModel.path, search: $viewModel.searchCriteria)
                 
                 HStack {
@@ -62,7 +53,6 @@ struct MenuView: View {
                                 specificSearch: true)
                             
                         } else {
-                            
                             SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
                                 fetchRecipes: viewModel.fetchRecipes,
                                 groupName: "Breakfast Foods",
@@ -83,7 +73,6 @@ struct MenuView: View {
                                 queryType: "dinner",
                                 selectedDate: viewModel.selectedDate),
                                                path: $viewModel.path)
-                            
                         }
                     }
                 }
