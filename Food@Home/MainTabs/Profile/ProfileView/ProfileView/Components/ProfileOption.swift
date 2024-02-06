@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ProfileOption: View {
-    var title: String
-    var subText: String
+    var profileOptionDetails: ProfileOptionDetails
+    @Binding var path: NavigationPath
+    
+    init(_ profileOptionDetails: ProfileOptionDetails, path: Binding<NavigationPath>) {
+        self.profileOptionDetails = profileOptionDetails
+        self._path = path
+    }
     
     var body: some View {
-        NavigationLink(destination: chooseView(viewTitle: title)) {
+        Button {
+            path.append(profileOptionDetails)
+        } label: {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(title)
+                        Text(profileOptionDetails.title)
                             .font(.customSystem(size: 16, weight: .semibold))
-                        Text(subText)
+                        Text(profileOptionDetails.subText)
                             .font(.customSystem(size: 13, weight: .regular))
                             .foregroundStyle(darkGrey)
                     }
@@ -33,24 +40,13 @@ struct ProfileOption: View {
         }
         .buttonStyle(.plain)
     }
-    
-    
-    private func chooseView(viewTitle: String) -> some View {
-        switch viewTitle {
-        case "Food Profile":
-            return AnyView(FoodProfileView())
-        case "Saved Recipes":
-            return AnyView(SavedRecipesView())
-        case "Resources":
-            return AnyView(ResourcesView())
-        case "Preferences":
-            return AnyView(PreferencesView())
-        default:
-            return AnyView(FoodProfileView())
-        }
-    }
 }
 
 #Preview {
-    ProfileOption(title: "Food Profile", subText: "Nutrition goals, intolerances, dietary types")
+    ProfileOption(ProfileOptionDetails(title: "Saved Recipes", subText: "Your favorited"), path: .constant(NavigationPath()))
+}
+
+struct ProfileOptionDetails: Hashable {
+    var title: String
+    var subText: String
 }

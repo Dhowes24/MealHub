@@ -12,7 +12,6 @@ struct FoodProfileOption: View {
     var title: String
         
     init(title: String) {
-        
         self.title = title
         _filterDict = State(initialValue: decodeUserDefaults(title))
         
@@ -58,65 +57,8 @@ struct FoodProfileOption: View {
         }
     }
     
-//    private func decodeUserDefaults() -> [String: Bool] {
-//        if let data = UserDefaults.standard.data(forKey: title),
-//           let decodedDictionary = try? PropertyListDecoder().decode([String: Bool].self, from: data) {
-//            return decodedDictionary
-//        } else {
-//            return dictionaryDefaults()
-//        }
-//    }
-//    
-//    private func dictionaryDefaults() -> [String: Bool] {
-//        switch title {
-//        case "Dietary Need":
-//            return [
-//                "Pescatarian": false,
-//                "Lacto Vegetarian": false,
-//                "OVO Vegetarian": false,
-//                "Vegan": false,
-//                "Paleo": false,
-//                "Primal": false,
-//                "Vegetarian": false
-//            ]
-//        case "Intolerances":
-//            return [
-//                "Dairy": false,
-//                "Egg": false,
-//                "Gluten": false,
-//                "Peanut": false,
-//                "Sesame": false,
-//                "Seafood": false,
-//                "Shellfish": false,
-//                "Soy": false,
-//                "Sulfite": false,
-//                "Tree nut": false,
-//                "Wheat": false
-//            ]
-//        default:
-//            return [
-//                "Pescatarian": false,
-//                "Lacto Vegetarian": false,
-//                "OVO Vegetarian": false,
-//                "Vegan": false,
-//                "Paleo": false,
-//                "Primal": false,
-//                "Vegetarian": false
-//            ]
-//        }
-//    }
-//
-//    private func encodeUserDefaults() {
-//        if let data = try? PropertyListEncoder().encode(filterDict) {
-//            UserDefaults.standard.set(data, forKey: title)
-//        } else {
-//            print("no worky")
-//        }
-//    }
-    
     private func retrieveSelectedItems() -> String {
         let trueValues = filterDict.filter { $0.value }.map { $0.key }
-        let falseValues = filterDict.filter { !$0.value }.map { $0.key }
         var returnString: String = ""
         switch title {
         case "Dietary Need":

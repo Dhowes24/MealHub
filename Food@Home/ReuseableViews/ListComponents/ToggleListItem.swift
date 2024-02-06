@@ -29,7 +29,7 @@ struct ToggleListItem<Key: Hashable>: View {
         .frame(height: 55)
     }
     
-    private func binding<Key>(for key: Key, on dict: Binding<[Key: Bool]>) -> Binding<Bool> {
+    private func binding<Element>(for key: Element, on dict: Binding<[Element: Bool]>) -> Binding<Bool> {
         return Binding(get: {
             return dict.wrappedValue[key] ?? false
         }, set: { newValue in

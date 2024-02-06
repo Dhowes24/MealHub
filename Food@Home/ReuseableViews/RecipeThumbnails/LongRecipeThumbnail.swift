@@ -15,7 +15,6 @@ struct LongRecipeThumbnail: View {
     @Environment(\.managedObjectContext) var moc
     @Binding var path: NavigationPath
 
-    
     var body: some View {
         HStack {
             Button(action: {
