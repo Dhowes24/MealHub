@@ -38,9 +38,11 @@ extension RecipeDetailsView {
             self.showTabBar = showTabBar
         }
         
-        func fetchTestData(id: Int) async throws {
+        //Test Data Function
+        //------------------------------------------------------------------------------------------
+        func fetchIndividualRecipe(id: Int) async throws {
             do {
-                if let filePath = Bundle.main.path(forResource: "SearchRecipeDetailsTestInfo", ofType: "json") {
+                if let filePath = Bundle.main.path(forResource: "RecipeDetailsTestInfo", ofType: "json") {
                     let fileUrl = URL(fileURLWithPath: filePath)
                     let data = try Data(contentsOf: fileUrl)
                     
@@ -56,31 +58,33 @@ extension RecipeDetailsView {
             }
         }
         
-        func fetchIndividualRecipe(id: Int) async throws {
-            let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/\(id)/information")! as URL,
-                                              cachePolicy: .useProtocolCachePolicy,
-                                              timeoutInterval: 10.0)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = headers
-            
-            let session = URLSession.shared
-            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                if (error != nil) {
-                    print(error as Any)
-                } else {
-                    if let decodedResponse = try? JSONDecoder().decode(RecipeInfo.self, from: data!) {
-                        Task {
-                            await MainActor.run {
-                                self.recipeInfo = decodedResponse
-                            }
-                        }
-                    } else {
-                        print(String(describing: error))
-                    }
-                }
-            })
-            dataTask.resume()
-        }
+        //Live Data Function
+        //------------------------------------------------------------------------------------------
+        //        func fetchIndividualRecipe(id: Int) async throws {
+        //            let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/\(id)/information")! as URL,
+        //                                              cachePolicy: .useProtocolCachePolicy,
+        //                                              timeoutInterval: 10.0)
+        //            request.httpMethod = "GET"
+        //            request.allHTTPHeaderFields = headers
+        //
+        //            let session = URLSession.shared
+        //            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+        //                if (error != nil) {
+        //                    print(error as Any)
+        //                } else {
+        //                    if let decodedResponse = try? JSONDecoder().decode(RecipeInfo.self, from: data!) {
+        //                        Task {
+        //                            await MainActor.run {
+        //                                self.recipeInfo = decodedResponse
+        //                            }
+        //                        }
+        //                    } else {
+        //                        print(String(describing: error))
+        //                    }
+        //                }
+        //            })
+        //            dataTask.resume()
+        //        }
         
         func saveButtonTapped(savedRecipes: FetchedResults<SavedRecipes>, moc: NSManagedObjectContext) {
             if saved {
