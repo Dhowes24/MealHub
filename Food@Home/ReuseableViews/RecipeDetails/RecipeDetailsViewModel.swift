@@ -11,28 +11,31 @@ import SwiftUI
 
 extension RecipeDetailsView {
     @MainActor class ViewModel: ObservableObject {
-        @Published var recipeInfo: RecipeInfo?
-        var selectedDate: Date
         var id: Int
-        @Published var pullError: Bool
-        @Published var showingScheduler: Bool
-        @Published var saved: Bool
         @Binding var path: NavigationPath
+        @Published var pullError: Bool
+        @Published var recipeInfo: RecipeInfo?
+        @Published var saved: Bool
+        var selectedDate: Date
+        @Published var showingScheduler: Bool
+        @Published var showTabBar: Bool
         
-        init(recipeInfo: RecipeInfo? = nil,
-             selectedDate:Date,
-             id: Int,
+        init(id: Int,
+             path: Binding<NavigationPath>,
              pullError: Bool = false,
-             showingScheduler: Bool = false,
+             recipeInfo: RecipeInfo? = nil,
              saved: Bool = false,
-             path: Binding<NavigationPath>) {
-            self.recipeInfo = recipeInfo
-            self.selectedDate = selectedDate
+             selectedDate: Date,
+             showingScheduler: Bool = false,
+             showTabBar: Bool = false) {
             self.id = id
-            self.pullError = pullError
-            self.showingScheduler = showingScheduler
-            self.saved = saved
             self._path = path
+            self.pullError = pullError
+            self.recipeInfo = recipeInfo
+            self.saved = saved
+            self.selectedDate = selectedDate
+            self.showingScheduler = showingScheduler
+            self.showTabBar = showTabBar
         }
         
         func fetchTestData(id: Int) async throws {

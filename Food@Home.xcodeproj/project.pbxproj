@@ -306,7 +306,8 @@
 		1E6DF62B2B6DC69200C5D74B /* RecipeDetailsView */ = {
 			isa = PBXGroup;
 			children = (
-				1EE49B972B71D530000D0F68 /* RecipeDetailsView */,
+				6B8877B02AD7373C002B9CDB /* RecipeDetailsView.swift */,
+				6B75CE3C2B1ACE0A00323037 /* Components */,
 			);
 			path = RecipeDetailsView;
 			sourceTree = "<group>";
@@ -394,15 +395,6 @@
 			);
 			name = ProfileView;
 			path = ProfileView/ProfileView;
-			sourceTree = "<group>";
-		};
-		1EE49B972B71D530000D0F68 /* RecipeDetailsView */ = {
-			isa = PBXGroup;
-			children = (
-				6B8877B02AD7373C002B9CDB /* RecipeDetailsView.swift */,
-				6B75CE3C2B1ACE0A00323037 /* Components */,
-			);
-			path = RecipeDetailsView;
 			sourceTree = "<group>";
 		};
 		6B5F75E92AF839910082CC4E /* Archivo */ = {
