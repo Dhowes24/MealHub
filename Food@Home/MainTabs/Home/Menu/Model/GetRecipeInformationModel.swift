@@ -13,14 +13,27 @@ struct RecipeInfo: Codable, Identifiable {
     var image: String
     var instructions: String
     let extendedIngredients: [ExtendedIngredient]
+    let analyzedInstructions: [AnalyzedInstructions]
     let readyInMinutes, servings: Int
 
 }
 
-// MARK: - ExtendedIngredient
 struct ExtendedIngredient: Codable, Identifiable {
     let id: Int
-    let aisle, image, name: String
+    let originalName, original, nameClean, name: String
     let amount: Double
     let unit: String
 }
+
+struct AnalyzedInstructions: Codable {
+    let steps: [Step]
+}
+
+struct Step: Codable, Identifiable {
+    var id: UUID {
+        UUID()
+    }
+    let number: Int
+    let step: String
+}
+
