@@ -11,10 +11,10 @@ struct TrashLabel: View {
     var offset: CGSize
     
     var body: some View {
-        Image("TrashIcon")
+        Image("custom.trash")
             .resizable()
             .scaledToFit()
-            .frame(width: 40)
+            .frame(width: 20)
             .foregroundColor(offWhite)
             .background(
                 Rectangle()
@@ -24,7 +24,7 @@ struct TrashLabel: View {
             .offset(x: offset.width/2 + 20)
     }
 }
-//
-//#Preview {
-//    TrashLabel(dragAmount: CGSize.zero)
-//}
+
+#Preview {
+    TrashLabel(offset: CGSize.zero)
+}

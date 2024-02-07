@@ -1,16 +1,17 @@
 //
-//  kitchenList.swift
+//  groceryListItem.swift
 //  Food@Home
 //
-//  Created by Derek Howes on 1/16/24.
+//  Created by Derek Howes on 1/10/24.
 //
 
 import SwiftUI
 
-struct kitchenList: View {
+struct provisionsList: View {
     var deleteItems: @MainActor ([FoodItem]) -> Void
     @Binding var items: [FoodItem]
     var moveItemsToKitchen: @MainActor ([FoodItem]) -> Void
+    @State var ownedItems: Bool
     @State private var selectAllBool: Bool = false
     @State private var toggleItems: [FoodItem : Bool] = [:]
     @State var triggerRefresh: Bool = false
@@ -27,7 +28,7 @@ struct kitchenList: View {
                 Image(systemName: selectAllBool ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(selectAllBool ? .purple : .gray)
+                    .foregroundColor(selectAllBool ? brandGreen : .gray)
                     .font(.system(size: 20, weight: .bold, design: .default))
                 
             }
@@ -48,19 +49,9 @@ struct kitchenList: View {
                         SeparatorLine()
                     }
                     
-                    HStack {
-                        Text(item.name ?? "Something else")
-                            .font(.customSystem(size: 16, weight: .semibold))
-                            .padding(.vertical, 16)
-                        
-                        Spacer()
-                        
-                        Toggle(isOn: binding(for: item)) {
-                        }
-                        .toggleStyle(CheckboxStyle())
-                    }
-                    .frame(height: 55)
+                    ToggleListItem(controlKey: item, displayString: item.name ?? "Something else", dict: $toggleItems)
                 }
+                
             }
             .frame(maxWidth: .infinity)
             
@@ -81,6 +72,27 @@ struct kitchenList: View {
             .disabled(!itemsSelected())
             .padding(.bottom, 38)
             
+            
+            if !ownedItems {
+                Button(action: {
+                    var moveItemsArray: [FoodItem] = []
+                    
+                    toggleItems.forEach { (key: FoodItem, value: Bool) in
+                        if toggleItems[key] ?? false {
+                            moveItemsArray.append(key)
+                        }
+                    }
+                    moveItemsToKitchen(moveItemsArray)
+                    triggerRefresh.toggle()
+                }, label: {
+                    Text("Add Items to Kitchen")
+                        .button(color: "black")
+                })
+                .buttonStyle(.plain)
+                .disabled(!itemsSelected())
+                .padding(.bottom, 38)
+            }
+            
         }
         .onChange(of: triggerRefresh) { _ in
             refreshPage()
@@ -92,21 +104,13 @@ struct kitchenList: View {
             selectAllBool = allItemsSelected()
         }
         .onAppear(perform: {
-            let filteredItems = items.filter { $0.owned }
+            let filteredItems = items.filter { $0.owned == ownedItems}
             toggleItems = Dictionary(uniqueKeysWithValues: filteredItems.map { ($0, false) })
         })
     }
     
     private func allItemsSelected() -> Bool {
         !toggleItems.values.contains { Bool in Bool == false }
-    }
-    
-    private func binding(for key: FoodItem) -> Binding<Bool> {
-        return Binding(get: {
-            return toggleItems[key] ?? false
-        }, set: {
-            toggleItems[key] = $0
-        })
     }
     
     private func itemsSelected() -> Bool {
@@ -117,7 +121,7 @@ struct kitchenList: View {
         let tempItems = toggleItems
         toggleItems.removeAll()
         
-        let filteredItems = items.filter { $0.owned }
+        let filteredItems = items.filter { $0.owned == ownedItems }
         filteredItems.forEach { item in
             if tempItems.keys.contains(item) {
                 toggleItems[item] = tempItems[item]
@@ -135,5 +139,13 @@ struct kitchenList: View {
 }
 
 //#Preview {
-//    kitchenList()
+//    struct PreviewWrapper: View {
+//        @FetchRequest(sortDescriptors: []) var items: FetchedResults<FoodItem>
+//        var body: some View {
+//
+//            groceryListItems(items: items)
+//        }
+//    }
+//
+//    return PreviewWrapper()
 //}
