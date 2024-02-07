@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct NavView: View {
+    @State private var selectedTab: Int = 0
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label("Home", image: selectedTab == 0 ? "custom.home.active" : "custom.home.inactive")
                 }
+                .tag(0)
             ProvisionsView()
                 .tabItem {
-                    Label("Provisions", systemImage: "takeoutbag.and.cup.and.straw")
+                    Label("Provisions", image: "custom.provisions")
                 }
+                .tag(1)
             ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
+                .tag(2)
         }
+        .tint(.black)
         .ignoresSafeArea()
     }
 }

@@ -26,7 +26,10 @@ struct myKitchenItem: View {
             Button(action: {
                 
             }, label: {
-                Image(systemName: "trash")
+                Image("TrashIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 20)
             }
             )
             .buttonStyle(.plain)

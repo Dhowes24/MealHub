@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3300px" height="2200px" viewBox="0 0 3300 2200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Slice 1</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="testClock">
+            <g id="Notes">
+                <rect id="artboard" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="25" height="2200"></rect>
+                <line x1="1.99242424" y1="292" x2="23" y2="292" id="Path" stroke="#000000" stroke-width="0.5"></line>
+                <text id="Weight/Scale-Variations" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="322">W</tspan>
+                    <tspan x="1.99242424" y="338">e</tspan>
+                    <tspan x="1.99242424" y="354">i</tspan>
+                    <tspan x="1.99242424" y="370">g</tspan>
+                    <tspan x="1.99242424" y="386">h</tspan>
+                    <tspan x="1.99242424" y="402">t</tspan>
+                    <tspan x="1.99242424" y="418">/</tspan>
+                    <tspan x="1.99242424" y="434">S</tspan>
+                    <tspan x="1.99242424" y="450">c</tspan>
+                    <tspan x="1.99242424" y="466">a</tspan>
+                    <tspan x="1.99242424" y="482">l</tspan>
+                    <tspan x="1.99242424" y="498">e </tspan>
+                    <tspan x="1.99242424" y="514">V</tspan>
+                    <tspan x="1.99242424" y="530">a</tspan>
+                    <tspan x="1.99242424" y="546">r</tspan>
+                    <tspan x="1.99242424" y="562">i</tspan>
+                    <tspan x="1.99242424" y="578">a</tspan>
+                    <tspan x="1.99242424" y="594">t</tspan>
+                    <tspan x="1.99242424" y="610">i</tspan>
+                    <tspan x="1.99242424" y="626">o</tspan>
+                    <tspan x="1.99242424" y="642">n</tspan>
+                    <tspan x="1.99242424" y="658">s</tspan>
+                </text>
+                <text id="Ultralight" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="4.04326515" y="322">U</tspan>
+                    <tspan x="4.04326515" y="338">l</tspan>
+                    <tspan x="4.04326515" y="354">t</tspan>
+                    <tspan x="4.04326515" y="370">r</tspan>
+                    <tspan x="4.04326515" y="386">a</tspan>
+                    <tspan x="4.04326515" y="402">l</tspan>
+                    <tspan x="4.04326515" y="418">i</tspan>
+                    <tspan x="4.04326515" y="434">g</tspan>
+                    <tspan x="4.04326515" y="450">h</tspan>
+                    <tspan x="4.04326515" y="466">t</tspan>
+                </text>
+                <text id="Thin" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="6.38956061" y="322">T</tspan>
+                    <tspan x="6.38956061" y="338">h</tspan>
+                    <tspan x="6.38956061" y="354">i</tspan>
+                    <tspan x="6.38956061" y="370">n</tspan>
+                </text>
+                <text id="Light" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="8.62598485" y="322">L</tspan>
+                    <tspan x="8.62598485" y="338">i</tspan>
+                    <tspan x="8.62598485" y="354">g</tspan>
+                    <tspan x="8.62598485" y="370">h</tspan>
+                    <tspan x="8.62598485" y="386">t</tspan>
+                </text>
+                <text id="Regular" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="10.8093939" y="322">R</tspan>
+                    <tspan x="10.8093939" y="338">e</tspan>
+                    <tspan x="10.8093939" y="354">g</tspan>
+                    <tspan x="10.8093939" y="370">u</tspan>
+                    <tspan x="10.8093939" y="386">l</tspan>
+                    <tspan x="10.8093939" y="402">a</tspan>
+                    <tspan x="10.8093939" y="418">r</tspan>
+                </text>
+                <text id="Medium" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="13.0534848" y="322">M</tspan>
+                    <tspan x="13.0534848" y="338">e</tspan>
+                    <tspan x="13.0534848" y="354">d</tspan>
+                    <tspan x="13.0534848" y="370">i</tspan>
+                    <tspan x="13.0534848" y="386">u</tspan>
+                    <tspan x="13.0534848" y="402">m</tspan>
+                </text>
+                <text id="Semibold" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="15.2709848" y="322">S</tspan>
+                    <tspan x="15.2709848" y="338">e</tspan>
+                    <tspan x="15.2709848" y="354">m</tspan>
+                    <tspan x="15.2709848" y="370">i</tspan>
+                    <tspan x="15.2709848" y="386">b</tspan>
+                    <tspan x="15.2709848" y="402">o</tspan>
+                    <tspan x="15.2709848" y="418">l</tspan>
+                    <tspan x="15.2709848" y="434">d</tspan>
+                </text>
+                <text id="Bold" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="17.6248485" y="322">B</tspan>
+                    <tspan x="17.6248485" y="338">o</tspan>
+                    <tspan x="17.6248485" y="354">l</tspan>
+                    <tspan x="17.6248485" y="370">d</tspan>
+                </text>
+                <text id="Heavy" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="19.8347727" y="322">H</tspan>
+                    <tspan x="19.8347727" y="338">e</tspan>
+                    <tspan x="19.8347727" y="354">a</tspan>
+                    <tspan x="19.8347727" y="370">v</tspan>
+                    <tspan x="19.8347727" y="386">y</tspan>
+                </text>
+                <text id="Black" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="22.1015152" y="322">B</tspan>
+                    <tspan x="22.1015152" y="338">l</tspan>
+                    <tspan x="22.1015152" y="354">a</tspan>
+                    <tspan x="22.1015152" y="370">c</tspan>
+                    <tspan x="22.1015152" y="386">k</tspan>
+                </text>
+                <line x1="1.99242424" y1="1903" x2="23" y2="1903" id="Path" stroke="#000000" stroke-width="0.5"></line>
+                <g id="Group" transform="translate(2.0028, 1918.0684)" fill="#000000" fill-rule="nonzero">
+                    <path d="M0.49968963,15.761678 C0.772754796,15.761678 1,12.18746 1,7.88082 C1,3.5742 0.772133423,0 0.499070159,0 C0.226625098,0 0,3.5742 0,7.88082 C0,12.18746 0.227243935,15.761678 0.49968963,15.761678 Z M0.49968963,14.277303 C0.274921678,14.277303 0.0953554859,11.43551 0.0953554859,7.88082 C0.0953554859,4.3261 0.274302841,1.4843 0.499070159,1.4843 C0.72445885,1.4843 0.905259547,4.3261 0.905259547,7.88082 C0.905259547,11.43551 0.725073883,14.277303 0.49968963,14.277303 Z M0.271826223,7.88082 C0.271826223,8.31051 0.291020961,8.60348 0.319503966,8.60348 L0.452630725,8.60348 L0.452630725,10.72262 C0.452630725,11.16207 0.471206625,11.4648 0.498451321,11.4648 C0.526933692,11.4648 0.545509593,11.16207 0.545509593,10.72262 L0.545509593,8.60348 L0.679872124,8.60348 C0.707738828,8.60348 0.726931663,8.31051 0.726931663,7.88082 C0.726931663,7.44137 0.707738828,7.13863 0.679872124,7.13863 L0.545509593,7.13863 L0.545509593,5.02926 C0.545509593,4.58 0.526933692,4.2773 0.498451321,4.2773 C0.471206625,4.2773 0.452630725,4.58 0.452630725,5.02926 L0.452630725,7.13863 L0.319503966,7.13863 C0.291020961,7.13863 0.271826223,7.44137 0.271826223,7.88082 Z" id="Shape"></path>
+                </g>
+                <g id="Group" transform="translate(2.1486, 1915.9883)" fill="#000000" fill-rule="nonzero">
+                    <path d="M0.5,19.92186 C0.773530069,19.92186 1,15.40037 1,9.96092 C1,4.5117 0.773038147,0 0.499509333,0 C0.226470935,0 0,4.5117 0,9.96092 C0,15.40037 0.22696085,19.92186 0.5,19.92186 Z M0.500001255,18.2617 C0.268627663,18.2617 0.0838235405,14.57029 0.0838235405,9.96092 C0.0838235405,5.3515 0.268137246,1.6601 0.499509333,1.6601 C0.730883427,1.6601 0.916669386,5.3515 0.916669386,9.96092 C0.916669386,14.57029 0.731375349,18.2617 0.500001255,18.2617 Z M0.272548985,9.96092 C0.272548985,10.43943 0.289216112,10.7617 0.314215798,10.7617 L0.458333438,10.7617 L0.458333438,13.64256 C0.458333438,14.13084 0.474998557,14.47264 0.49902243,14.47264 C0.523528186,14.47264 0.540685228,14.14061 0.540685228,13.64256 L0.540685228,10.7617 L0.685295291,10.7617 C0.709806067,10.7617 0.726963108,10.43943 0.726963108,9.96092 C0.726963108,9.47264 0.709806067,9.13084 0.685295291,9.13084 L0.540685228,9.13084 L0.540685228,6.2597 C0.540685228,5.7617 0.523528186,5.4199 0.49902243,5.4199 C0.474998557,5.4199 0.458333438,5.7617 0.458333438,6.2597 L0.458333438,9.13084 L0.314215798,9.13084 C0.289216112,9.13084 0.272548985,9.47264 0.272548985,9.96092 Z" id="Shape"></path>
+                </g>
+                <g id="Group" transform="translate(2.3326, 1913.2246)" fill="#000000" fill-rule="nonzero">
+                    <path d="M0.499808172,25.43946 C0.773513096,25.43946 1,19.6777438 1,12.72462 C1,5.7617 0.773127868,0 0.499422943,0 C0.226103641,0 0,5.7617 0,12.72462 C0,19.6777438 0.22648769,25.43946 0.499808172,25.43946 Z M0.499808172,23.62306 C0.262572211,23.62306 0.0717849921,18.75978 0.0717849921,12.72462 C0.0717849921,6.6797 0.262188161,1.8262 0.499422943,1.8262 C0.737046098,1.8262 0.928213829,6.6797 0.928213829,12.72462 C0.928213829,18.75978 0.737427396,23.62306 0.499808172,23.62306 Z M0.272936826,12.72462 C0.272936826,13.2422 0.287524018,13.60352 0.309021739,13.60352 L0.4641077,13.60352 L0.4641077,17.5586 C0.4641077,18.09571 0.478695286,18.47657 0.499041646,18.47657 C0.520154532,18.47657 0.534742117,18.10548 0.534742117,17.5586 L0.534742117,13.60352 L0.690213307,13.60352 C0.711326193,13.60352 0.726295076,13.2422 0.726295076,12.72462 C0.726295076,12.17774 0.71170749,11.80665 0.690213307,11.80665 L0.534742117,11.80665 L0.534742117,7.8613 C0.534742117,7.3145 0.520154532,6.9336 0.499041646,6.9336 C0.478695286,6.9336 0.4641077,7.3145 0.4641077,7.8613 L0.4641077,11.80665 L0.309021739,11.80665 C0.287524018,11.80665 0.272936826,12.17774 0.272936826,12.72462 Z" id="Shape"></path>
+                </g>
+                <text id="Design-Variations" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="1953">D</tspan>
+                    <tspan x="1.99242424" y="1969">e</tspan>
+                    <tspan x="1.99242424" y="1985">s</tspan>
+                    <tspan x="1.99242424" y="2001">i</tspan>
+                    <tspan x="1.99242424" y="2017">g</tspan>
+                    <tspan x="1.99242424" y="2033">n </tspan>
+                    <tspan x="1.99242424" y="2049">V</tspan>
+                    <tspan x="1.99242424" y="2065">a</tspan>
+                    <tspan x="1.99242424" y="2081">r</tspan>
+                    <tspan x="1.99242424" y="2097">i</tspan>
+                    <tspan x="1.99242424" y="2113">a</tspan>
+                    <tspan x="1.99242424" y="2129">t</tspan>
+                    <tspan x="1.99242424" y="2145">i</tspan>
+                    <tspan x="1.99242424" y="2161">o</tspan>
+                    <tspan x="1.99242424" y="2177">n</tspan>
+                    <tspan x="1.99242424" y="2193">s</tspan>
+                </text>
+                <text id="Symbols-are-supported-in-up-to-nine-weights-and-three-scales." fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="1971">S</tspan>
+                    <tspan x="1.99242424" y="1987">y</tspan>
+                    <tspan x="1.99242424" y="2003">m</tspan>
+                    <tspan x="1.99242424" y="2019">b</tspan>
+                    <tspan x="1.99242424" y="2035">o</tspan>
+                    <tspan x="1.99242424" y="2051">l</tspan>
+                    <tspan x="1.99242424" y="2067">s </tspan>
+                    <tspan x="1.99242424" y="2083">a</tspan>
+                    <tspan x="1.99242424" y="2099">r</tspan>
+                    <tspan x="1.99242424" y="2115">e </tspan>
+                    <tspan x="1.99242424" y="2131">s</tspan>
+                    <tspan x="1.99242424" y="2147">u</tspan>
+                    <tspan x="1.99242424" y="2163">p</tspan>
+                    <tspan x="1.99242424" y="2179">p</tspan>
+                    <tspan x="1.99242424" y="2195">o</tspan>
+                    <tspan x="1.99242424" y="2211">r</tspan>
+                    <tspan x="1.99242424" y="2227">t</tspan>
+                    <tspan x="1.99242424" y="2243">e</tspan>
+                    <tspan x="1.99242424" y="2259">d </tspan>
+                    <tspan x="1.99242424" y="2275">i</tspan>
+                    <tspan x="1.99242424" y="2291">n </tspan>
+                    <tspan x="1.99242424" y="2307">u</tspan>
+                    <tspan x="1.99242424" y="2323">p </tspan>
+                    <tspan x="1.99242424" y="2339">t</tspan>
+                    <tspan x="1.99242424" y="2355">o </tspan>
+                    <tspan x="1.99242424" y="2371">n</tspan>
+                    <tspan x="1.99242424" y="2387">i</tspan>
+                    <tspan x="1.99242424" y="2403">n</tspan>
+                    <tspan x="1.99242424" y="2419">e </tspan>
+                    <tspan x="1.99242424" y="2435">w</tspan>
+                    <tspan x="1.99242424" y="2451">e</tspan>
+                    <tspan x="1.99242424" y="2467">i</tspan>
+                    <tspan x="1.99242424" y="2483">g</tspan>
+                    <tspan x="1.99242424" y="2499">h</tspan>
+                    <tspan x="1.99242424" y="2515">t</tspan>
+                    <tspan x="1.99242424" y="2531">s </tspan>
+                    <tspan x="1.99242424" y="2547">a</tspan>
+                    <tspan x="1.99242424" y="2563">n</tspan>
+                    <tspan x="1.99242424" y="2579">d </tspan>
+                    <tspan x="1.99242424" y="2595">t</tspan>
+                    <tspan x="1.99242424" y="2611">h</tspan>
+                    <tspan x="1.99242424" y="2627">r</tspan>
+                    <tspan x="1.99242424" y="2643">e</tspan>
+                    <tspan x="1.99242424" y="2659">e </tspan>
+                    <tspan x="1.99242424" y="2675">s</tspan>
+                    <tspan x="1.99242424" y="2691">c</tspan>
+                    <tspan x="1.99242424" y="2707">a</tspan>
+                    <tspan x="1.99242424" y="2723">l</tspan>
+                    <tspan x="1.99242424" y="2739">e</tspan>
+                    <tspan x="1.99242424" y="2755">s</tspan>
+                    <tspan x="1.99242424" y="2771">.</tspan>
+                </text>
+                <text id="For-optimal-layout-with-text-and-other-symbols,-vertically-align" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="1989">F</tspan>
+                    <tspan x="1.99242424" y="2005">o</tspan>
+                    <tspan x="1.99242424" y="2021">r </tspan>
+                    <tspan x="1.99242424" y="2037">o</tspan>
+                    <tspan x="1.99242424" y="2053">p</tspan>
+                    <tspan x="1.99242424" y="2069">t</tspan>
+                    <tspan x="1.99242424" y="2085">i</tspan>
+                    <tspan x="1.99242424" y="2101">m</tspan>
+                    <tspan x="1.99242424" y="2117">a</tspan>
+                    <tspan x="1.99242424" y="2133">l </tspan>
+                    <tspan x="1.99242424" y="2149">l</tspan>
+                    <tspan x="1.99242424" y="2165">a</tspan>
+                    <tspan x="1.99242424" y="2181">y</tspan>
+                    <tspan x="1.99242424" y="2197">o</tspan>
+                    <tspan x="1.99242424" y="2213">u</tspan>
+                    <tspan x="1.99242424" y="2229">t </tspan>
+                    <tspan x="1.99242424" y="2245">w</tspan>
+                    <tspan x="1.99242424" y="2261">i</tspan>
+                    <tspan x="1.99242424" y="2277">t</tspan>
+                    <tspan x="1.99242424" y="2293">h </tspan>
+                    <tspan x="1.99242424" y="2309">t</tspan>
+                    <tspan x="1.99242424" y="2325">e</tspan>
+                    <tspan x="1.99242424" y="2341">x</tspan>
+                    <tspan x="1.99242424" y="2357">t </tspan>
+                    <tspan x="1.99242424" y="2373">a</tspan>
+                    <tspan x="1.99242424" y="2389">n</tspan>
+                    <tspan x="1.99242424" y="2405">d </tspan>
+                    <tspan x="1.99242424" y="2421">o</tspan>
+                    <tspan x="1.99242424" y="2437">t</tspan>
+                    <tspan x="1.99242424" y="2453">h</tspan>
+                    <tspan x="1.99242424" y="2469">e</tspan>
+                    <tspan x="1.99242424" y="2485">r </tspan>
+                    <tspan x="1.99242424" y="2501">s</tspan>
+                    <tspan x="1.99242424" y="2517">y</tspan>
+                    <tspan x="1.99242424" y="2533">m</tspan>
+                    <tspan x="1.99242424" y="2549">b</tspan>
+                    <tspan x="1.99242424" y="2565">o</tspan>
+                    <tspan x="1.99242424" y="2581">l</tspan>
+                    <tspan x="1.99242424" y="2597">s</tspan>
+                    <tspan x="1.99242424" y="2613">, </tspan>
+                    <tspan x="1.99242424" y="2629">v</tspan>
+                    <tspan x="1.99242424" y="2645">e</tspan>
+                    <tspan x="1.99242424" y="2661">r</tspan>
+                    <tspan x="1.99242424" y="2677">t</tspan>
+                    <tspan x="1.99242424" y="2693">i</tspan>
+                    <tspan x="1.99242424" y="2709">c</tspan>
+                    <tspan x="1.99242424" y="2725">a</tspan>
+                    <tspan x="1.99242424" y="2741">l</tspan>
+                    <tspan x="1.99242424" y="2757">l</tspan>
+                    <tspan x="1.99242424" y="2773">y </tspan>
+                    <tspan x="1.99242424" y="2789">a</tspan>
+                    <tspan x="1.99242424" y="2805">l</tspan>
+                    <tspan x="1.99242424" y="2821">i</tspan>
+                    <tspan x="1.99242424" y="2837">g</tspan>
+                    <tspan x="1.99242424" y="2853">n</tspan>
+                </text>
+                <text id="symbols-with-the-adjacent-text." fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="2007">s</tspan>
+                    <tspan x="1.99242424" y="2023">y</tspan>
+                    <tspan x="1.99242424" y="2039">m</tspan>
+                    <tspan x="1.99242424" y="2055">b</tspan>
+                    <tspan x="1.99242424" y="2071">o</tspan>
+                    <tspan x="1.99242424" y="2087">l</tspan>
+                    <tspan x="1.99242424" y="2103">s </tspan>
+                    <tspan x="1.99242424" y="2119">w</tspan>
+                    <tspan x="1.99242424" y="2135">i</tspan>
+                    <tspan x="1.99242424" y="2151">t</tspan>
+                    <tspan x="1.99242424" y="2167">h </tspan>
+                    <tspan x="1.99242424" y="2183">t</tspan>
+                    <tspan x="1.99242424" y="2199">h</tspan>
+                    <tspan x="1.99242424" y="2215">e </tspan>
+                    <tspan x="1.99242424" y="2231">a</tspan>
+                    <tspan x="1.99242424" y="2247">d</tspan>
+                    <tspan x="1.99242424" y="2263">j</tspan>
+                    <tspan x="1.99242424" y="2279">a</tspan>
+                    <tspan x="1.99242424" y="2295">c</tspan>
+                    <tspan x="1.99242424" y="2311">e</tspan>
+                    <tspan x="1.99242424" y="2327">n</tspan>
+                    <tspan x="1.99242424" y="2343">t </tspan>
+                    <tspan x="1.99242424" y="2359">t</tspan>
+                    <tspan x="1.99242424" y="2375">e</tspan>
+                    <tspan x="1.99242424" y="2391">x</tspan>
+                    <tspan x="1.99242424" y="2407">t</tspan>
+                    <tspan x="1.99242424" y="2423">.</tspan>
+                </text>
+                <line x1="5.925" y1="1919" x2="5.925" y2="1933" id="Path" stroke="#00AEEF" stroke-width="0.5"></line>
+                <g id="Group" transform="translate(5.8977, 1918.7324)" fill="#000000" fill-rule="nonzero">
+                    <path d="M0.0691933766,14.42385 C0.112850018,14.42385 0.134267136,14.2285375 0.149918139,13.681662 L0.25617795,10.2344 L0.742178083,10.2344 L0.848432833,13.681662 C0.864088054,14.2285375 0.885504328,14.42385 0.928336877,14.42385 C0.971996049,14.42385 1,14.11135 1,13.623069 C1,13.457053 0.997528567,13.300803 0.990940891,13.09572 L0.604612892,0.8985 C0.585667207,0.3028 0.551894611,0 0.49917633,0 C0.448105389,0 0.413509545,0.293 0.395387108,0.8887 L0.0090616399,13.10549 C0.00247143302,13.310569 -3.74585917e-17,13.466819 -3.74585917e-17,13.632834 C-3.74585917e-17,14.121116 0.0263591405,14.42385 0.0691933766,14.42385 Z M0.296540753,8.75002 L0.49670574,2.1778 L0.50082367,2.1778 L0.700990345,8.75002 L0.296540753,8.75002 Z" id="Shape"></path>
+                </g>
+                <line x1="6.0552803" y1="1919" x2="6.0552803" y2="1933" id="Path" stroke="#00AEEF" stroke-width="0.5"></line>
+                <text id="Margins" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="5.87878788" y="1953">M</tspan>
+                    <tspan x="5.87878788" y="1969">a</tspan>
+                    <tspan x="5.87878788" y="1985">r</tspan>
+                    <tspan x="5.87878788" y="2001">g</tspan>
+                    <tspan x="5.87878788" y="2017">i</tspan>
+                    <tspan x="5.87878788" y="2033">n</tspan>
+                    <tspan x="5.87878788" y="2049">s</tspan>
+                </text>
+                <text id="Leading-and-trailing-margins-on-the-left-and-right-side-of-each-symbol" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="5.87878788" y="1971">L</tspan>
+                    <tspan x="5.87878788" y="1987">e</tspan>
+                    <tspan x="5.87878788" y="2003">a</tspan>
+                    <tspan x="5.87878788" y="2019">d</tspan>
+                    <tspan x="5.87878788" y="2035">i</tspan>
+                    <tspan x="5.87878788" y="2051">n</tspan>
+                    <tspan x="5.87878788" y="2067">g </tspan>
+                    <tspan x="5.87878788" y="2083">a</tspan>
+                    <tspan x="5.87878788" y="2099">n</tspan>
+                    <tspan x="5.87878788" y="2115">d </tspan>
+                    <tspan x="5.87878788" y="2131">t</tspan>
+                    <tspan x="5.87878788" y="2147">r</tspan>
+                    <tspan x="5.87878788" y="2163">a</tspan>
+                    <tspan x="5.87878788" y="2179">i</tspan>
+                    <tspan x="5.87878788" y="2195">l</tspan>
+                    <tspan x="5.87878788" y="2211">i</tspan>
+                    <tspan x="5.87878788" y="2227">n</tspan>
+                    <tspan x="5.87878788" y="2243">g </tspan>
+                    <tspan x="5.87878788" y="2259">m</tspan>
+                    <tspan x="5.87878788" y="2275">a</tspan>
+                    <tspan x="5.87878788" y="2291">r</tspan>
+                    <tspan x="5.87878788" y="2307">g</tspan>
+                    <tspan x="5.87878788" y="2323">i</tspan>
+                    <tspan x="5.87878788" y="2339">n</tspan>
+                    <tspan x="5.87878788" y="2355">s </tspan>
+                    <tspan x="5.87878788" y="2371">o</tspan>
+                    <tspan x="5.87878788" y="2387">n </tspan>
+                    <tspan x="5.87878788" y="2403">t</tspan>
+                    <tspan x="5.87878788" y="2419">h</tspan>
+                    <tspan x="5.87878788" y="2435">e </tspan>
+                    <tspan x="5.87878788" y="2451">l</tspan>
+                    <tspan x="5.87878788" y="2467">e</tspan>
+                    <tspan x="5.87878788" y="2483">f</tspan>
+                    <tspan x="5.87878788" y="2499">t </tspan>
+                    <tspan x="5.87878788" y="2515">a</tspan>
+                    <tspan x="5.87878788" y="2531">n</tspan>
+                    <tspan x="5.87878788" y="2547">d </tspan>
+                    <tspan x="5.87878788" y="2563">r</tspan>
+                    <tspan x="5.87878788" y="2579">i</tspan>
+                    <tspan x="5.87878788" y="2595">g</tspan>
+                    <tspan x="5.87878788" y="2611">h</tspan>
+                    <tspan x="5.87878788" y="2627">t </tspan>
+                    <tspan x="5.87878788" y="2643">s</tspan>
+                    <tspan x="5.87878788" y="2659">i</tspan>
+                    <tspan x="5.87878788" y="2675">d</tspan>
+                    <tspan x="5.87878788" y="2691">e </tspan>
+                    <tspan x="5.87878788" y="2707">o</tspan>
+                    <tspan x="5.87878788" y="2723">f </tspan>
+                    <tspan x="5.87878788" y="2739">e</tspan>
+                    <tspan x="5.87878788" y="2755">a</tspan>
+                    <tspan x="5.87878788" y="2771">c</tspan>
+                    <tspan x="5.87878788" y="2787">h </tspan>
+                    <tspan x="5.87878788" y="2803">s</tspan>
+                    <tspan x="5.87878788" y="2819">y</tspan>
+                    <tspan x="5.87878788" y="2835">m</tspan>
+                    <tspan x="5.87878788" y="2851">b</tspan>
+                    <tspan x="5.87878788" y="2867">o</tspan>
+                    <tspan x="5.87878788" y="2883">l</tspan>
+                </text>
+                <text id="can-be-adjusted-by-modifying-the-x-location-of-the-margin-guidelines." fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="5.87878788" y="1989">c</tspan>
+                    <tspan x="5.87878788" y="2005">a</tspan>
+                    <tspan x="5.87878788" y="2021">n </tspan>
+                    <tspan x="5.87878788" y="2037">b</tspan>
+                    <tspan x="5.87878788" y="2053">e </tspan>
+                    <tspan x="5.87878788" y="2069">a</tspan>
+                    <tspan x="5.87878788" y="2085">d</tspan>
+                    <tspan x="5.87878788" y="2101">j</tspan>
+                    <tspan x="5.87878788" y="2117">u</tspan>
+                    <tspan x="5.87878788" y="2133">s</tspan>
+                    <tspan x="5.87878788" y="2149">t</tspan>
+                    <tspan x="5.87878788" y="2165">e</tspan>
+                    <tspan x="5.87878788" y="2181">d </tspan>
+                    <tspan x="5.87878788" y="2197">b</tspan>
+                    <tspan x="5.87878788" y="2213">y </tspan>
+                    <tspan x="5.87878788" y="2229">m</tspan>
+                    <tspan x="5.87878788" y="2245">o</tspan>
+                    <tspan x="5.87878788" y="2261">d</tspan>
+                    <tspan x="5.87878788" y="2277">i</tspan>
+                    <tspan x="5.87878788" y="2293">f</tspan>
+                    <tspan x="5.87878788" y="2309">y</tspan>
+                    <tspan x="5.87878788" y="2325">i</tspan>
+                    <tspan x="5.87878788" y="2341">n</tspan>
+                    <tspan x="5.87878788" y="2357">g </tspan>
+                    <tspan x="5.87878788" y="2373">t</tspan>
+                    <tspan x="5.87878788" y="2389">h</tspan>
+                    <tspan x="5.87878788" y="2405">e </tspan>
+                    <tspan x="5.87878788" y="2421">x</tspan>
+                    <tspan x="5.87878788" y="2437">-</tspan>
+                    <tspan x="5.87878788" y="2453">l</tspan>
+                    <tspan x="5.87878788" y="2469">o</tspan>
+                    <tspan x="5.87878788" y="2485">c</tspan>
+                    <tspan x="5.87878788" y="2501">a</tspan>
+                    <tspan x="5.87878788" y="2517">t</tspan>
+                    <tspan x="5.87878788" y="2533">i</tspan>
+                    <tspan x="5.87878788" y="2549">o</tspan>
+                    <tspan x="5.87878788" y="2565">n </tspan>
+                    <tspan x="5.87878788" y="2581">o</tspan>
+                    <tspan x="5.87878788" y="2597">f </tspan>
+                    <tspan x="5.87878788" y="2613">t</tspan>
+                    <tspan x="5.87878788" y="2629">h</tspan>
+                    <tspan x="5.87878788" y="2645">e </tspan>
+                    <tspan x="5.87878788" y="2661">m</tspan>
+                    <tspan x="5.87878788" y="2677">a</tspan>
+                    <tspan x="5.87878788" y="2693">r</tspan>
+                    <tspan x="5.87878788" y="2709">g</tspan>
+                    <tspan x="5.87878788" y="2725">i</tspan>
+                    <tspan x="5.87878788" y="2741">n </tspan>
+                    <tspan x="5.87878788" y="2757">g</tspan>
+                    <tspan x="5.87878788" y="2773">u</tspan>
+                    <tspan x="5.87878788" y="2789">i</tspan>
+                    <tspan x="5.87878788" y="2805">d</tspan>
+                    <tspan x="5.87878788" y="2821">e</tspan>
+                    <tspan x="5.87878788" y="2837">l</tspan>
+                    <tspan x="5.87878788" y="2853">i</tspan>
+                    <tspan x="5.87878788" y="2869">n</tspan>
+                    <tspan x="5.87878788" y="2885">e</tspan>
+                    <tspan x="5.87878788" y="2901">s</tspan>
+                    <tspan x="5.87878788" y="2917">.</tspan>
+                </text>
+                <text id="Modifications-are-automatically-applied-proportionally-to-all" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="5.87878788" y="2007">M</tspan>
+                    <tspan x="5.87878788" y="2023">o</tspan>
+                    <tspan x="5.87878788" y="2039">d</tspan>
+                    <tspan x="5.87878788" y="2055">i</tspan>
+                    <tspan x="5.87878788" y="2071">f</tspan>
+                    <tspan x="5.87878788" y="2087">i</tspan>
+                    <tspan x="5.87878788" y="2103">c</tspan>
+                    <tspan x="5.87878788" y="2119">a</tspan>
+                    <tspan x="5.87878788" y="2135">t</tspan>
+                    <tspan x="5.87878788" y="2151">i</tspan>
+                    <tspan x="5.87878788" y="2167">o</tspan>
+                    <tspan x="5.87878788" y="2183">n</tspan>
+                    <tspan x="5.87878788" y="2199">s </tspan>
+                    <tspan x="5.87878788" y="2215">a</tspan>
+                    <tspan x="5.87878788" y="2231">r</tspan>
+                    <tspan x="5.87878788" y="2247">e </tspan>
+                    <tspan x="5.87878788" y="2263">a</tspan>
+                    <tspan x="5.87878788" y="2279">u</tspan>
+                    <tspan x="5.87878788" y="2295">t</tspan>
+                    <tspan x="5.87878788" y="2311">o</tspan>
+                    <tspan x="5.87878788" y="2327">m</tspan>
+                    <tspan x="5.87878788" y="2343">a</tspan>
+                    <tspan x="5.87878788" y="2359">t</tspan>
+                    <tspan x="5.87878788" y="2375">i</tspan>
+                    <tspan x="5.87878788" y="2391">c</tspan>
+                    <tspan x="5.87878788" y="2407">a</tspan>
+                    <tspan x="5.87878788" y="2423">l</tspan>
+                    <tspan x="5.87878788" y="2439">l</tspan>
+                    <tspan x="5.87878788" y="2455">y </tspan>
+                    <tspan x="5.87878788" y="2471">a</tspan>
+                    <tspan x="5.87878788" y="2487">p</tspan>
+                    <tspan x="5.87878788" y="2503">p</tspan>
+                    <tspan x="5.87878788" y="2519">l</tspan>
+                    <tspan x="5.87878788" y="2535">i</tspan>
+                    <tspan x="5.87878788" y="2551">e</tspan>
+                    <tspan x="5.87878788" y="2567">d </tspan>
+                    <tspan x="5.87878788" y="2583">p</tspan>
+                    <tspan x="5.87878788" y="2599">r</tspan>
+                    <tspan x="5.87878788" y="2615">o</tspan>
+                    <tspan x="5.87878788" y="2631">p</tspan>
+                    <tspan x="5.87878788" y="2647">o</tspan>
+                    <tspan x="5.87878788" y="2663">r</tspan>
+                    <tspan x="5.87878788" y="2679">t</tspan>
+                    <tspan x="5.87878788" y="2695">i</tspan>
+                    <tspan x="5.87878788" y="2711">o</tspan>
+                    <tspan x="5.87878788" y="2727">n</tspan>
+                    <tspan x="5.87878788" y="2743">a</tspan>
+                    <tspan x="5.87878788" y="2759">l</tspan>
+                    <tspan x="5.87878788" y="2775">l</tspan>
+                    <tspan x="5.87878788" y="2791">y </tspan>
+                    <tspan x="5.87878788" y="2807">t</tspan>
+                    <tspan x="5.87878788" y="2823">o </tspan>
+                    <tspan x="5.87878788" y="2839">a</tspan>
+                    <tspan x="5.87878788" y="2855">l</tspan>
+                    <tspan x="5.87878788" y="2871">l</tspan>
+                </text>
+                <text id="scales-and-weights." fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="5.87878788" y="2025">s</tspan>
+                    <tspan x="5.87878788" y="2041">c</tspan>
+                    <tspan x="5.87878788" y="2057">a</tspan>
+                    <tspan x="5.87878788" y="2073">l</tspan>
+                    <tspan x="5.87878788" y="2089">e</tspan>
+                    <tspan x="5.87878788" y="2105">s </tspan>
+                    <tspan x="5.87878788" y="2121">a</tspan>
+                    <tspan x="5.87878788" y="2137">n</tspan>
+                    <tspan x="5.87878788" y="2153">d </tspan>
+                    <tspan x="5.87878788" y="2169">w</tspan>
+                    <tspan x="5.87878788" y="2185">e</tspan>
+                    <tspan x="5.87878788" y="2201">i</tspan>
+                    <tspan x="5.87878788" y="2217">g</tspan>
+                    <tspan x="5.87878788" y="2233">h</tspan>
+                    <tspan x="5.87878788" y="2249">t</tspan>
+                    <tspan x="5.87878788" y="2265">s</tspan>
+                    <tspan x="5.87878788" y="2281">.</tspan>
+                </text>
+                <g id="Group" transform="translate(9.7822, 1914.5174)" fill="#000000" fill-rule="nonzero">
+                    <path d="M0.0248061333,20.347834 L0.0958065541,22.056824 C0.131714577,22.925964 0.172927513,22.867374 0.2116919,21.841984 L0.658504172,10.054874 L0.61810728,9.07830404 L0.174559601,20.757994 C0.159869974,21.158384 0.145996391,21.256044 0.126410083,20.787294 L0.0774441025,19.625184 C0.057857794,19.166198 0.0623462447,18.824401 0.0790761904,18.4630728 L0.558531475,7.66230404 L0.517729277,6.69550404 L0.0333752216,17.584166 C-0.00783771431,18.5021352 -0.011102308,19.478698 0.0248061333,20.347834 Z M0.292893497,2.15450404 C0.275347507,2.56460404 0.274123232,3.14080404 0.283916595,3.53140404 C0.293709541,3.89280404 0.312888036,4.12710404 0.33982083,3.96110404 C0.401026216,3.61930404 0.464680152,3.56070404 0.524255957,4.49820404 L0.499774638,5.95330404 C0.485492824,6.78340404 0.492838473,7.36930404 0.515280727,7.91620404 L0.611171115,10.230654 C0.631574303,10.718934 0.648709973,10.738464 0.672376501,10.640804 L0.716855702,10.445494 L0.74460454,11.119324 L0.74297078,11.675964 C0.741337021,12.174014 0.746643605,12.554874 0.767046793,13.033384 L0.798873761,13.775574 C0.818867465,14.254084 0.844573059,14.283384 0.864161456,13.814634 L0.985757438,10.894714 C1.00534584,10.425964 1.00453105,9.83026404 0.984533164,9.35174404 L0.95230089,8.59002404 C0.932303007,8.11150404 0.916801097,7.95530404 0.896803215,7.99430404 L0.87273138,8.04310404 L0.845797334,7.40840404 L0.856001017,6.28530404 C0.861303422,5.71890404 0.854776742,5.27950404 0.830291245,4.69350404 L0.738483165,2.50600404 C0.598928367,-0.814295964 0.41367427,-0.736195964 0.292893497,2.15450404 Z M0.355326918,2.52560404 C0.456929196,0.748204036 0.594440752,1.05100404 0.687477284,3.27750404 L0.789079562,5.68960404 C0.798873761,5.92400404 0.800503342,6.10960404 0.797649486,6.45140404 L0.784182463,7.93570404 L0.847021608,9.42010404 L0.888237469,9.36151404 C0.898846459,9.35174404 0.902109799,9.37127404 0.910270238,9.56658404 L0.934346251,10.142764 L0.832334488,12.584164 L0.808258476,12.007994 C0.800098036,11.812684 0.798873761,11.734554 0.799283246,11.470884 L0.802137101,10.494324 L0.73970744,9.00994404 L0.676049326,9.26385404 C0.662586481,9.33221404 0.656465107,9.30291404 0.646261423,9.06854404 L0.562613784,7.06660404 C0.552004794,6.83220404 0.550780519,6.66620404 0.5573072,6.29510404 L0.594031267,4.20530404 C0.528743572,2.75020404 0.443871657,2.12520404 0.358995564,2.72090404 C0.352468884,2.75990404 0.350020334,2.63300404 0.355326918,2.52560404 Z" id="Shape"></path>
+                </g>
+                <text id="Exporting" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="9.76515152" y="1953">E</tspan>
+                    <tspan x="9.76515152" y="1969">x</tspan>
+                    <tspan x="9.76515152" y="1985">p</tspan>
+                    <tspan x="9.76515152" y="2001">o</tspan>
+                    <tspan x="9.76515152" y="2017">r</tspan>
+                    <tspan x="9.76515152" y="2033">t</tspan>
+                    <tspan x="9.76515152" y="2049">i</tspan>
+                    <tspan x="9.76515152" y="2065">n</tspan>
+                    <tspan x="9.76515152" y="2081">g</tspan>
+                </text>
+                <text id="Symbols-should-be-outlined-when-exporting-to-ensure-the" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="9.76515152" y="1971">S</tspan>
+                    <tspan x="9.76515152" y="1987">y</tspan>
+                    <tspan x="9.76515152" y="2003">m</tspan>
+                    <tspan x="9.76515152" y="2019">b</tspan>
+                    <tspan x="9.76515152" y="2035">o</tspan>
+                    <tspan x="9.76515152" y="2051">l</tspan>
+                    <tspan x="9.76515152" y="2067">s </tspan>
+                    <tspan x="9.76515152" y="2083">s</tspan>
+                    <tspan x="9.76515152" y="2099">h</tspan>
+                    <tspan x="9.76515152" y="2115">o</tspan>
+                    <tspan x="9.76515152" y="2131">u</tspan>
+                    <tspan x="9.76515152" y="2147">l</tspan>
+                    <tspan x="9.76515152" y="2163">d </tspan>
+                    <tspan x="9.76515152" y="2179">b</tspan>
+                    <tspan x="9.76515152" y="2195">e </tspan>
+                    <tspan x="9.76515152" y="2211">o</tspan>
+                    <tspan x="9.76515152" y="2227">u</tspan>
+                    <tspan x="9.76515152" y="2243">t</tspan>
+                    <tspan x="9.76515152" y="2259">l</tspan>
+                    <tspan x="9.76515152" y="2275">i</tspan>
+                    <tspan x="9.76515152" y="2291">n</tspan>
+                    <tspan x="9.76515152" y="2307">e</tspan>
+                    <tspan x="9.76515152" y="2323">d </tspan>
+                    <tspan x="9.76515152" y="2339">w</tspan>
+                    <tspan x="9.76515152" y="2355">h</tspan>
+                    <tspan x="9.76515152" y="2371">e</tspan>
+                    <tspan x="9.76515152" y="2387">n </tspan>
+                    <tspan x="9.76515152" y="2403">e</tspan>
+                    <tspan x="9.76515152" y="2419">x</tspan>
+                    <tspan x="9.76515152" y="2435">p</tspan>
+                    <tspan x="9.76515152" y="2451">o</tspan>
+                    <tspan x="9.76515152" y="2467">r</tspan>
+                    <tspan x="9.76515152" y="2483">t</tspan>
+                    <tspan x="9.76515152" y="2499">i</tspan>
+                    <tspan x="9.76515152" y="2515">n</tspan>
+                    <tspan x="9.76515152" y="2531">g </tspan>
+                    <tspan x="9.76515152" y="2547">t</tspan>
+                    <tspan x="9.76515152" y="2563">o </tspan>
+                    <tspan x="9.76515152" y="2579">e</tspan>
+                    <tspan x="9.76515152" y="2595">n</tspan>
+                    <tspan x="9.76515152" y="2611">s</tspan>
+                    <tspan x="9.76515152" y="2627">u</tspan>
+                    <tspan x="9.76515152" y="2643">r</tspan>
+                    <tspan x="9.76515152" y="2659">e </tspan>
+                    <tspan x="9.76515152" y="2675">t</tspan>
+                    <tspan x="9.76515152" y="2691">h</tspan>
+                    <tspan x="9.76515152" y="2707">e</tspan>
+                </text>
+                <text id="design-is-preserved-when-submitting-to-Xcode." fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="9.76515152" y="1989">d</tspan>
+                    <tspan x="9.76515152" y="2005">e</tspan>
+                    <tspan x="9.76515152" y="2021">s</tspan>
+                    <tspan x="9.76515152" y="2037">i</tspan>
+                    <tspan x="9.76515152" y="2053">g</tspan>
+                    <tspan x="9.76515152" y="2069">n </tspan>
+                    <tspan x="9.76515152" y="2085">i</tspan>
+                    <tspan x="9.76515152" y="2101">s </tspan>
+                    <tspan x="9.76515152" y="2117">p</tspan>
+                    <tspan x="9.76515152" y="2133">r</tspan>
+                    <tspan x="9.76515152" y="2149">e</tspan>
+                    <tspan x="9.76515152" y="2165">s</tspan>
+                    <tspan x="9.76515152" y="2181">e</tspan>
+                    <tspan x="9.76515152" y="2197">r</tspan>
+                    <tspan x="9.76515152" y="2213">v</tspan>
+                    <tspan x="9.76515152" y="2229">e</tspan>
+                    <tspan x="9.76515152" y="2245">d </tspan>
+                    <tspan x="9.76515152" y="2261">w</tspan>
+                    <tspan x="9.76515152" y="2277">h</tspan>
+                    <tspan x="9.76515152" y="2293">e</tspan>
+                    <tspan x="9.76515152" y="2309">n </tspan>
+                    <tspan x="9.76515152" y="2325">s</tspan>
+                    <tspan x="9.76515152" y="2341">u</tspan>
+                    <tspan x="9.76515152" y="2357">b</tspan>
+                    <tspan x="9.76515152" y="2373">m</tspan>
+                    <tspan x="9.76515152" y="2389">i</tspan>
+                    <tspan x="9.76515152" y="2405">t</tspan>
+                    <tspan x="9.76515152" y="2421">t</tspan>
+                    <tspan x="9.76515152" y="2437">i</tspan>
+                    <tspan x="9.76515152" y="2453">n</tspan>
+                    <tspan x="9.76515152" y="2469">g </tspan>
+                    <tspan x="9.76515152" y="2485">t</tspan>
+                    <tspan x="9.76515152" y="2501">o </tspan>
+                    <tspan x="9.76515152" y="2517">X</tspan>
+                    <tspan x="9.76515152" y="2533">c</tspan>
+                    <tspan x="9.76515152" y="2549">o</tspan>
+                    <tspan x="9.76515152" y="2565">d</tspan>
+                    <tspan x="9.76515152" y="2581">e</tspan>
+                    <tspan x="9.76515152" y="2597">.</tspan>
+                </text>
+                <text id="template-version" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="22.3636364" y="1933">T</tspan>
+                    <tspan x="22.3636364" y="1949">e</tspan>
+                    <tspan x="22.3636364" y="1965">m</tspan>
+                    <tspan x="22.3636364" y="1981">p</tspan>
+                    <tspan x="22.3636364" y="1997">l</tspan>
+                    <tspan x="22.3636364" y="2013">a</tspan>
+                    <tspan x="22.3636364" y="2029">t</tspan>
+                    <tspan x="22.3636364" y="2045">e </tspan>
+                    <tspan x="22.3636364" y="2061">v</tspan>
+                    <tspan x="22.3636364" y="2077">.</tspan>
+                    <tspan x="22.3636364" y="2093">4</tspan>
+                    <tspan x="22.3636364" y="2109">.</tspan>
+                    <tspan x="22.3636364" y="2125">0</tspan>
+                </text>
+                <text id="Requires-Xcode-14-or-greater" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="21.7045455" y="1951">R</tspan>
+                    <tspan x="21.7045455" y="1967">e</tspan>
+                    <tspan x="21.7045455" y="1983">q</tspan>
+                    <tspan x="21.7045455" y="1999">u</tspan>
+                    <tspan x="21.7045455" y="2015">i</tspan>
+                    <tspan x="21.7045455" y="2031">r</tspan>
+                    <tspan x="21.7045455" y="2047">e</tspan>
+                    <tspan x="21.7045455" y="2063">s </tspan>
+                    <tspan x="21.7045455" y="2079">X</tspan>
+                    <tspan x="21.7045455" y="2095">c</tspan>
+                    <tspan x="21.7045455" y="2111">o</tspan>
+                    <tspan x="21.7045455" y="2127">d</tspan>
+                    <tspan x="21.7045455" y="2143">e </tspan>
+                    <tspan x="21.7045455" y="2159">1</tspan>
+                    <tspan x="21.7045455" y="2175">4 </tspan>
+                    <tspan x="21.7045455" y="2191">o</tspan>
+                    <tspan x="21.7045455" y="2207">r </tspan>
+                    <tspan x="21.7045455" y="2223">g</tspan>
+                    <tspan x="21.7045455" y="2239">r</tspan>
+                    <tspan x="21.7045455" y="2255">e</tspan>
+                    <tspan x="21.7045455" y="2271">a</tspan>
+                    <tspan x="21.7045455" y="2287">t</tspan>
+                    <tspan x="21.7045455" y="2303">e</tspan>
+                    <tspan x="21.7045455" y="2319">r</tspan>
+                </text>
+                <text id="descriptive-name" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="22.0530303" y="1969">G</tspan>
+                    <tspan x="22.0530303" y="1985">e</tspan>
+                    <tspan x="22.0530303" y="2001">n</tspan>
+                    <tspan x="22.0530303" y="2017">e</tspan>
+                    <tspan x="22.0530303" y="2033">r</tspan>
+                    <tspan x="22.0530303" y="2049">a</tspan>
+                    <tspan x="22.0530303" y="2065">t</tspan>
+                    <tspan x="22.0530303" y="2081">e</tspan>
+                    <tspan x="22.0530303" y="2097">d </tspan>
+                    <tspan x="22.0530303" y="2113">f</tspan>
+                    <tspan x="22.0530303" y="2129">r</tspan>
+                    <tspan x="22.0530303" y="2145">o</tspan>
+                    <tspan x="22.0530303" y="2161">m </tspan>
+                    <tspan x="22.0530303" y="2177">c</tspan>
+                    <tspan x="22.0530303" y="2193">l</tspan>
+                    <tspan x="22.0530303" y="2209">o</tspan>
+                    <tspan x="22.0530303" y="2225">c</tspan>
+                    <tspan x="22.0530303" y="2241">k</tspan>
+                </text>
+                <text id="Typeset-at-100-points" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="22.0606061" y="1987">T</tspan>
+                    <tspan x="22.0606061" y="2003">y</tspan>
+                    <tspan x="22.0606061" y="2019">p</tspan>
+                    <tspan x="22.0606061" y="2035">e</tspan>
+                    <tspan x="22.0606061" y="2051">s</tspan>
+                    <tspan x="22.0606061" y="2067">e</tspan>
+                    <tspan x="22.0606061" y="2083">t </tspan>
+                    <tspan x="22.0606061" y="2099">a</tspan>
+                    <tspan x="22.0606061" y="2115">t </tspan>
+                    <tspan x="22.0606061" y="2131">1</tspan>
+                    <tspan x="22.0606061" y="2147">0</tspan>
+                    <tspan x="22.0606061" y="2163">0 </tspan>
+                    <tspan x="22.0606061" y="2179">p</tspan>
+                    <tspan x="22.0606061" y="2195">o</tspan>
+                    <tspan x="22.0606061" y="2211">i</tspan>
+                    <tspan x="22.0606061" y="2227">n</tspan>
+                    <tspan x="22.0606061" y="2243">t</tspan>
+                    <tspan x="22.0606061" y="2259">s</tspan>
+                </text>
+                <text id="Small" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="726">S</tspan>
+                    <tspan x="1.99242424" y="742">m</tspan>
+                    <tspan x="1.99242424" y="758">a</tspan>
+                    <tspan x="1.99242424" y="774">l</tspan>
+                    <tspan x="1.99242424" y="790">l</tspan>
+                </text>
+                <text id="Medium" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="1156">M</tspan>
+                    <tspan x="1.99242424" y="1172">e</tspan>
+                    <tspan x="1.99242424" y="1188">d</tspan>
+                    <tspan x="1.99242424" y="1204">i</tspan>
+                    <tspan x="1.99242424" y="1220">u</tspan>
+                    <tspan x="1.99242424" y="1236">m</tspan>
+                </text>
+                <text id="Large" fill="#000000" fill-rule="nonzero" font-family="Helvetica" font-size="13" font-weight="normal">
+                    <tspan x="1.99242424" y="1586">L</tspan>
+                    <tspan x="1.99242424" y="1602">a</tspan>
+                    <tspan x="1.99242424" y="1618">r</tspan>
+                    <tspan x="1.99242424" y="1634">g</tspan>
+                    <tspan x="1.99242424" y="1650">e</tspan>
+                </text>
+            </g>
+            <g id="Guides" transform="translate(263, 625.041)">
+                <g id="H-reference" transform="translate(76.9937, 0.5)" fill="#27AAE1" fill-rule="nonzero">
+                    <path d="M0,70.459 L2.644096,70.459 L28.334446,3.3267 L29.036646,3.3267 L29.036646,0 L27.128946,0 L0,70.459 Z M10.694846,45.9791 L45.987846,45.9791 L45.237846,43.7305 L11.444846,43.7305 L10.694846,45.9791 Z M54.125946,70.459 L56.770046,70.459 L29.644546,0 L28.438946,0 L28.438946,3.3267 L54.125946,70.459 Z" id="Shape"></path>
+                </g>
+                <line x1="0" y1="70.959" x2="2773" y2="70.959" id="Baseline-S" stroke="#27AAE1" stroke-width="0.5"></line>
+                <line x1="0" y1="0.5" x2="2773" y2="0.5" id="Capline-S" stroke="#27AAE1" stroke-width="0.5"></line>
+                <g id="H-reference" transform="translate(76.9937, 430.5)" fill="#27AAE1" fill-rule="nonzero">
+                    <path d="M0,70.459 L2.644096,70.459 L28.334446,3.3267 L29.036646,3.3267 L29.036646,0 L27.128946,0 L0,70.459 Z M10.694846,45.9791 L45.987846,45.9791 L45.237846,43.7305 L11.444846,43.7305 L10.694846,45.9791 Z M54.125946,70.459 L56.770046,70.459 L29.644546,0 L28.438946,0 L28.438946,3.3267 L54.125946,70.459 Z" id="Shape"></path>
+                </g>
+                <line x1="0" y1="500.959" x2="2773" y2="500.959" id="Baseline-M" stroke="#27AAE1" stroke-width="0.5"></line>
+                <line x1="0" y1="430.499" x2="2773" y2="430.499" id="Capline-M" stroke="#27AAE1" stroke-width="0.5"></line>
+                <g id="H-reference" transform="translate(76.9937, 860.5)" fill="#27AAE1" fill-rule="nonzero">
+                    <path d="M0,70.459 L2.644096,70.459 L28.334446,3.3267 L29.036646,3.3267 L29.036646,0 L27.128946,0 L0,70.459 Z M10.694846,45.9791 L45.987846,45.9791 L45.237846,43.7305 L11.444846,43.7305 L10.694846,45.9791 Z M54.125946,70.459 L56.770046,70.459 L29.644546,0 L28.438946,0 L28.438946,3.3267 L54.125946,70.459 Z" id="Shape"></path>
+                </g>
+                <line x1="0" y1="930.959" x2="2773" y2="930.959" id="Baseline-L" stroke="#27AAE1" stroke-width="0.5"></line>
+                <line x1="0" y1="860.499" x2="2773" y2="860.499" id="Capline-L" stroke="#27AAE1" stroke-width="0.5"></line>
+                <line x1="1128.32" y1="405.749" x2="1128.32" y2="525.079" id="left-margin-Regular-M" stroke="#00AEEF" stroke-width="0.5"></line>
+                <line x1="1245.37" y1="405.749" x2="1245.37" y2="525.079" id="right-margin-Regular-M" stroke="#00AEEF" stroke-width="0.5"></line>
+            </g>
+            <g id="Symbols" transform="translate(1400, 1036)" fill="#231F20" fill-rule="nonzero">
+                <g id="Regular-M" transform="translate(0, 0)">
+                    <path d="M2.04000779,44.52 L97.7200078,44.52 C97.7200078,44.52 99.8400078,45.04 100.000008,47.96 L100.000008,57.2 C100.000008,57.2 99.6800078,60.24 95.0000078,59.8 C95.0000078,59.8 91.2400078,102.72 84.7600078,101.92 L15.2800078,101.92 C15.2800078,101.92 9.36000779,106.8 4.72000779,59.96 C4.72000779,59.96 0.760007786,59.84 7.78560616e-06,56.96 L7.78560616e-06,47.12 C7.78560616e-06,47.12 0.0800077856,44.48 2.04000779,44.48 L2.04000779,44.52 Z M38.4400078,87.8 L38.4400078,62.64 C38.4400078,61 37.0800078,59.64 35.4400078,59.64 L33.4400078,59.64 C31.8000078,59.64 30.4400078,61 30.4400078,62.64 L30.4400078,87.8 C30.4400078,89.44 31.8000078,90.8 33.4400078,90.8 L35.4400078,90.8 C37.0800078,90.8 38.4400078,89.44 38.4400078,87.8 Z M53.9600078,87.8 L53.9600078,62.64 C53.9600078,61 52.6000078,59.64 50.9600078,59.64 L48.9600078,59.64 C47.3200078,59.64 45.9600078,61 45.9600078,62.64 L45.9600078,87.8 C45.9600078,89.44 47.3200078,90.8 48.9600078,90.8 L50.9600078,90.8 C52.6000078,90.8 53.9600078,89.44 53.9600078,87.8 Z M69.3200078,87.8 L69.3200078,62.64 C69.3200078,61 67.9600078,59.64 66.3200078,59.64 L64.3200078,59.64 C62.6800078,59.64 61.3200078,61 61.3200078,62.64 L61.3200078,87.8 C61.3200078,89.44 62.6800078,90.8 64.3200078,90.8 L66.3200078,90.8 C67.9600078,90.8 69.3200078,89.44 69.3200078,87.8 Z M20.6000078,22.48 L41.4000078,36.32 L11.8000078,36.32 C13.3286232,30.1723077 18.3909474,24.6871858 20.0605714,23.0067471 L20.2317715,22.8358484 C20.4665735,22.6034651 20.6000078,22.48 20.6000078,22.48 Z M31.8400078,20.32 C40.1547066,14.5426506 46.4884386,18.9748991 46.7888509,19.191856 L46.8000078,19.2 L42.7200078,28 L42.6800078,28 Z M50.0000078,36.32 L84.6000078,36.32 C84.6000078,36.32 86.5600078,25.48 75.4800078,14.8 C75.4800078,14.8 74.3600078,12.6 75.7200078,12 C76.3200078,11.72 76.6800078,11.16 76.7200078,10.52 C76.8000078,9.36 76.5200078,7.64 74.4400078,6 L59.9200078,6 C59.9200078,6 55.6000078,8.8 58.5600078,11.88 C58.8800078,12.2 59.0800078,12.6 59.1600078,13.04 C59.2800078,13.72 59.2800078,14.72 58.4800078,15.32 C58.4800078,15.32 49.0000078,24.72 49.9600078,36.32 L50.0000078,36.32 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

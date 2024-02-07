@@ -59,7 +59,10 @@ struct LongRecipeThumbnail: View {
             })
             .buttonStyle(.plain)
             
-            Image(systemName: "trash")
+            Image("TrashIcon")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 20)
                 .onTapGesture {
                     withAnimation {
                         deleteScheduledMeals(moc, meal)
