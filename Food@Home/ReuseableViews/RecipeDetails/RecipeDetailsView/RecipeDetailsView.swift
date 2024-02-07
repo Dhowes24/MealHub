@@ -19,7 +19,7 @@ struct RecipeDetailsView: View {
     var body: some View {
         VStack {
             HStack {
-                subViewHeader(headerText: "")
+                subViewHeader(headerText: "", path: viewModel.path, showTabBar: $viewModel.showTabBar)
                 
                 Spacer()
                 

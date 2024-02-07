@@ -27,8 +27,17 @@ struct Header: View {
 }
 
 struct subViewHeader: View {
-    var headerText: String
     @Environment(\.dismiss) private var dismiss
+    var headerText: String
+    var path: NavigationPath
+    @Binding var showTabBar: Bool
+    
+    init(headerText: String, path: NavigationPath = NavigationPath(), showTabBar: Binding<Bool> = .constant(true)) {
+        self.headerText = headerText
+        self.path = path
+        self._showTabBar = showTabBar
+        
+    }
 
     var body: some View {
         HStack {
@@ -36,6 +45,9 @@ struct subViewHeader: View {
                 .frame(width: 24, height: 24)
                 .onTapGesture {
                     dismiss()
+                    if path.count <= 1 {
+                        showTabBar = true
+                    }
                 }
             
             Spacer()

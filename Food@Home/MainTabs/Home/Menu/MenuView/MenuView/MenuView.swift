@@ -18,8 +18,8 @@ struct MenuView: View {
     var body: some View {
         VStack {
             HStack {
-                subViewHeader(headerText: "")
-                
+                subViewHeader(headerText: "", path: viewModel.path, showTabBar: $viewModel.showTabBar)
+
                 Text ("\(viewModel.selectedDate.formatted(.dateTime.weekday())), \(viewModel.selectedDate.formatted(.dateTime.day().month()))")
                     .font(.customSystem(size: 16, weight: .bold))
                     .padding(.trailing, 16)
