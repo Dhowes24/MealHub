@@ -47,7 +47,7 @@ let makeAMealGuide = ArticleInformation(
                     ["All meals should have protein for satiety, energy stability and overall health benefits", "Mixing in vegetarian proteins to lower your intake of saturated fats", "Processed proteins (sausage and fake meat) can be time savers but spread them out to reduce your intake of salt"
                     ]),
         InfoBlock(blockTitle: "Condiments", blockBullets:
-                    ["Depending on your sill (and time), you can use the things in your home to create different sauces, marinades and seasonings", "This is essential for using up random ingredients and also adding variety... and excitement!"
+                    ["Depending on your skill (and time), you can use the things in your home to create different sauces, marinades and seasonings", "This is essential for using up random ingredients and also adding variety... and excitement!"
                     ])
     ]
 )

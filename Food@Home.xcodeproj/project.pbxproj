@@ -26,6 +26,24 @@
 		1EB43AE02B6D6C1B005D0886 /* RecipeDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43ADF2B6D6C1B005D0886 /* RecipeDisplayModel.swift */; };
 		1EB43AE22B6D6C4E005D0886 /* RecipeDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43AE12B6D6C4E005D0886 /* RecipeDisplayViewModel.swift */; };
 		1EE49B992B732119000D0F68 /* RecipeDetailsTestInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EE49B982B732119000D0F68 /* RecipeDetailsTestInfo.json */; };
+		1EE49B9A2B74221D000D0F68 /* Archivo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F72AF839910082CC4E /* Archivo-Bold.ttf */; };
+		1EE49B9B2B7422E3000D0F68 /* Archivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FD2AF83B8F0082CC4E /* Archivo-Regular.ttf */; };
+		1EE49B9C2B7422E8000D0F68 /* Archivo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75EC2AF839910082CC4E /* Archivo-Black.ttf */; };
+		1EE49B9D2B7422EB000D0F68 /* Archivo-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75EA2AF839910082CC4E /* Archivo-BlackItalic.ttf */; };
+		1EE49B9E2B7422EF000D0F68 /* Archivo-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75ED2AF839910082CC4E /* Archivo-MediumItalic.ttf */; };
+		1EE49B9F2B7422F1000D0F68 /* Archivo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75EE2AF839910082CC4E /* Archivo-SemiBold.ttf */; };
+		1EE49BA02B7422F3000D0F68 /* Archivo-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75EF2AF839910082CC4E /* Archivo-SemiBoldItalic.ttf */; };
+		1EE49BA12B7422F5000D0F68 /* Archivo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F02AF839910082CC4E /* Archivo-Medium.ttf */; };
+		1EE49BA22B7422F7000D0F68 /* Archivo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F12AF839910082CC4E /* Archivo-LightItalic.ttf */; };
+		1EE49BA32B7422F9000D0F68 /* Archivo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F22AF839910082CC4E /* Archivo-ExtraLight.ttf */; };
+		1EE49BA42B7422FB000D0F68 /* Archivo-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F32AF839910082CC4E /* Archivo-ThinItalic.ttf */; };
+		1EE49BA52B7422FD000D0F68 /* Archivo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F42AF839910082CC4E /* Archivo-BoldItalic.ttf */; };
+		1EE49BA62B742300000D0F68 /* Archivo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F52AF839910082CC4E /* Archivo-Italic.ttf */; };
+		1EE49BA72B742302000D0F68 /* Archivo-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F62AF839910082CC4E /* Archivo-ExtraBoldItalic.ttf */; };
+		1EE49BA82B742303000D0F68 /* Archivo-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F82AF839910082CC4E /* Archivo-ExtraLightItalic.ttf */; };
+		1EE49BA92B742305000D0F68 /* Archivo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F92AF839910082CC4E /* Archivo-ExtraBold.ttf */; };
+		1EE49BAA2B742308000D0F68 /* Archivo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FA2AF839910082CC4E /* Archivo-Light.ttf */; };
+		1EE49BAB2B74230A000D0F68 /* Archivo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FB2AF839910082CC4E /* Archivo-Thin.ttf */; };
 		6B1811232B3240EB00D81FAB /* homeMealSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1811222B3240EB00D81FAB /* homeMealSection.swift */; };
 		6B5F76052AF83FB80082CC4E /* Noto in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F76042AF83FB70082CC4E /* Noto */; };
 		6B5F76082AF842A60082CC4E /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F76072AF842A60082CC4E /* Logo.swift */; };
@@ -400,6 +418,7 @@
 		6B5F75E92AF839910082CC4E /* Archivo */ = {
 			isa = PBXGroup;
 			children = (
+				6B5F75F72AF839910082CC4E /* Archivo-Bold.ttf */,
 				6B5F75EA2AF839910082CC4E /* Archivo-BlackItalic.ttf */,
 				6B5F75FD2AF83B8F0082CC4E /* Archivo-Regular.ttf */,
 				6B5F75EC2AF839910082CC4E /* Archivo-Black.ttf */,
@@ -413,7 +432,6 @@
 				6B5F75F42AF839910082CC4E /* Archivo-BoldItalic.ttf */,
 				6B5F75F52AF839910082CC4E /* Archivo-Italic.ttf */,
 				6B5F75F62AF839910082CC4E /* Archivo-ExtraBoldItalic.ttf */,
-				6B5F75F72AF839910082CC4E /* Archivo-Bold.ttf */,
 				6B5F75F82AF839910082CC4E /* Archivo-ExtraLightItalic.ttf */,
 				6B5F75F92AF839910082CC4E /* Archivo-ExtraBold.ttf */,
 				6B5F75FA2AF839910082CC4E /* Archivo-Light.ttf */,
@@ -458,9 +476,9 @@
 		6B7388072A2FC66E00EBCE7B = {
 			isa = PBXGroup;
 			children = (
+				6BFF72AD2AF82BDC00255DDA /* Fonts */,
 				6B75CE502B2BA1BD00323037 /* CoreData */,
 				6B8877B72ADAF8E0002B9CDB /* Config.xcconfig */,
-				6BFF72AD2AF82BDC00255DDA /* Fonts */,
 				6B7388122A2FC66E00EBCE7B /* Food@Home */,
 				6B7388242A2FC66F00EBCE7B /* Food@HomeTests */,
 				6B73882E2A2FC66F00EBCE7B /* Food@HomeUITests */,
@@ -883,11 +901,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EE49BA52B7422FD000D0F68 /* Archivo-BoldItalic.ttf in Resources */,
+				1EE49BA72B742302000D0F68 /* Archivo-ExtraBoldItalic.ttf in Resources */,
+				1EE49BA92B742305000D0F68 /* Archivo-ExtraBold.ttf in Resources */,
+				1EE49B9A2B74221D000D0F68 /* Archivo-Bold.ttf in Resources */,
+				1EE49BA82B742303000D0F68 /* Archivo-ExtraLightItalic.ttf in Resources */,
 				6B73881C2A2FC66F00EBCE7B /* Preview Assets.xcassets in Resources */,
+				1EE49BA62B742300000D0F68 /* Archivo-Italic.ttf in Resources */,
 				6B5F76052AF83FB80082CC4E /* Noto in Resources */,
+				1EE49BA12B7422F5000D0F68 /* Archivo-Medium.ttf in Resources */,
+				1EE49BA42B7422FB000D0F68 /* Archivo-ThinItalic.ttf in Resources */,
+				1EE49B9F2B7422F1000D0F68 /* Archivo-SemiBold.ttf in Resources */,
+				1EE49BAB2B74230A000D0F68 /* Archivo-Thin.ttf in Resources */,
+				1EE49B9C2B7422E8000D0F68 /* Archivo-Black.ttf in Resources */,
 				6B7388182A2FC66F00EBCE7B /* Assets.xcassets in Resources */,
 				6B8877BC2ADB009A002B9CDB /* SearchRecipeTestInfo.json in Resources */,
+				1EE49BAA2B742308000D0F68 /* Archivo-Light.ttf in Resources */,
+				1EE49B9B2B7422E3000D0F68 /* Archivo-Regular.ttf in Resources */,
+				1EE49BA02B7422F3000D0F68 /* Archivo-SemiBoldItalic.ttf in Resources */,
+				1EE49BA22B7422F7000D0F68 /* Archivo-LightItalic.ttf in Resources */,
 				1EE49B992B732119000D0F68 /* RecipeDetailsTestInfo.json in Resources */,
+				1EE49B9E2B7422EF000D0F68 /* Archivo-MediumItalic.ttf in Resources */,
+				1EE49BA32B7422F9000D0F68 /* Archivo-ExtraLight.ttf in Resources */,
+				1EE49B9D2B7422EB000D0F68 /* Archivo-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
