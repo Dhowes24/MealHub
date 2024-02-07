@@ -38,7 +38,10 @@ struct IncludeExcludeFilter: View {
                             HStack {
                                 Text(element.key.description)
                                 
-                                Image(systemName: "trash.fill")
+                                Image("TrashIcon")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 20)
                                     .onTapGesture {
                                         deleteItemFromList(itemName: element.key.description)
                                     }

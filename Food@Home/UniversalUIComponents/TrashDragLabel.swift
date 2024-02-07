@@ -11,7 +11,9 @@ struct TrashLabel: View {
     var offset: CGSize
     
     var body: some View {
-        Image(systemName: "trash")
+        Image("TrashIcon")
+            .resizable()
+            .scaledToFit()
             .frame(width: 40)
             .foregroundColor(offWhite)
             .background(
