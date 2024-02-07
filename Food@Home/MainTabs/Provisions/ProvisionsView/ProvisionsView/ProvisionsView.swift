@@ -34,10 +34,10 @@ struct ProvisionsView: View {
                 )
                 
                 if viewModel.myKitchenShowing {
-                    kitchenList(deleteItems: viewModel.deleteItems, items: $viewModel.items, moveItemsToKitchen: viewModel.moveItemsToKitchen)
+                    provisionsList(deleteItems: viewModel.deleteItems, items: $viewModel.items, moveItemsToKitchen: viewModel.moveItemsToKitchen, ownedItems: true)
                     
                 } else {
-                    groceryList(deleteItems: viewModel.deleteItems, items: $viewModel.items, moveItemsToKitchen: viewModel.moveItemsToKitchen)
+                    provisionsList(deleteItems: viewModel.deleteItems, items: $viewModel.items, moveItemsToKitchen: viewModel.moveItemsToKitchen, ownedItems: false)
                 }
             }
             .padding(.horizontal, 16)

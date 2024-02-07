@@ -78,6 +78,7 @@ struct MealScheduler: View {
                             timeSelectors.append(TimeSelectorObject(date: nextAvaliableDate()))
                         }
                         .disabled(timeSelectors.count > 14)
+                        .tint(.blue)
                     }
                 }
                 .padding(.horizontal, 17)

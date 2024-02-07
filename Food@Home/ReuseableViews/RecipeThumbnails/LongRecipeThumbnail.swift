@@ -59,7 +59,7 @@ struct LongRecipeThumbnail: View {
             })
             .buttonStyle(.plain)
             
-            Image("TrashIcon")
+            Image("custom.trash")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 20)

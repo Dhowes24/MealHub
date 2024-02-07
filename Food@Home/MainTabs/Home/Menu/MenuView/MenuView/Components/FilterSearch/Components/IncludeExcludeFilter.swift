@@ -12,6 +12,7 @@ struct IncludeExcludeFilter: View {
     @Environment(\.dismiss) private var dismiss
     @State var include: Bool = true
     @State var itemString: String = ""
+    @State var firstItem: Bool = true
     
     var body: some View {
         VStack {
@@ -22,7 +23,8 @@ struct IncludeExcludeFilter: View {
             }
             
             let enumeratedItems = Array(dict.sorted(by: { $0.key < $1.key })).enumerated()
-            let arrayEnumeratedItems = Array(enumeratedItems)
+            let filteredArray = enumeratedItems.filter { $0.element.value == include }
+            let arrayEnumeratedItems = Array(filteredArray)
             
             VStack {
                 addItemInput(optionOne: "Include",
@@ -33,12 +35,20 @@ struct IncludeExcludeFilter: View {
                              disabled: itemString.isEmpty)
                 
                 ScrollView {
-                    ForEach(arrayEnumeratedItems, id: \.element.key)  { (index, element) in
-                        if element.value == include {
+                    VStack(spacing: 16) {
+                        ForEach(arrayEnumeratedItems, id: \.element.key)  { (index, element) in
+                            
+                            if index != arrayEnumeratedItems.first?.offset {
+                                SeparatorLine()
+                            }
+                            
                             HStack {
                                 Text(element.key.description)
+                                    .font(.customSystem(size: 16, weight: .semibold))
                                 
-                                Image("TrashIcon")
+                                Spacer()
+                                
+                                Image("custom.trash")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 20)
@@ -62,6 +72,9 @@ struct IncludeExcludeFilter: View {
                     }
                 }
         }
+        .onChange(of: include, perform: { _ in
+            firstItem = true
+        })
         .navigationBarBackButtonHidden(true)
         
     }
@@ -86,3 +99,4 @@ struct IncludeExcludeFilter: View {
     }
     return PreviewWrapper()
 }
+
