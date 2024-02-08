@@ -44,6 +44,7 @@
 		1EE49BA92B742305000D0F68 /* Archivo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F92AF839910082CC4E /* Archivo-ExtraBold.ttf */; };
 		1EE49BAA2B742308000D0F68 /* Archivo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FA2AF839910082CC4E /* Archivo-Light.ttf */; };
 		1EE49BAB2B74230A000D0F68 /* Archivo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FB2AF839910082CC4E /* Archivo-Thin.ttf */; };
+		1EE49BAE2B7479C5000D0F68 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE49BAD2B7479C5000D0F68 /* WrappingHStack */; };
 		6B1811232B3240EB00D81FAB /* homeMealSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1811222B3240EB00D81FAB /* homeMealSection.swift */; };
 		6B5F76052AF83FB80082CC4E /* Noto in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F76042AF83FB70082CC4E /* Noto */; };
 		6B5F76082AF842A60082CC4E /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F76072AF842A60082CC4E /* Logo.swift */; };
@@ -231,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EE49BAE2B7479C5000D0F68 /* WrappingHStack in Frameworks */,
 				6B737B072B5A2DFB00468581 /* WaterfallGrid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,6 +805,7 @@
 			name = "Food@Home";
 			packageProductDependencies = (
 				6B737B062B5A2DFB00468581 /* WaterfallGrid */,
+				1EE49BAD2B7479C5000D0F68 /* WrappingHStack */,
 			);
 			productName = "Food@Home";
 			productReference = 6B7388102A2FC66E00EBCE7B /* Food@Home.app */;
@@ -878,6 +881,7 @@
 			mainGroup = 6B7388072A2FC66E00EBCE7B;
 			packageReferences = (
 				6B737B052B5A2DFB00468581 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+				1EE49BAC2B7479C5000D0F68 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = 6B7388112A2FC66E00EBCE7B /* Products */;
 			projectDirPath = "";
@@ -1378,6 +1382,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1EE49BAC2B7479C5000D0F68 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.11;
+			};
+		};
 		6B737B052B5A2DFB00468581 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid.git";
@@ -1389,6 +1401,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1EE49BAD2B7479C5000D0F68 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EE49BAC2B7479C5000D0F68 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
 		6B737B062B5A2DFB00468581 /* WaterfallGrid */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6B737B052B5A2DFB00468581 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
