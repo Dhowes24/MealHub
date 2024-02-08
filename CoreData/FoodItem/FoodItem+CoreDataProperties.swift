@@ -1,6 +1,6 @@
 //
 //  FoodItem+CoreDataProperties.swift
-//  Food@Home
+//  MealHub
 //
 //  Created by Derek Howes on 1/10/24.
 //
