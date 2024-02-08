@@ -1,6 +1,6 @@
 //
 //  SavedRecipes+CoreDataClass.swift
-//  Food@Home
+//  MealHub
 //
 //  Created by Derek Howes on 2/5/24.
 //
