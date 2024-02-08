@@ -18,11 +18,6 @@ struct HomeView: View {
             
             VStack {
                 Header(headerText: "Welcome!")
-                    .onTapGesture {
-                        meals.forEach{ meal in
-                            viewModel.deleteScheduledMeal(moc: moc, meal: meal)
-                        }
-                    }
                 
                 dateLineup(viewModel: viewModel)
                 
