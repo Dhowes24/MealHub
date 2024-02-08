@@ -35,7 +35,7 @@ struct LargeRecipeDisplay: View {
             } else {
                 subViewHeader(headerText: recipeDisplayViewModel.groupName)
             }
-                        
+            
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(recipeDisplayViewModel.recipeList, id: \.self) { recipe in
@@ -44,13 +44,15 @@ struct LargeRecipeDisplay: View {
                 }
                 .padding(.horizontal)
                 
-                Button {
-                    recipeDisplayViewModel.loadAdditionalRecipes()
-                } label: {
-                    Text("Load Additonal Recipes")
+                if recipeDisplayViewModel.recipeList.count < 16 {
+                    Button {
+                        recipeDisplayViewModel.loadAdditionalRecipes()
+                    } label: {
+                        Text("Loading Additonal Recipes...")
+                    }
+                    .padding(16)
                 }
-                .padding(16)
-
+                
             }
             .padding(.horizontal, 16)
         }
@@ -58,7 +60,7 @@ struct LargeRecipeDisplay: View {
             recipeDisplayViewModel.loadRecipes(returnNumber:16)
         }
         .toolbar(.hidden, for: .navigationBar)
-
+        
     }
 }
 

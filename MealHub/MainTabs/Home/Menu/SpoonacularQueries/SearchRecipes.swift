@@ -35,8 +35,24 @@ func buildSearchRecipes(queryType: String,
     
     let returnNumber = dictToString(dict: [returnNumber.description: true], parameterName: "number")
         
-    let query = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?\(queryType)\(includeCuisine)\(dietaryNeed)\(intolerances)\(includeIngredients)\(excludeIngredients)\(courseType)&instructionsRequired=true&fillIngredients=false&addRecipeInformation=false\(maxReadyTime)&ignorePantry=true&sort=calories&sortDirection=asc\(offset)\(returnNumber)&limitLicense=false&ranking=2"
+    let query = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?\(queryType)\(includeCuisine)\(dietaryNeed)\(intolerances)\(includeIngredients)\(excludeIngredients)\(courseType)&instructionsRequired=true&fillIngredients=false&addRecipeInformation=false\(maxReadyTime)&ignorePantry=true&sort=calories&sortDirection=asc\(offset)\(returnNumber)&limitLicense=false&ranking=1"
         
+    return query
+}
+
+func buildGetRandomRecipes(tags:[String], returnNumber: String) -> String {
+    
+    var tagDict: [String: Bool] = [:]
+    tags.forEach { tag in
+        tagDict[tag] = true
+    }
+    
+    let tagsDict = dictToString(dict: tagDict, parameterName: "tags")
+    let returnNumber = dictToString(dict: [returnNumber.description: true], parameterName: "number")
+    
+    let query =
+    "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?\(tagsDict)\(returnNumber)"
+    
     return query
 }
 
