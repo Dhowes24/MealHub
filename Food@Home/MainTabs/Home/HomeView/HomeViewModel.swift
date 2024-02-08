@@ -45,7 +45,7 @@ import SwiftUI
         let calendar = Calendar.current
         if let newDate = calendar.date(byAdding: .day, value: 7 * direction, to: dateLineup[0]) {
             dateLineup = getDateLineup(startDate: newDate)
-            selectedDate = dateLineup[0]
+            selectedDate = direction > 0 ? dateLineup[0] : dateLineup[6]
         }
     }
 }
