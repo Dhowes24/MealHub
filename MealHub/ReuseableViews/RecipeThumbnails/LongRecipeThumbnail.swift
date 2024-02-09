@@ -24,7 +24,6 @@ struct LongRecipeThumbnail: View {
                     selected.toggle()
                     if selected {
                         selectedRecipes.append(meal)
-                        print("Im here")
                     } else {
                         selectedRecipes.removeAll { RecipeCD in
                             RecipeCD == meal
