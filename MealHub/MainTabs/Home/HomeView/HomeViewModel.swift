@@ -11,7 +11,9 @@ import SwiftUI
 
 @MainActor class HomeViewModel: ObservableObject {
     @Published var dateLineup: [Date] = []
+    @Published var editMode: Bool = false
     @Published var selectedDate: Date = Date()
+    @Published var selectedRecipes: [RecipeCD] = []
     @Published var path = NavigationPath()
     
     init() {
@@ -19,9 +21,16 @@ import SwiftUI
         self.selectedDate = dateLineup[0]
     }
     
-    func deleteScheduledMeal(moc: NSManagedObjectContext, meal: RecipeCD) {
-        moc.delete(meal)
-        try? moc.save()
+    func deleteScheduledMeal(moc: NSManagedObjectContext) {
+        withAnimation {
+            selectedRecipes.forEach { meal in
+                selectedRecipes.removeAll { RecipeCD in
+                    RecipeCD == meal
+                }
+                moc.delete(meal)
+                try? moc.save()
+            }
+        }
     }
     
     func getDateLineup(startDate: Date) -> [Date] {

@@ -22,13 +22,11 @@ struct ProfileView: View {
                 .padding(.vertical, 40)
                 
                 VStack(alignment: .leading) {
-                    ProfileOption(ProfileOptionDetails(title: "Food Profile", subText: "Nutrition goals, intolerances, dietary types"), path: $path)
+                    ProfileOption(ProfileOptionDetails(title: "Food Profile", subText: "Intolerances and dietary types"), path: $path)
                     
                     ProfileOption(ProfileOptionDetails(title: "Saved Recipes", subText: "Your favorited"), path: $path)
                     
                     ProfileOption(ProfileOptionDetails(title: "Resources", subText: "Guides and articles on how to meal plan"), path: $path)
-
-                    ProfileOption(ProfileOptionDetails(title: "Preferences", subText: "Edit what you see when meal planning"), path: $path)
                 }
                 
                 Spacer()

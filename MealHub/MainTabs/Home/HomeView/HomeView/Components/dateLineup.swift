@@ -21,8 +21,10 @@ struct dateLineup: View {
             Spacer()
             
             Group {
-                Image(systemName: "arrow.backward")
-                    .frame(width: 24, height: 24)
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 6, height: 10)
                 Text("Previous")
                     .font(.customSystem(size: 14, weight: .bold))
                     .padding(.trailing, 24)
@@ -36,8 +38,10 @@ struct dateLineup: View {
             Group {
                 Text("Next")
                     .font(.customSystem(size: 14, weight: .bold))
-                Image(systemName: "arrow.forward")
-                    .frame(width: 24, height: 24)
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 6, height: 10)
             }
             .onTapGesture {
                 withAnimation {
@@ -45,8 +49,8 @@ struct dateLineup: View {
                 }
             }
         }
-        .padding(.horizontal, 17)
-        .padding(.bottom, 22)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
     }
 }
 

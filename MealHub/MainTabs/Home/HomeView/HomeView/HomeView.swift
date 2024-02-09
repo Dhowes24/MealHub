@@ -30,52 +30,94 @@ struct HomeView: View {
                     }
                 }
                 
-                ZStack {
+                VStack {
+                    HStack {
+                        Button(action: {
+                            withAnimation {
+                                viewModel.editMode.toggle()
+                            }
+                        }, label: {
+                            Text(viewModel.editMode ? "Cancel" : "Edit")
+                                .frame(width: 50, height: 25)
+                                .button(color: "grey")
+                        })
+                        .buttonStyle(.plain)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            viewModel.path.append(viewModel.selectedDate)
+                        }, label: {
+                            Text("See week view")
+                                .frame(width: 100, height: 25)
+                                .button(color: "grey")
+                        })
+                        .buttonStyle(.plain)
+                    }
+                    .padding(.vertical, 16)
+                    
                     ScrollView {
+                        
                         VStack {
-                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Breakfast", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
-                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Lunch", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
-                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Snack", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
-                            homeMealSection(deleteScheduledMeals: viewModel.deleteScheduledMeal, mealTime: "Dinner", meals: meals, selectedDate: viewModel.selectedDate, path: $viewModel.path)
+                            homeMealSection(
+                                editMode: $viewModel.editMode,
+                                mealTime: "Breakfast",
+                                meals: meals,
+                                selectedRecipes: $viewModel.selectedRecipes,
+                                selectedDate: viewModel.selectedDate,
+                                path: $viewModel.path)
+                            homeMealSection(
+                                editMode: $viewModel.editMode,
+                                mealTime: "Lunch",
+                                meals: meals,
+                                selectedRecipes: $viewModel.selectedRecipes,
+                                selectedDate: viewModel.selectedDate,
+                                path: $viewModel.path)
+                            homeMealSection(
+                                editMode: $viewModel.editMode,
+                                mealTime: "Snack",
+                                meals: meals,
+                                selectedRecipes: $viewModel.selectedRecipes,
+                                selectedDate: viewModel.selectedDate,
+                                path: $viewModel.path)
+                            homeMealSection(
+                                editMode: $viewModel.editMode,
+                                mealTime: "Dinner",
+                                meals: meals,
+                                selectedRecipes: $viewModel.selectedRecipes,
+                                selectedDate: viewModel.selectedDate,
+                                path: $viewModel.path)
                         }
                         .frame(maxWidth: .infinity)
                     }
-                    
-                    VStack {
-                        HStack {
-                            Spacer()
-                            
-                            Button(action: {
-                                viewModel.path.append(viewModel.selectedDate)
-                            }, label: {
-                                Text("See week view")
-                                    .frame(width: 100, height: 25)
-                                    .button(color: "grey")
-                            })
-                            .buttonStyle(.plain)
-                        }
-                        
-                        Spacer()
-                    }
                 }
                 .padding(.horizontal, 30)
-                .padding(.top, 16)
                 
                 Spacer()
                 
                 Button(action: {
-                    viewModel.path.append(1)
+                    if viewModel.editMode {
+                        viewModel.deleteScheduledMeal(moc: moc)
+                    } else {
+                        viewModel.path.append(1)
+                    }
                 }, label: {
-                    Text(withinDateRange(viewModel.selectedDate) ? "Plan your meal" : "Date unavailable for planning")
+                    Text(viewModel.editMode ? "Delete selected items" : withinDateRange(viewModel.selectedDate) ?  "Plan your meal" : "Date unavailable for planning")
                         .button(color: "black")
                         .padding(.bottom, 38)
                 })
                 .buttonStyle(.plain)
-                .disabled(!withinDateRange(viewModel.selectedDate))
+                .disabled(viewModel.editMode ?
+                          viewModel.selectedRecipes.isEmpty
+                          : !withinDateRange(viewModel.selectedDate))
                 
                 SeparatorLine()
             }
             .modifier(HomeNavStackViewMod(meals: meals, path: $viewModel.path, viewModel: viewModel))
+        }
+        .onChange(of: viewModel.selectedDate) { _ in
+            viewModel.selectedRecipes.removeAll()
+            viewModel.editMode = false
         }
     }
 }

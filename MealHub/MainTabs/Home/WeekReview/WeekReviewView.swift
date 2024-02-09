@@ -10,7 +10,6 @@ import SwiftUI
 
 struct WeekReviewView: View {
     var date: Date
-    var deleteScheduledMeals: @MainActor (NSManagedObjectContext, RecipeCD) -> Void
     @Environment(\.dismiss) private var dismiss
     var meals: FetchedResults<RecipeCD>
     let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
@@ -62,7 +61,12 @@ struct WeekReviewView: View {
                             ForEach(mealTimeArray, id: \.self) { mealTime in
                                 ForEach(meals) { meal in
                                     if meal.mealTime ?? "nil" == mealTime && isSameDay(meal.dateAssigned ?? Date(), dateRow) {
-                                        LongRecipeThumbnail(deleteScheduledMeals: deleteScheduledMeals, meal: meal, path: $path)
+                                        LongRecipeThumbnail(
+                                            editMode: .constant(false),
+                                            meal: meal,
+                                            path: $path,
+                                            selectedRecipes: .constant([])
+                                        )
                                     }
                                 }
                             }
@@ -92,7 +96,6 @@ struct WeekReviewView: View {
         var body: some View {
             WeekReviewView(
                 date: Calendar.current.date(byAdding: .day, value: 0, to: Date())!,
-                deleteScheduledMeals: {_,_ in },
                 meals: meals,
                 path: Binding.constant(NavigationPath())
             )

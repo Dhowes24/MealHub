@@ -9,38 +9,67 @@ import CoreData
 import SwiftUI
 
 struct LongRecipeThumbnail: View {
-    var deleteScheduledMeals: @MainActor (NSManagedObjectContext, RecipeCD) -> Void
+    @Binding var editMode: Bool
     var homeTab: Bool = false
     var meal: RecipeCD
     @Environment(\.managedObjectContext) var moc
     @Binding var path: NavigationPath
-
+    @State var selected: Bool = false
+    @Binding var selectedRecipes: [RecipeCD]
+    
     var body: some View {
         HStack {
             Button(action: {
-                path.append(Recipe(id: Int(meal.apiID), title: meal.name ?? "Unknown", image: meal.imageURL ?? "Unknown"))
+                if editMode {
+                    selected.toggle()
+                    if selected {
+                        selectedRecipes.append(meal)
+                        print("Im here")
+                    } else {
+                        selectedRecipes.removeAll { RecipeCD in
+                            RecipeCD == meal
+                        }
+                    }
+                } else {
+                    path.append(Recipe(id: Int(meal.apiID), title: meal.name ?? "Unknown", image: meal.imageURL ?? "Unknown"))
+                }
             }, label: {
                 HStack {
-                    AsyncImage(
-                        url: URL(string: meal.imageURL ?? "Unknown"),
-                        content: { image in
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 65, height: 65)
-                                .clipShape(
-                                    RoundedRectangle(cornerRadius: 16.0)
-                                )
-                        },
-                        placeholder: {
-                            ProgressView()
-                                .frame(width: 65, height: 65)
-                                .clipShape(
-                                    RoundedRectangle(cornerRadius: 16.0)
-                                )
-                                .background(customGrey)
+                    
+                    ZStack {
+                        AsyncImage(
+                            url: URL(string: meal.imageURL ?? "Unknown"),
+                            content: { image in
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 65, height: 65)
+                                    .clipShape(
+                                        RoundedRectangle(cornerRadius: 16.0)
+                                    )
+                            },
+                            placeholder: {
+                                ProgressView()
+                                    .frame(width: 65, height: 65)
+                                    .clipShape(
+                                        RoundedRectangle(cornerRadius: 16.0)
+                                    )
+                                    .background(customGrey)
+                            }
+                        )
+                        
+                        if editMode {
+                            Circle()
+                                .foregroundStyle(.white)
+                                .frame(width: 25, height: 25)
+                                .offset(x:25, y:-25)
+                            
+                            Image(systemName: selected ? "checkmark.circle.fill" : "checkmark.circle")
+                                .foregroundStyle(selected ? brandGreen : darkGrey)
+                                .frame(width: 25, height: 25)
+                                .offset(x:25, y:-25)
                         }
-                    )
+                    }
                     
                     VStack (alignment: .leading) {
                         Text(meal.name ?? "Unknown")
@@ -58,16 +87,12 @@ struct LongRecipeThumbnail: View {
                 .padding(.bottom, 16)
             })
             .buttonStyle(.plain)
-            
-            Image("custom.trash")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 20)
-                .onTapGesture {
-                    withAnimation {
-                        deleteScheduledMeals(moc, meal)
-                    }
-                }
+
+        }
+        .onChange(of: editMode) { _ in
+            if !editMode {
+                selected = false
+            }
         }
     }
 }

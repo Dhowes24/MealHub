@@ -23,7 +23,6 @@ struct HomeNavStackViewMod: ViewModifier {
             }
             .navigationDestination(for: Date.self) { date in
                 WeekReviewView(date: date,
-                               deleteScheduledMeals: viewModel.deleteScheduledMeal,
                                meals: meals,
                                path: $path)
             }
@@ -58,8 +57,6 @@ struct ProfileNavStackViewMod: ViewModifier {
             return AnyView(SavedRecipesView(path: $path))
         case "Resources":
             return AnyView(ResourcesView())
-        case "Preferences":
-            return AnyView(PreferencesView())
         default:
             return AnyView(FoodProfileView())
         }

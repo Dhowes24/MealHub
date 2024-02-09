@@ -19,6 +19,7 @@ struct provisionsList: View {
     var body: some View {
         VStack {
             HStack {
+                
                 Text("Select All")
                     .font(.customSystem(size: 16, weight: .semibold))
                     .padding(.vertical, 16)
@@ -55,44 +56,30 @@ struct provisionsList: View {
             }
             .frame(maxWidth: .infinity)
             
-            Button(action: {
-                var deleteItemsArray: [FoodItem] = []
-                toggleItems.forEach { (key: FoodItem, value: Bool) in
-                    if toggleItems[key] ?? false {
-                        deleteItemsArray.append(key)
-                    }
-                }
-                deleteItems(deleteItemsArray)
-                triggerRefresh.toggle()
-            }, label: {
-                Text("Delete Selected Items")
-                    .button(color: "black")
-            })
-            .buttonStyle(.plain)
-            .disabled(!itemsSelected())
-            .padding(.bottom, 38)
-            
-            
-            if !ownedItems {
+            HStack(spacing: 20) {
+                
                 Button(action: {
-                    var moveItemsArray: [FoodItem] = []
-                    
-                    toggleItems.forEach { (key: FoodItem, value: Bool) in
-                        if toggleItems[key] ?? false {
-                            moveItemsArray.append(key)
-                        }
-                    }
-                    moveItemsToKitchen(moveItemsArray)
-                    triggerRefresh.toggle()
+                    moveOrDeleteItems()
                 }, label: {
-                    Text("Add Items to Kitchen")
-                        .button(color: "black")
+                    Text("Delete Selected Items")
+                        .button(color: "black", width: ownedItems ? CGFloat(350) : CGFloat(165))
                 })
                 .buttonStyle(.plain)
                 .disabled(!itemsSelected())
                 .padding(.bottom, 38)
+                                
+                if !ownedItems {
+                    Button(action: {
+                        moveOrDeleteItems(deleting: false)
+                    }, label: {
+                        Text("Add Items to Kitchen")
+                            .button(color: "white", width: CGFloat(165))
+                    })
+                    .buttonStyle(.plain)
+                    .disabled(!itemsSelected())
+                    .padding(.bottom, 38)
+                }
             }
-            
         }
         .onChange(of: triggerRefresh) { _ in
             refreshPage()
@@ -117,6 +104,22 @@ struct provisionsList: View {
         toggleItems.values.contains { Bool in Bool == true }
     }
     
+    @MainActor private func moveOrDeleteItems( deleting: Bool = true ) {
+        var actionItemsArray: [FoodItem] = []
+        
+        toggleItems.forEach { (key: FoodItem, value: Bool) in
+            if toggleItems[key] ?? false {
+                actionItemsArray.append(key)
+            }
+        }
+        if deleting {
+            deleteItems(actionItemsArray)
+        } else {
+            moveItemsToKitchen(actionItemsArray)
+        }
+        triggerRefresh.toggle()
+    }
+    
     private func refreshPage() {
         let tempItems = toggleItems
         toggleItems.removeAll()
@@ -138,14 +141,19 @@ struct provisionsList: View {
     }
 }
 
-//#Preview {
-//    struct PreviewWrapper: View {
-//        @FetchRequest(sortDescriptors: []) var items: FetchedResults<FoodItem>
-//        var body: some View {
-//
-//            groceryListItems(items: items)
-//        }
-//    }
-//
-//    return PreviewWrapper()
-//}
+#Preview {
+    struct PreviewWrapper: View {
+        
+        var body: some View {
+            
+            provisionsList(
+                deleteItems: { _ in },
+                items: .constant([]),
+                moveItemsToKitchen: { _ in }, 
+                ownedItems: false)
+            
+        }
+    }
+    
+    return PreviewWrapper()
+}
