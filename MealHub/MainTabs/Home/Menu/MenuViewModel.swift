@@ -89,7 +89,7 @@ extension MenuView {
                             self.fetchRandomRecipes(
                                 tags: [queryType],
                                 returnNumber: returnNumber) { [weak self] list in
-                                    guard let self = self else { return }
+                                    guard self != nil else { return }
                                     
                                     DispatchQueue.main.async {
                                         returnRecipeList += list

@@ -9,9 +9,10 @@ import CoreData
 import SwiftUI
 
 struct homeMealSection: View {
-    var deleteScheduledMeals: @MainActor (NSManagedObjectContext, RecipeCD) -> Void
+    @Binding var editMode: Bool
     var mealTime: String
     var meals: FetchedResults<RecipeCD>
+    @Binding var selectedRecipes: [RecipeCD]
     var selectedDate: Date
     @Binding var path: NavigationPath
     
@@ -26,7 +27,13 @@ struct homeMealSection: View {
                         path.append(Recipe(id: Int(meal.apiID), title: meal.name ?? "No Name", image: meal.imageURL ?? ""))
                     }, label: {
                         
-                        LongRecipeThumbnail(deleteScheduledMeals: deleteScheduledMeals, homeTab: true, meal: meal, path: $path)
+                        LongRecipeThumbnail(
+                            editMode: $editMode,
+                            homeTab: true,
+                            meal: meal,
+                            path: $path,
+                            selectedRecipes: $selectedRecipes
+                        )
                         
                     })
                     .buttonStyle(.plain)
@@ -44,7 +51,15 @@ struct homeMealSection: View {
     struct PreviewWrapper: View {
         @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
         var body: some View {
-            homeMealSection(deleteScheduledMeals: {_,_ in }, mealTime: "Breakfast", meals: meals, selectedDate: Date(), path: Binding.constant(NavigationPath()))        }
+            homeMealSection(
+                editMode: .constant(false),
+                mealTime: "Breakfast",
+                meals: meals,
+                selectedRecipes: .constant([]),
+                selectedDate: Date(),
+                path: Binding.constant(NavigationPath())
+            )
+        }
     }
     return PreviewWrapper()
 }
