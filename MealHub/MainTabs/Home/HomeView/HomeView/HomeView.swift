@@ -98,6 +98,7 @@ struct HomeView: View {
                 Button(action: {
                     if viewModel.editMode {
                         viewModel.deleteScheduledMeal(moc: moc)
+                        viewModel.editMode = false
                     } else {
                         viewModel.path.append(1)
                     }
