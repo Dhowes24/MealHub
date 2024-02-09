@@ -19,3 +19,6 @@ Using asynchronous URLSession fetch requests the application pulls data from the
 
 
 Following a professional UI/UX designer's specifications MealHub uses the SwiftUI framework to create an intuitive and user-friendly design, ensuring a seamless and enjoyable experience for users of all levels. 
+
+
+
