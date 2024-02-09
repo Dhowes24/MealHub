@@ -74,19 +74,20 @@ struct WeekReviewView: View {
                     }
                 }
             }
-            Button(action: {
-                showTabBar.toggle()
-                dismiss()
-            }, label: {
-                Text("Back")
-                    .button(color: "white")
-                    .padding(.bottom, 38)
-            })
-            .buttonStyle(.plain)
         }
         .padding(.horizontal, 16)
         .toolbar(.hidden, for: .navigationBar)
         .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
+        
+        Button(action: {
+            showTabBar.toggle()
+            dismiss()
+        }, label: {
+            Text("Back")
+                .button(color: "white")
+                .padding(.bottom, 38)
+        })
+        .buttonStyle(.plain)
     }
 }
 
