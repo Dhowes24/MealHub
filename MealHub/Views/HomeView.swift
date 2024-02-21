@@ -103,14 +103,14 @@ struct HomeView: View {
                         viewModel.path.append(1)
                     }
                 }, label: {
-                    Text(viewModel.editMode ? "Delete selected items" : withinDateRange(viewModel.selectedDate) ?  "Plan your meal" : "Date unavailable for planning")
+                    Text(viewModel.editMode ? "Delete selected items" : viewModel.selectedDate.withinTwoWeeks() ?  "Plan your meal" : "Date unavailable for planning")
                         .button(color: "black")
                         .padding(.bottom, 38)
                 })
                 .buttonStyle(.plain)
                 .disabled(viewModel.editMode ?
                           viewModel.selectedRecipes.isEmpty
-                          : !withinDateRange(viewModel.selectedDate))
+                          : !viewModel.selectedDate.withinTwoWeeks())
                 
                 SeparatorLine()
             }

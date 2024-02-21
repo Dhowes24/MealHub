@@ -24,6 +24,7 @@
 		1EB43ADC2B6D545E005D0886 /* LargeRecipeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43ADB2B6D545E005D0886 /* LargeRecipeDisplay.swift */; };
 		1EB43AE02B6D6C1B005D0886 /* RecipeDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43ADF2B6D6C1B005D0886 /* RecipeDisplayModel.swift */; };
 		1EB43AE22B6D6C4E005D0886 /* RecipeDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43AE12B6D6C4E005D0886 /* RecipeDisplayViewModel.swift */; };
+		1ECF35872B865DFE00F2AA15 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF35862B865DFE00F2AA15 /* Date+Ext.swift */; };
 		1EE49B992B732119000D0F68 /* RecipeDetailsTestInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EE49B982B732119000D0F68 /* RecipeDetailsTestInfo.json */; };
 		1EE49B9A2B74221D000D0F68 /* Archivo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F72AF839910082CC4E /* Archivo-Bold.ttf */; };
 		1EE49B9B2B7422E3000D0F68 /* Archivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FD2AF83B8F0082CC4E /* Archivo-Regular.ttf */; };
@@ -90,7 +91,6 @@
 		6BCE75992B4DC046005BCF42 /* ProvisionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE75982B4DC046005BCF42 /* ProvisionsView.swift */; };
 		6BCE759B2B4DC068005BCF42 /* ProvisionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE759A2B4DC068005BCF42 /* ProvisionsViewModel.swift */; };
 		6BCE759E2B4DC525005BCF42 /* ListToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE759D2B4DC525005BCF42 /* ListToggle.swift */; };
-		6BCE75A02B4E5E41005BCF42 /* UniversalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE759F2B4E5E41005BCF42 /* UniversalFunctions.swift */; };
 		6BCE75A42B4E63E4005BCF42 /* provisionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE75A32B4E63E4005BCF42 /* provisionsList.swift */; };
 		6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB950D2ACDE94D0006B0E8 /* NavView.swift */; };
 		6BEB95112ACF0C690006B0E8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB95102ACF0C690006B0E8 /* MenuView.swift */; };
@@ -137,6 +137,7 @@
 		1EB43ADB2B6D545E005D0886 /* LargeRecipeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRecipeDisplay.swift; sourceTree = "<group>"; };
 		1EB43ADF2B6D6C1B005D0886 /* RecipeDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDisplayModel.swift; sourceTree = "<group>"; };
 		1EB43AE12B6D6C4E005D0886 /* RecipeDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDisplayViewModel.swift; sourceTree = "<group>"; };
+		1ECF35862B865DFE00F2AA15 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		1EE49B922B7196E0000D0F68 /* SavedRecipes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedRecipes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1EE49B932B7196E0000D0F68 /* SavedRecipes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedRecipes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1EE49B982B732119000D0F68 /* RecipeDetailsTestInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeDetailsTestInfo.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
@@ -209,7 +210,6 @@
 		6BCE75982B4DC046005BCF42 /* ProvisionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionsView.swift; sourceTree = "<group>"; };
 		6BCE759A2B4DC068005BCF42 /* ProvisionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionsViewModel.swift; sourceTree = "<group>"; };
 		6BCE759D2B4DC525005BCF42 /* ListToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToggle.swift; sourceTree = "<group>"; };
-		6BCE759F2B4E5E41005BCF42 /* UniversalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalFunctions.swift; sourceTree = "<group>"; };
 		6BCE75A32B4E63E4005BCF42 /* provisionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provisionsList.swift; sourceTree = "<group>"; };
 		6BEB950D2ACDE94D0006B0E8 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		6BEB95102ACF0C690006B0E8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -482,7 +482,6 @@
 				1ECF357D2B86535E00F2AA15 /* Models */,
 				1ECF357C2B86535100F2AA15 /* Views */,
 				1ECF357E2B8653BB00F2AA15 /* ViewModels */,
-				6BCE759F2B4E5E41005BCF42 /* UniversalFunctions.swift */,
 				1E484FDD2B697536008360A2 /* PreferencesFunctions.swift */,
 				1ECF357B2B86532800F2AA15 /* ViewModifiers */,
 				6B73883E2A2FC86900EBCE7B /* Extensions */,
@@ -524,6 +523,7 @@
 				6B7388482A2FE29500EBCE7B /* UIScreen+Ext.swift */,
 				6B7388532A30F6A600EBCE7B /* Color+Ext.swift */,
 				6BA601132A38EB5C00F1D335 /* Transition+Ext.swift */,
+				1ECF35862B865DFE00F2AA15 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -800,13 +800,13 @@
 				6B5F762B2B19257D0082CC4E /* HomeViewModel.swift in Sources */,
 				6B7388402A2FD63F00EBCE7B /* Font+Ext.swift in Sources */,
 				6B8877B32AD7375B002B9CDB /* RecipeDetailsViewModel.swift in Sources */,
+				1ECF35872B865DFE00F2AA15 /* Date+Ext.swift in Sources */,
 				1E484FC92B65C654008360A2 /* IntolerancesFilter.swift in Sources */,
 				1E484FC52B65C2E4008360A2 /* FoodProfileView.swift in Sources */,
 				6B8877C42ADC6463002B9CDB /* SearchRecipes.swift in Sources */,
 				6B9140012B34D4580095D80C /* TrashDragLabel.swift in Sources */,
 				6BEB950E2ACDE94D0006B0E8 /* NavView.swift in Sources */,
 				6BCE75932B47C93A005BCF42 /* WeekReviewView.swift in Sources */,
-				6BCE75A02B4E5E41005BCF42 /* UniversalFunctions.swift in Sources */,
 				1E484FDE2B697536008360A2 /* PreferencesFunctions.swift in Sources */,
 				6B5F762D2B1928DA0082CC4E /* Headers.swift in Sources */,
 				6B7388492A2FE29500EBCE7B /* UIScreen+Ext.swift in Sources */,

@@ -139,7 +139,7 @@ struct MealScheduler: View {
             var dateTaken = false
             let avaliableDate = Date().addingTimeInterval(TimeInterval(86400 * selectors))
             timeSelectors.forEach { TimeSelectorObject in
-                if isSameDay(TimeSelectorObject.date, avaliableDate) {
+                if TimeSelectorObject.date.isSameDay(as: avaliableDate) {
                     dateTaken = true
                 }
             }
@@ -161,7 +161,7 @@ struct MealScheduler: View {
         
         timeSelectors.forEach { TimeSelectorObject in
             choosableDates.removeAll { Date in
-                isSameDay(Date, TimeSelectorObject.date)
+                Date.isSameDay(as: TimeSelectorObject.date)
             }
         }
         

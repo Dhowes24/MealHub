@@ -32,7 +32,7 @@ struct WeekReviewView: View {
             .padding(.bottom, 13)
             
             Text("\(date.formatted(.dateTime.day().month())) - " +
-                 (isSameMonth(Calendar.current.date(byAdding: .day, value: 6, to: date)!, date) ?
+                 (date.isSameMonth(as: Calendar.current.date(byAdding: .day, value: 6, to: date)!) ?
                  "\(Calendar.current.date(byAdding: .day, value: 6, to: date)!.formatted(.dateTime.day()))" :
                     "\(Calendar.current.date(byAdding: .day, value: 6, to: date)!.formatted(.dateTime.day().month()))"))
             .font(.customSystem(size: 16, weight: .semibold))
@@ -60,7 +60,8 @@ struct WeekReviewView: View {
                             
                             ForEach(mealTimeArray, id: \.self) { mealTime in
                                 ForEach(meals) { meal in
-                                    if meal.mealTime ?? "nil" == mealTime && isSameDay(meal.dateAssigned ?? Date(), dateRow) {
+                                    if meal.mealTime ?? "nil" == mealTime && 
+                                        (meal.dateAssigned ?? Date()).isSameDay(as: dateRow) {
                                         LongRecipeThumbnail(
                                             editMode: .constant(false),
                                             meal: meal,
