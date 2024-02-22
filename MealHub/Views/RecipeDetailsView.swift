@@ -27,7 +27,11 @@ struct RecipeDetailsView: View {
                 Image(systemName: viewModel.saved ? "heart.fill" : "heart")
                     .frame(width: 24, height: 24)
                     .onTapGesture {
-                        viewModel.saveButtonTapped(savedRecipes: savedRecipes, moc: moc)
+                        if let recipeInfo = viewModel.recipeInfo {
+                            PersistenceController.shared.favoriteRecipeToggle(alreadySaved: &viewModel.saved, currentRecipe: recipeInfo, savedRecipes: savedRecipes)
+                        } else {
+                            //Handle Error
+                        }
                     }
                     .padding(.trailing, 16)
             }
@@ -148,10 +152,15 @@ struct RecipeDetailsView: View {
             Task{
                 do {
                     //                        try await viewModel.fetchTestData(id: id)
-                    try await viewModel.fetchIndividualRecipe(id: viewModel.id)
-                }
-                catch {
-                    viewModel.pullError = true
+                    NetworkManager.shared.fetchIndividualRecipe(id: viewModel.id) { recipe, error in
+                        DispatchQueue.main.async {
+                            if let recipe {
+                                viewModel.recipeInfo = recipe
+                            } else {
+                                //Handle Error
+                            }
+                        }
+                    }
                 }
             }
         })

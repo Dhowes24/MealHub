@@ -113,7 +113,7 @@ struct provisionsList: View {
             }
         }
         if deleting {
-            PersistenceController.shared.deleteItems(itemsToDelete: actionItemsArray, allFoodItems: &items)
+            PersistenceController.shared.deleteFoodItems(itemsToDelete: actionItemsArray, allFoodItems: &items)
         } else {
             PersistenceController.shared.moveItemsToKitchen(itemsToMove: actionItemsArray)
         }

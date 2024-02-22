@@ -37,16 +37,15 @@ struct PersistenceController {
     }
     
     func saveData() {
-        let context = persistentContainer.viewContext
-
-        if context.hasChanges {
+        if mainContext.hasChanges {
             do {
-                try context.save()
+                try mainContext.save()
             } catch {
                 print(String(describing: error))
             }
         }
     }
+    
     
     func addFoodItem(dateAdded: Date, name: String, owned: Bool) {
         let item = FoodItem(context: mainContext)
@@ -59,15 +58,7 @@ struct PersistenceController {
     }
     
     
-    func deleteAll(items: [FoodItem]) {
-        items.forEach { item in
-            mainContext.delete(item)
-        }
-        saveData()
-    }
-    
-    
-    func deleteItems(itemsToDelete: [FoodItem], allFoodItems: inout [FoodItem]) {
+    func deleteFoodItems(itemsToDelete: [FoodItem], allFoodItems: inout [FoodItem]) {
         withAnimation(Animation.easeInOut(duration: 0.5)) {
             itemsToDelete.forEach { item in
                 allFoodItems.removeAll { listItem in
@@ -80,31 +71,34 @@ struct PersistenceController {
     }
     
     
-    func fetchItems(foodItems: inout [FoodItem]) {
-        let request = NSFetchRequest<FoodItem>(entityName: "FoodItem")
-        
-        do {
-            let tempItems = try mainContext.fetch(request)
-            
-            foodItems = tempItems.sorted(by: {
-                if $0.dateAdded! ==  $1.dateAdded! {
-                    return true
-                } else {
-                    return $0.dateAdded! < $1.dateAdded!
-                }
-            })
-            
-        } catch let error {
-            print("Error fetching. \(error)")
-        }
-    }
-    
-    
     func moveItemsToKitchen(itemsToMove: [FoodItem]) {
         itemsToMove.forEach { item in
             item.owned = true
         }
         saveData()
+    }
+    
+    
+    func favoriteRecipeToggle(alreadySaved: inout Bool, currentRecipe: RecipeInfo, savedRecipes: FetchedResults<SavedRecipes>) {
+        if alreadySaved {
+            if let recipeToDelete =
+                savedRecipes.first(where: { savedRecipe in
+                    savedRecipe.apiID == Int32(currentRecipe.id)
+                }) {
+                mainContext.delete(recipeToDelete)
+            }
+            alreadySaved.toggle()
+        } else {
+            let savedRecipe = SavedRecipes(context: mainContext)
+            savedRecipe.apiID = Int32(currentRecipe.id)
+            savedRecipe.dateSaved = Date()
+            savedRecipe.imageURL = currentRecipe.image
+            savedRecipe.name = currentRecipe.title
+            savedRecipe.uuid = UUID()
+            
+            try? mainContext.save()
+            alreadySaved.toggle()
+        }
     }
     
 }
