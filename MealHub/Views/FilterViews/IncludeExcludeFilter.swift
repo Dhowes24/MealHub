@@ -14,10 +14,11 @@ struct IncludeExcludeFilter: View {
     @State var itemString: String = ""
     @State var firstItem: Bool = true
     
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                subViewHeader(headerText: "Include and Exclude")
+                SubViewHeader(headerText: "Include and Exclude")
                 
                 ListToggle(colored: true, listToggle: $include, optionOne: "Include", optionTwo: "Exclude")
             }
@@ -27,7 +28,7 @@ struct IncludeExcludeFilter: View {
             let arrayEnumeratedItems = Array(filteredArray)
             
             VStack {
-                addItemInput(optionOne: "Include",
+                AddItemInput(optionOne: "Include",
                              optionTwo: "Exclude",
                              optionOneSelected: include,
                              itemName: $itemString,
@@ -79,16 +80,19 @@ struct IncludeExcludeFilter: View {
         
     }
     
+    
     private func addItemToList(date: Date, itemName: String, include: Bool) {
         dict[itemName] = include
         encodeUserDefaults(filterDict: dict, keyString: "Include/Exclude")
     }
+    
     
     private func deleteItemFromList(itemName: String) {
         dict.removeValue(forKey: itemName)
         encodeUserDefaults(filterDict: dict, keyString: "Include/Exclude")
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {
@@ -99,4 +103,3 @@ struct IncludeExcludeFilter: View {
     }
     return PreviewWrapper()
 }
-

@@ -15,7 +15,7 @@ struct GuideTemplate: View {
         GeometryReader { proxy in
             
             ScrollView(.vertical) {
-                subViewHeader(headerText: "")
+                SubViewHeader(headerText: "")
 
                 VStack(alignment: .leading, spacing: 24) {
                     

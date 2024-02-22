@@ -46,6 +46,7 @@ struct ProfileOption: View {
     ProfileOption(ProfileOptionDetails(title: "Saved Recipes", subText: "Your favorited"), path: .constant(NavigationPath()))
 }
 
+
 struct ProfileOptionDetails: Hashable {
     var title: String
     var subText: String

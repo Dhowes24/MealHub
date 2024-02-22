@@ -13,9 +13,12 @@ struct RecipeDisplayModel: Identifiable, Hashable {
     var queryType: String
     var selectedDate: Date
     
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+    
+    
     static func == (lhs: RecipeDisplayModel, rhs: RecipeDisplayModel) -> Bool {
         return lhs.id == rhs.id
     }

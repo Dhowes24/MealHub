@@ -18,6 +18,7 @@ struct SmallRecipeDisplay: View {
         self._path = path
     }
     
+    
     var body: some View {
         Group {
             HStack {
@@ -40,12 +41,9 @@ struct SmallRecipeDisplay: View {
             .padding(.bottom, 24)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                
                 HStack(spacing: 20) {
-                    
                     if recipeDisplayViewModel.nothingFound {
                         Text("Sorry! It looks like we could not find any results. \nTry changing up your food preferences above")
-                        
                     } else {
                         ForEach(recipeDisplayViewModel.recipeList) {recipe in
                             ShortRecipeThumbnail(recipe: recipe, path: $path)
@@ -63,6 +61,7 @@ struct SmallRecipeDisplay: View {
 
     }
 }
+
 
 #Preview {
     SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(

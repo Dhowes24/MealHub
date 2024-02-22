@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @State var path = NavigationPath()
 
+    
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
@@ -39,6 +40,7 @@ struct ProfileView: View {
         }
     }
 }
+
 
 #Preview {
     ProfileView()

@@ -19,23 +19,11 @@ import Foundation
         refreshItems()
     }
     
+    
     func addItem(dateAdded: Date, name: String, owned: Bool) {
         PersistenceController.shared.addFoodItem(dateAdded: dateAdded, name: name, owned: owned)
         refreshItems()
     }
-    
-    
-//    func deleteAll() {
-//        PersistenceController.shared.deleteAll(items: items)
-//        refreshItems()
-//
-//    }
-//    
-//    
-//    func deleteItems(_ deleteItems: [FoodItem]) {
-//        PersistenceController.shared.deleteAll(items: deleteItems)
-//        refreshItems()
-//    }
     
     
     func refreshItems() {
@@ -56,11 +44,4 @@ import Foundation
             print("Error fetching. \(error)")
         }
     }
-    
-//    
-//    func moveItemsToKitchen(_ items: [FoodItem]) {
-//        PersistenceController.shared.moveItemsToKitchen(itemsToMove: items)
-//        refreshItems()
-//    }
-    
 }

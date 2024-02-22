@@ -61,7 +61,7 @@ struct FilterSearch: View {
     }
 }
 
+
 #Preview {
     FilterSearch(isKeyboardVisible: .constant(false), path: Binding.constant(NavigationPath()), search: .constant(""))
 }
-

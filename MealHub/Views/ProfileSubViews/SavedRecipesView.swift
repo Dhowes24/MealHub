@@ -16,8 +16,9 @@ struct SavedRecipesView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SavedRecipes.dateSaved, ascending: false)]) var savedRecipes: FetchedResults<SavedRecipes>
     @State private var showTabBar: Bool  = false
     
+    
     var body: some View {
-        subViewHeader(headerText: "Saved Recipes")
+        SubViewHeader(headerText: "Saved Recipes")
 
         VStack {
             ScrollView {
@@ -42,6 +43,7 @@ struct SavedRecipesView: View {
         }
     }
 }
+
 
 #Preview {
     SavedRecipesView(path: .constant(NavigationPath()))

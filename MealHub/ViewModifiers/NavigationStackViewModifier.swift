@@ -13,6 +13,7 @@ struct HomeNavStackViewMod: ViewModifier {
     @Binding var path: NavigationPath
     @StateObject var viewModel: HomeViewModel
 
+    
     func body(content: Content) -> some View {
         content
             .navigationDestination(for: Int.self) { int in
@@ -32,9 +33,11 @@ struct HomeNavStackViewMod: ViewModifier {
     }
 }
 
+
 struct ProfileNavStackViewMod: ViewModifier {
     @Binding var path: NavigationPath
 
+    
     func body(content: Content) -> some View {
         content
             .navigationDestination(for: ArticleInformation.self) { articleInformation in
@@ -46,8 +49,8 @@ struct ProfileNavStackViewMod: ViewModifier {
             .navigationDestination(for: ProfileOptionDetails.self) { details in
                 chooseView(viewTitle: details.title)
             }
-
     }
+    
     
     private func chooseView(viewTitle: String) -> some View {
         switch viewTitle {
@@ -62,4 +65,3 @@ struct ProfileNavStackViewMod: ViewModifier {
         }
     }
 }
-

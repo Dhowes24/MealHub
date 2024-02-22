@@ -15,8 +15,8 @@ struct MealScheduler: View {
     var selectedDate: Date
     @State private var timeSelectors: [TimeSelectorObject] = []
         
+    
     var body: some View {
-        
         GeometryReader { geo in
             VStack{
                 VStack {
@@ -26,6 +26,7 @@ struct MealScheduler: View {
                             .onTapGesture {
                                 dismiss()
                             }
+                        
                         Spacer()
                         
                         Text("Schedule Meal")
@@ -40,7 +41,6 @@ struct MealScheduler: View {
                     }
                     .padding(.top, 31)
                     .padding(.bottom, 13)
-                    
                 }
                 .padding(.horizontal, 17)
                 
@@ -56,7 +56,6 @@ struct MealScheduler: View {
                     
                     ScrollView(.vertical) {
                         ForEach($timeSelectors) { selector in
-                            
                             ZStack{
                                 Group {
                                     TimeSelector(specificDateSelect: specificDatePickerList, timeSelectorObject: selector)
@@ -101,13 +100,13 @@ struct MealScheduler: View {
                 })
                 .buttonStyle(.plain)
                 .disabled(noTimesSelected())
-                
             }
             .onAppear {
                 self.timeSelectors.append(TimeSelectorObject(date: selectedDate))
             }
         }
     }
+    
     
     func noTimesSelected() -> Bool {
         var returnValue = false
@@ -119,11 +118,13 @@ struct MealScheduler: View {
         return returnValue
     }
     
+    
     func deleteTimeSelector(selector: TimeSelectorObject) {
         timeSelectors.removeAll { toRemove in
             toRemove == selector
         }
     }
+    
     
     func nextAvaliableDate() -> Date {
         for selectors in 0...timeSelectors.count {
@@ -140,6 +141,7 @@ struct MealScheduler: View {
         }
         return Date()
     }
+    
     
     func specificDatePickerList() -> [Date] {
         var currentDate = Date()
@@ -160,6 +162,7 @@ struct MealScheduler: View {
     }
 }
 
+
 #Preview {
     MealScheduler(path: Binding.constant(NavigationPath()), recipe: Recipe(id: 1, title: "Recipe Name", image: ""), selectedDate: Date())
 }
@@ -169,6 +172,7 @@ struct timeSelectorViewModifier: ViewModifier {
     @State var drag: CGSize = CGSize.zero
     var isFirst: Bool
     var selectorReference: TimeSelectorObject
+    
     
     func body(content: Content) -> some View {
         if isFirst {

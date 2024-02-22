@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ListToggle: View {
     var colored: Bool = false
     @Binding var listToggle: Bool
     @Namespace private var animation
     var optionOne: String
     var optionTwo: String
+    
     
     var body: some View {
         VStack {
@@ -63,14 +62,13 @@ struct ListToggle: View {
     }
 }
 
+
 #Preview {
     struct PreviewWrapper: View {
         @State var binding: Bool = true
         var body: some View {
             ListToggle(colored: true, listToggle: $binding, optionOne: "Kitchen", optionTwo: "Grocery List")
-
         }
     }
     return PreviewWrapper()
 }
-

@@ -26,7 +26,7 @@ struct Header: View {
     }
 }
 
-struct subViewHeader: View {
+struct SubViewHeader: View {
     @Environment(\.dismiss) private var dismiss
     var headerText: String
     var path: NavigationPath

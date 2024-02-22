@@ -11,10 +11,10 @@ struct IntolerancesFilter: View {
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
 
+    
     var body: some View {
         VStack {
-            
-            subViewHeader(headerText: "Select Food Intolerances")
+            SubViewHeader(headerText: "Select Food Intolerances")
             
             SeparatorLine()
             
@@ -24,7 +24,6 @@ struct IntolerancesFilter: View {
                 let arrayEnumeratedItems = Array(enumeratedItems)
                 
                 ForEach(arrayEnumeratedItems, id: \.element.key)  { (index, element) in
-                    
                     if index > 0 {
                         SeparatorLine()
                     }
@@ -40,6 +39,7 @@ struct IntolerancesFilter: View {
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {

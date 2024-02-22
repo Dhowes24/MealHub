@@ -10,8 +10,9 @@ import SwiftUI
 struct ResourcesView: View {
     @State private var showTabBar: Bool  = false
 
+    
     var body: some View {
-        subViewHeader(headerText: "Resources")
+        SubViewHeader(headerText: "Resources")
 
         VStack {
             VStack(spacing: 24) {
@@ -32,6 +33,7 @@ struct ResourcesView: View {
             }
             
             Spacer()
+            
         }
         .padding(.horizontal, 16)
         .navigationBarBackButtonHidden(true)
@@ -39,8 +41,7 @@ struct ResourcesView: View {
     }
 }
 
+
 #Preview {
     ResourcesView()
 }
-
-

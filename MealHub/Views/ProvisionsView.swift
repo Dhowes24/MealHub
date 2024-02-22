@@ -10,11 +10,13 @@ import SwiftUI
 struct ProvisionsView: View {
     @ObservedObject private var viewModel: ProvisionsViewModel = ProvisionsViewModel()
     
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Text("Provisions")
                     .font(.customSystem(size: 30, weight: .bold))
+                
                 Spacer()
             }
             .padding(.horizontal, 16)
@@ -22,7 +24,7 @@ struct ProvisionsView: View {
             ListToggle(listToggle: $viewModel.myKitchenShowing, optionOne: "Kitchen", optionTwo: "Grocery List")
             
             Group {
-                addItemInput(
+                AddItemInput(
                     optionOne: "Kitchen",
                     optionTwo: "Grocery List", 
                     optionOneSelected: viewModel.myKitchenShowing,
@@ -32,11 +34,10 @@ struct ProvisionsView: View {
                 )
                 
                 if viewModel.myKitchenShowing {
-                    provisionsList(items: $viewModel.items,
+                    ProvisionsList(items: $viewModel.items,
                                    ownedItems: true)
-                    
                 } else {
-                    provisionsList(items: $viewModel.items,
+                    ProvisionsList(items: $viewModel.items,
                                    ownedItems: false)
                 }
             }
@@ -49,6 +50,7 @@ struct ProvisionsView: View {
         .padding(.top, 6)
     }
 }
+
 
 #Preview {
     ProvisionsView()

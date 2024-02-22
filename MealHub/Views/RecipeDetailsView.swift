@@ -16,10 +16,11 @@ struct RecipeDetailsView: View {
         self._viewModel = StateObject(wrappedValue: ViewModel(id: id, path: path, selectedDate: selectedDate))
     }
     
+    
     var body: some View {
         VStack {
             HStack {
-                subViewHeader(headerText: "", path: viewModel.path, showTabBar: $viewModel.showTabBar)
+                SubViewHeader(headerText: "", path: viewModel.path, showTabBar: $viewModel.showTabBar)
                 
                 Spacer()
                 
@@ -38,7 +39,6 @@ struct RecipeDetailsView: View {
             SeparatorLine()
             
             ScrollView(.vertical, showsIndicators: false) {
-                
                 if let recipeInfo = viewModel.recipeInfo {
                     VStack(alignment: .leading, spacing: 16) {
                         
@@ -119,7 +119,6 @@ struct RecipeDetailsView: View {
                                 }
                             }
                         }
-                        
                         Spacer()
                     }
                     .padding(.horizontal, 16)
@@ -141,11 +140,8 @@ struct RecipeDetailsView: View {
                         ProgressView()
                     }
                 }
-                
             }
             .frame(maxWidth: .infinity)
-            
-            
         }
         .onAppear(perform: {
             Task{
@@ -173,12 +169,14 @@ struct RecipeDetailsView: View {
     }
 }
 
+
 #Preview {
     RecipeDetailsView(
         id: 1,
         path: .constant(NavigationPath())
     )
 }
+
 
 private func boldedIngredient(ingredient: ExtendedIngredient) -> String {
     let words = ingredient.name.components(separatedBy: " ")

@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct dateBubble: View {
+struct DateBubble: View {
     var day: Date
     var selectedDate: Date
     var updatedSelectedDate: @MainActor (Date) -> Void
+    
+    
     var body: some View {
         VStack {
             ZStack{
@@ -29,10 +31,10 @@ struct dateBubble: View {
                     .font(.customSystem(size: 14, weight: .semibold))
                     .foregroundColor(day == selectedDate ? .white : .black)
             }
+            
             Text(day.formatted(.dateTime.weekday()))
                 .font(.customSystem(size: 14, weight: .medium))
                 .frame(width: 40, height: 20)
-
         }
         .onTapGesture {
             withAnimation {
@@ -42,6 +44,7 @@ struct dateBubble: View {
     }
 }
 
+
 #Preview {
-    dateBubble(day: Date(), selectedDate: Date(), updatedSelectedDate: {_ in})
+    DateBubble(day: Date(), selectedDate: Date(), updatedSelectedDate: {_ in})
 }

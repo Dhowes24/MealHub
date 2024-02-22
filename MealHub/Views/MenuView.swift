@@ -15,10 +15,11 @@ struct MenuView: View {
         self._viewModel = StateObject(wrappedValue: ViewModel(path: path, selectedDate: selectedDate))
     }
     
+    
     var body: some View {
         VStack {
             HStack {
-                subViewHeader(headerText: "", path: viewModel.path, showTabBar: $viewModel.showTabBar)
+                SubViewHeader(headerText: "", path: viewModel.path, showTabBar: $viewModel.showTabBar)
 
                 Text ("\(viewModel.selectedDate.formatted(.dateTime.weekday())), \(viewModel.selectedDate.formatted(.dateTime.day().month()))")
                     .font(.customSystem(size: 16, weight: .bold))
@@ -40,9 +41,7 @@ struct MenuView: View {
                 
                 VStack {
                     ScrollView(.vertical, showsIndicators: false) {
-                        
                         if !viewModel.searchCriteria.isEmpty && !viewModel.searchKeyboardVisible {
-                            
                             LargeRecipeDisplay(
                                 recipeDisplayModel: RecipeDisplayModel(
                                     groupName: "Search For: \(viewModel.searchCriteria)",
@@ -50,7 +49,6 @@ struct MenuView: View {
                                     selectedDate: viewModel.selectedDate),
                                 path: $viewModel.path,
                                 specificSearch: true)
-                            
                         } else {
                             SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
                                 groupName: "Breakfast Foods",
@@ -79,6 +77,7 @@ struct MenuView: View {
         }
     }
 }
+
 
 #Preview {
     MenuView(path: Binding.constant(NavigationPath()), selectedDate: Date())

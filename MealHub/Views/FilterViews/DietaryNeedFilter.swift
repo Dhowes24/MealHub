@@ -17,10 +17,10 @@ struct DietaryNeedFilter: View {
         self.oldDictVal = dict.wrappedValue
     }
 
+    
     var body: some View {
         VStack {
-            
-            subViewHeader(headerText: "Select Dietary Needs")
+            SubViewHeader(headerText: "Select Dietary Needs")
             
             SeparatorLine()
             
@@ -30,7 +30,6 @@ struct DietaryNeedFilter: View {
                 let arrayEnumeratedItems = Array(enumeratedItems)
                 
                 ForEach(arrayEnumeratedItems, id: \.element.key)  { (index, element) in
-                    
                     if index > 0 {
                         SeparatorLine()
                     }
@@ -50,6 +49,7 @@ struct DietaryNeedFilter: View {
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {

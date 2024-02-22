@@ -14,7 +14,6 @@ struct FoodProfileOption: View {
     init(title: String) {
         self.title = title
         _filterDict = State(initialValue: decodeUserDefaults(title))
-        
     }
     
     var body: some View {
@@ -46,6 +45,7 @@ struct FoodProfileOption: View {
         SeparatorLine()
     }
     
+    
     private func chooseView() -> some View {
         switch title {
         case "Intolerances":
@@ -56,6 +56,7 @@ struct FoodProfileOption: View {
             return AnyView(IntolerancesFilter(dict: $filterDict))
         }
     }
+    
     
     private func retrieveSelectedItems() -> String {
         let trueValues = filterDict.filter { $0.value }.map { $0.key }

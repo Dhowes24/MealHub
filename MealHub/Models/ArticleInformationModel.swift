@@ -13,10 +13,12 @@ struct ArticleInformation: Hashable {
     var articleBlocks: [InfoBlock]
 }
 
+
 struct InfoBlock: Hashable {
     var blockTitle: String
     var blockBullets: [String]
 }
+
 
 let mealPrepGuide = ArticleInformation(
     title: "How to use the meal prep guide",
@@ -31,6 +33,7 @@ let mealPrepGuide = ArticleInformation(
                     ])
     ]
 )
+
 
 let makeAMealGuide = ArticleInformation(
     title: "What makes a meal?",
@@ -51,6 +54,7 @@ let makeAMealGuide = ArticleInformation(
                     ])
     ]
 )
+
 
 let wellBalancedMeal = ArticleInformation(
     title: "Create a well-balanced meal",

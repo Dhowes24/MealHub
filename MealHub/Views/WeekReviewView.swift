@@ -16,6 +16,7 @@ struct WeekReviewView: View {
     @State private var showTabBar: Bool  = false
     @Binding var path: NavigationPath
     
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -91,6 +92,7 @@ struct WeekReviewView: View {
         .buttonStyle(.plain)
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {

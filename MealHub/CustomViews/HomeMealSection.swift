@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct homeMealSection: View {
+struct HomeMealSection: View {
     @Binding var editMode: Bool
     var mealTime: String
     var meals: FetchedResults<RecipeCD>
@@ -51,7 +51,7 @@ struct homeMealSection: View {
     struct PreviewWrapper: View {
         @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
         var body: some View {
-            homeMealSection(
+            HomeMealSection(
                 editMode: .constant(false),
                 mealTime: "Breakfast",
                 meals: meals,

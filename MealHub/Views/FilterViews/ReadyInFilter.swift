@@ -11,8 +11,9 @@ struct ReadyInFilter: View {
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
     
+    
     var body: some View {
-        subViewHeader(headerText: "Pick time")
+        SubViewHeader(headerText: "Pick time")
         
         VStack(alignment: .leading) {
             Text("Ready in less than")
@@ -41,7 +42,6 @@ struct ReadyInFilter: View {
                                 .font(.customSystem(size: 14, weight: .bold))
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 13)
-                            
                                 .overlay(
                                     Capsule()
                                         .stroke(customGrey, lineWidth: 1)
@@ -71,6 +71,7 @@ struct ReadyInFilter: View {
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {

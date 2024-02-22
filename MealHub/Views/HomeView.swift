@@ -12,18 +12,19 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
     
+    
     var body: some View {
         NavigationStack(path: $viewModel.path) {
             
             VStack {
                 Header(headerText: "Welcome!")
                 
-                dateLineup(viewModel: viewModel)
+                DateLineup(viewModel: viewModel)
                 
                 HStack {
                     Spacer()
                     ForEach(viewModel.dateLineup, id:  \.self) { day in
-                        dateBubble(day: day, selectedDate: viewModel.selectedDate, updatedSelectedDate: viewModel.updateSelectedDate)
+                        DateBubble(day: day, selectedDate: viewModel.selectedDate, updatedSelectedDate: viewModel.updateSelectedDate)
                         
                         Spacer()
                     }
@@ -56,30 +57,29 @@ struct HomeView: View {
                     .padding(.vertical, 16)
                     
                     ScrollView {
-                        
                         VStack {
-                            homeMealSection(
+                            HomeMealSection(
                                 editMode: $viewModel.editMode,
                                 mealTime: "Breakfast",
                                 meals: meals,
                                 selectedRecipes: $viewModel.selectedRecipes,
                                 selectedDate: viewModel.selectedDate,
                                 path: $viewModel.path)
-                            homeMealSection(
+                            HomeMealSection(
                                 editMode: $viewModel.editMode,
                                 mealTime: "Lunch",
                                 meals: meals,
                                 selectedRecipes: $viewModel.selectedRecipes,
                                 selectedDate: viewModel.selectedDate,
                                 path: $viewModel.path)
-                            homeMealSection(
+                            HomeMealSection(
                                 editMode: $viewModel.editMode,
                                 mealTime: "Snack",
                                 meals: meals,
                                 selectedRecipes: $viewModel.selectedRecipes,
                                 selectedDate: viewModel.selectedDate,
                                 path: $viewModel.path)
-                            homeMealSection(
+                            HomeMealSection(
                                 editMode: $viewModel.editMode,
                                 mealTime: "Dinner",
                                 meals: meals,
@@ -121,6 +121,7 @@ struct HomeView: View {
         }
     }
 }
+
 
 #Preview {
     HomeView()

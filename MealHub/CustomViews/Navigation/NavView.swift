@@ -10,6 +10,7 @@ import SwiftUI
 struct NavView: View {
     @State private var selectedTab: Int = 0
     
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
@@ -32,6 +33,7 @@ struct NavView: View {
         .ignoresSafeArea()
     }
 }
+
 
 #Preview {
     NavView()

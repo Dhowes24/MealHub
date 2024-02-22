@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct TimeSelector: View {
-    
     @State var delete: Bool = false
     @State private var dragAmount = CGSize.zero
     let firstSelector: Bool = false
     let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
     let specificDateSelect: () -> [Date]
     @Binding var timeSelectorObject: TimeSelectorObject
-        
+    
     var body: some View {
         VStack {
             Group{
@@ -31,15 +30,15 @@ struct TimeSelector: View {
                             .frame(width: 10)
                             .offset(x: -5)
                     }
-                        .overlay{
-                                DatePicker(
-                                    "",
-                                    selection: $timeSelectorObject.date,
-                                    in: Date()...Date().addingTimeInterval(TimeInterval(86400 * 13)),
-                                    displayedComponents: [.date]
-                                )
-                                .blendMode(.destinationOver)
-                        }
+                    .overlay{
+                        DatePicker(
+                            "",
+                            selection: $timeSelectorObject.date,
+                            in: Date()...Date().addingTimeInterval(TimeInterval(86400 * 13)),
+                            displayedComponents: [.date]
+                        )
+                        .blendMode(.destinationOver)
+                    }
                     
                     Spacer()
                     
@@ -124,7 +123,6 @@ struct TimeSelector: View {
     struct PreviewWrapper: View {
         @State var object = TimeSelectorObject( date: Date())
         var body: some View {
-            
             TimeSelector(specificDateSelect: {[Date()]}, timeSelectorObject: $object)
         }
     }

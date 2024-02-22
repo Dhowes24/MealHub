@@ -21,6 +21,7 @@ import SwiftUI
         self.selectedDate = dateLineup[0]
     }
     
+    
     func getDateLineup(startDate: Date) -> [Date] {
         var dates: [Date] = []
         let calendar = Calendar.current
@@ -30,13 +31,14 @@ import SwiftUI
                 dates.append(date)
             }
         }
-        
         return dates
     }
+    
     
     func updateSelectedDate(newDate: Date) {
         selectedDate = newDate
     }
+    
     
     func updateWeekLineup(direction: Int) {
         let calendar = Calendar.current
@@ -46,4 +48,3 @@ import SwiftUI
         }
     }
 }
-

@@ -15,8 +15,8 @@ struct RecipeInfo: Codable, Identifiable {
     let extendedIngredients: [ExtendedIngredient]
     let analyzedInstructions: [AnalyzedInstructions]
     let readyInMinutes, servings: Int
-
 }
+
 
 struct ExtendedIngredient: Codable, Identifiable {
     let id: Int
@@ -25,15 +25,14 @@ struct ExtendedIngredient: Codable, Identifiable {
     let unit: String
 }
 
+
 struct AnalyzedInstructions: Codable {
     let steps: [Step]
 }
 
+
 struct Step: Codable, Identifiable {
-    var id: UUID {
-        UUID()
-    }
+    var id: UUID { UUID() }
     let number: Int
     let step: String
 }
-

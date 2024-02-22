@@ -39,4 +39,3 @@ let doubleRowHeight: CGFloat = 82
 let rowHeight: CGFloat = 40
 let taskNameFontSize: CGFloat = 20
 let taskWidthAvailable: CGFloat = UIScreen.screenWidth - 80
-

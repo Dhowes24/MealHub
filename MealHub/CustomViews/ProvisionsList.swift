@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct provisionsList: View {
+struct ProvisionsList: View {
     @Binding var items: [FoodItem]
     @State var ownedItems: Bool
     @State private var selectAllBool: Bool = false
@@ -147,7 +147,7 @@ struct provisionsList: View {
 #Preview {
     struct PreviewWrapper: View {
         var body: some View {
-            provisionsList(items: .constant([]),
+            ProvisionsList(items: .constant([]),
                            ownedItems: false)
         }
     }

@@ -12,10 +12,8 @@ struct FilterSearchOption: View {
     var title: String
         
     init(title: String) {
-        
         self.title = title
         _filterDict = State(initialValue: decodeUserDefaults(title))
-        
     }
     
     var body: some View {
@@ -47,6 +45,7 @@ struct FilterSearchOption: View {
         SeparatorLine()
     }
         
+    
     private func chooseView() -> some View {
         switch title {
         case "Ready In":
@@ -61,6 +60,7 @@ struct FilterSearchOption: View {
             return AnyView(ReadyInFilter(dict: $filterDict))
         }
     }
+    
     
     private func retrieveSelectedItems() -> String {
         let trueValues = filterDict.filter { $0.value }.map { $0.key }
@@ -110,6 +110,7 @@ struct FilterSearchOption: View {
         }
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {

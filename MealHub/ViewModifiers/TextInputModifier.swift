@@ -23,11 +23,13 @@ struct TextInputModifier: ViewModifier {
     }
 }
 
+
 extension View {
     func textInputMod() -> some View {
         return(modifier(TextInputModifier()))
     }
 }
+
 
 struct SearchInputModifier: ViewModifier {
     func body(content: Content) -> some View {
@@ -39,6 +41,7 @@ struct SearchInputModifier: ViewModifier {
             )
     }
 }
+
 
 extension View {
     func SearchInputMod() -> some View {

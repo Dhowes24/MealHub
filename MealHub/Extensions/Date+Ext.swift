@@ -10,6 +10,7 @@ import SwiftUI
 
 extension Date {
     
+    
     func isSameDay(as date: Date) -> Bool {
         let calendar = Calendar.current
         let formattedSelf = calendar.dateComponents([.month, .day], from: self)
@@ -18,6 +19,7 @@ extension Date {
         return formattedSelf.month == compareToDate.month && formattedSelf.day == compareToDate.day
     }
 
+    
     func isSameMonth(as date: Date) -> Bool {
         let calendar = Calendar.current
         let formattedSelf = calendar.dateComponents([.month], from: self)
@@ -26,6 +28,7 @@ extension Date {
         return formattedSelf.month == compareToDate.month
     }
 
+    
     func withinTwoWeeks() -> Bool  {
         let range = Calendar.current.startOfDay(for: Date())...Date().addingTimeInterval(TimeInterval(86400 * 13))
         return range ~= self

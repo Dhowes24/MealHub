@@ -10,8 +10,9 @@ import SwiftUI
 struct FoodProfileView: View {
     @State private var showTabBar: Bool  = false
     
+    
     var body: some View {
-        subViewHeader(headerText: "Food Profile")
+        SubViewHeader(headerText: "Food Profile")
         
         VStack {
             FoodProfileOption(title: "Intolerances")
@@ -24,6 +25,7 @@ struct FoodProfileView: View {
         .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
     }
 }
+
 
 #Preview {
     FoodProfileView()

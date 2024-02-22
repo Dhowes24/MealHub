@@ -11,10 +11,10 @@ struct CuisineFilter: View {
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
 
+    
     var body: some View {
         VStack {
-            
-            subViewHeader(headerText: "Select Preferred Cuisine")
+            SubViewHeader(headerText: "Select Preferred Cuisine")
             
             SeparatorLine()
             
@@ -40,6 +40,7 @@ struct CuisineFilter: View {
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {

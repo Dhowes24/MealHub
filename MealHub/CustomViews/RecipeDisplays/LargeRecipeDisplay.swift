@@ -22,6 +22,7 @@ struct LargeRecipeDisplay: View {
         self.specificSearch = specificSearch
     }
     
+    
     var body: some View {
         VStack {
             if specificSearch {
@@ -33,7 +34,7 @@ struct LargeRecipeDisplay: View {
                 .frame(height: 30)
                 .padding(.bottom, 24)
             } else {
-                subViewHeader(headerText: recipeDisplayViewModel.groupName)
+                SubViewHeader(headerText: recipeDisplayViewModel.groupName)
             }
             
             ScrollView(showsIndicators: false) {
@@ -52,7 +53,6 @@ struct LargeRecipeDisplay: View {
                     }
                     .padding(16)
                 }
-                
             }
             .padding(.horizontal, 16)
         }
@@ -63,6 +63,7 @@ struct LargeRecipeDisplay: View {
         
     }
 }
+
 
 //#Preview {
 //    LargeRecipeDisplay()

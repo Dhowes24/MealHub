@@ -23,6 +23,7 @@ struct BlackButton: ViewModifier {
     }
 }
 
+
 struct WhiteButton: ViewModifier {
     var width: CGFloat
     var height: CGFloat
@@ -39,6 +40,7 @@ struct WhiteButton: ViewModifier {
     }
 }
 
+
 struct GreyButton: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -47,6 +49,7 @@ struct GreyButton: ViewModifier {
             .background(Capsule().fill(Color.init(hex: 0xE2E5E9)))
     }
 }
+
 
 extension View {
     func button(color: String, width: CGFloat = 350, height: CGFloat = 60) -> some View {

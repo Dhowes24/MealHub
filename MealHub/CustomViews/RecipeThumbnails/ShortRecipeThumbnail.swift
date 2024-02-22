@@ -11,8 +11,8 @@ struct ShortRecipeThumbnail: View {
     var recipe: Recipe
     @Binding var path: NavigationPath
     
+    
     var body: some View {
-        
         Button(action: {
             path.append(recipe)
         }, label: {
@@ -47,6 +47,7 @@ struct ShortRecipeThumbnail: View {
         .buttonStyle(.plain)
     }
 }
+
 
 #Preview {
     ShortRecipeThumbnail(

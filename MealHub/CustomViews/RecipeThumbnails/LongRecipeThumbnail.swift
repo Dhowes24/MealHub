@@ -16,6 +16,7 @@ struct LongRecipeThumbnail: View {
     @State var selected: Bool = false
     @Binding var selectedRecipes: [RecipeCD]
     
+    
     var body: some View {
         HStack {
             Button(action: {

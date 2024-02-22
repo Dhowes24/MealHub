@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct dateLineup: View {
+struct DateLineup: View {
     @ObservedObject var viewModel: HomeViewModel
+    
     
     var body: some View {
         HStack {
@@ -54,6 +55,7 @@ struct dateLineup: View {
     }
 }
 
+
 #Preview {
-    dateLineup(viewModel: HomeViewModel())
+    DateLineup(viewModel: HomeViewModel())
 }

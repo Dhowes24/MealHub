@@ -11,6 +11,7 @@ import Foundation
 class NetworkManager {
     static let shared = NetworkManager()
     
+    
     func fetchRecipes(queryType: String, offset: String, returnNumber: Int, completion: @escaping ([Recipe]?, Error?) -> Void) {
         let queryString = buildSearchRecipes(queryType: queryType, returnNumber: returnNumber, offset: offset)
         

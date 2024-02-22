@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct addItemInput: View {
+struct AddItemInput: View {
     var optionOne: String
     var optionTwo: String
     var optionOneSelected: Bool
@@ -48,7 +48,7 @@ struct addItemInput: View {
         @State var bindingBool: Bool = true
         @State var bindingString: String = ""
         var body: some View {
-            addItemInput(
+            AddItemInput(
                 optionOne: "Kitchen",
                 optionTwo: "Grocery List",
                 optionOneSelected: bindingBool,

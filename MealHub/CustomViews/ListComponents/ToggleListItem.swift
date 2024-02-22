@@ -54,7 +54,6 @@ struct ToggleListItem<Key: Hashable>: View {
         ]
         var body: some View {
             ToggleListItem(controlKey: "Pescatarian", displayString: "Pescatarian", dict: $bindingDict)
-
         }
     }
     return PreviewWrapper()

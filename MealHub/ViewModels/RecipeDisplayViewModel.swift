@@ -22,6 +22,7 @@ import Foundation
         self.selectedDate = recipeDisplayModel.selectedDate
     }
     
+    
     func loadRecipes(returnNumber: Int = 6) {
         Task{
             NetworkManager.shared.fetchRecipes(queryType: queryType, offset: randomOffset, returnNumber: 10) { recipes, error in
@@ -36,6 +37,7 @@ import Foundation
             }
         }
     }
+    
     
     func loadAdditionalRecipes(returnNumber: Int = 6) {
         Task{
