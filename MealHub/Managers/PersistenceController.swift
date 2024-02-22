@@ -113,4 +113,16 @@ struct PersistenceController {
             }
         }
     }
+    
+    
+    func setMealTime(recipe: Recipe, date: Date, time: String) {
+        let recipeCD = RecipeCD(context: mainContext)
+        recipeCD.apiID = Int32(recipe.id)
+        recipeCD.dateAssigned = date
+        recipeCD.imageURL = recipe.image
+        recipeCD.mealTime = time
+        recipeCD.name = recipe.title
+        
+        saveData()
+    }
 }

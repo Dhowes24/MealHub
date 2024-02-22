@@ -10,7 +10,6 @@ import SwiftUI
 struct MealScheduler: View {
     @State var dragAmount: CGSize = CGSize.zero
     @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var moc
     @Binding var path: NavigationPath
     var recipe: Recipe
     var selectedDate: Date
@@ -91,18 +90,10 @@ struct MealScheduler: View {
                     timeSelectors.forEach { daySelected in
                         daySelected.mealTimes.forEach { (time: String, selected: Bool) in
                             if selected {
-                                let recipeCD = RecipeCD(context: moc)
-                                recipeCD.apiID = Int32(recipe.id)
-                                recipeCD.dateAssigned = daySelected.date
-                                recipeCD.imageURL = recipe.image
-                                recipeCD.mealTime = time
-                                recipeCD.name = recipe.title
-                                
-                                try? moc.save()
+                                PersistenceController.shared.setMealTime(recipe: recipe, date: daySelected.date, time: time)
                             }
                         }
                     }
-                    
                     path = NavigationPath()
                 }, label: {
                     Text("Done")
