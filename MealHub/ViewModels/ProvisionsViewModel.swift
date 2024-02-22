@@ -7,9 +7,7 @@
 
 import CoreData
 import Foundation
-import SwiftUI
 
-//extension ProvisionsView {
 @MainActor class ProvisionsViewModel: ObservableObject {
     let mainContext: NSManagedObjectContext
     @Published var myKitchenShowing: Bool  = true
@@ -18,43 +16,29 @@ import SwiftUI
     
     init(mainContext: NSManagedObjectContext = PersistenceController.shared.mainContext) {
         self.mainContext = mainContext
-        fetchItems()
+        refreshItems()
     }
     
     func addItem(dateAdded: Date, name: String, owned: Bool) {
-        let item = FoodItem(context: mainContext)
-        item.dateAdded = dateAdded
-        item.id = UUID()
-        item.name = name
-        item.owned = owned
-        
-        saveData()
-        fetchItems()
+        PersistenceController.shared.addFoodItem(dateAdded: dateAdded, name: name, owned: owned)
+        refreshItems()
     }
     
-    func deleteAll() {
-        items.forEach { item in
-            mainContext.delete(item)
-            saveData()
-            fetchItems()
-        }
-    }
     
-    func deleteItems(_ deleteItems: [FoodItem]) {
-        withAnimation(Animation.easeInOut(duration: 0.5)) {
-            
-            deleteItems.forEach { item in
-                items.removeAll { listItem in
-                    listItem.id == item.id
-                }
-                mainContext.delete(item)
-            }
-        }
-        saveData()
-        fetchItems()
-    }
+//    func deleteAll() {
+//        PersistenceController.shared.deleteAll(items: items)
+//        refreshItems()
+//
+//    }
+//    
+//    
+//    func deleteItems(_ deleteItems: [FoodItem]) {
+//        PersistenceController.shared.deleteAll(items: deleteItems)
+//        refreshItems()
+//    }
     
-    func fetchItems() {
+    
+    func refreshItems() {
         let request = NSFetchRequest<FoodItem>(entityName: "FoodItem")
         
         do {
@@ -73,20 +57,10 @@ import SwiftUI
         }
     }
     
-    func moveItemsToKitchen(_ items: [FoodItem]) {
-        items.forEach { item in
-            item.owned = true
-        }
-        saveData()
-        fetchItems()
-    }
+//    
+//    func moveItemsToKitchen(_ items: [FoodItem]) {
+//        PersistenceController.shared.moveItemsToKitchen(itemsToMove: items)
+//        refreshItems()
+//    }
     
-    func saveData() {
-        do {
-            try mainContext.save()
-            fetchItems()
-        } catch let error {
-            print("Error Saving. \(error)")
-        }
-    }
 }

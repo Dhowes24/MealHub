@@ -14,12 +14,11 @@ struct MealHubApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            LoginSignupView()
             NavView()
                 .environment(\.managedObjectContext, persistenceController.persistentContainer.viewContext)
         }
         .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            persistenceController.saveData()
         }
     }
 }

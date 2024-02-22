@@ -40,7 +40,6 @@ struct addItemInput: View {
             .disabled(disabled)
         }
         .padding(.vertical, 20)
-        
     }
 }
 
@@ -49,7 +48,13 @@ struct addItemInput: View {
         @State var bindingBool: Bool = true
         @State var bindingString: String = ""
         var body: some View {
-            addItemInput(optionOne: "Kitchen", optionTwo: "Grocery List", optionOneSelected: bindingBool, itemName: $bindingString, addItemFunction: {_,_,_ in }, disabled: bindingString.isEmpty)
+            addItemInput(
+                optionOne: "Kitchen",
+                optionTwo: "Grocery List",
+                optionOneSelected: bindingBool,
+                itemName: $bindingString,
+                addItemFunction: {_,_,_ in },
+                disabled: bindingString.isEmpty)
         }
     }
     return PreviewWrapper()

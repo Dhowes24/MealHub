@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct provisionsList: View {
-    var deleteItems: @MainActor ([FoodItem]) -> Void
     @Binding var items: [FoodItem]
-    var moveItemsToKitchen: @MainActor ([FoodItem]) -> Void
     @State var ownedItems: Bool
     @State private var selectAllBool: Bool = false
     @State private var toggleItems: [FoodItem : Bool] = [:]
@@ -57,7 +55,6 @@ struct provisionsList: View {
             .frame(maxWidth: .infinity)
             
             HStack(spacing: 20) {
-                
                 Button(action: {
                     moveOrDeleteItems()
                 }, label: {
@@ -96,13 +93,16 @@ struct provisionsList: View {
         })
     }
     
+    
     private func allItemsSelected() -> Bool {
         !toggleItems.values.contains { Bool in Bool == false }
     }
     
+    
     private func itemsSelected() -> Bool {
         toggleItems.values.contains { Bool in Bool == true }
     }
+    
     
     @MainActor private func moveOrDeleteItems( deleting: Bool = true ) {
         var actionItemsArray: [FoodItem] = []
@@ -113,12 +113,13 @@ struct provisionsList: View {
             }
         }
         if deleting {
-            deleteItems(actionItemsArray)
+            PersistenceController.shared.deleteItems(itemsToDelete: actionItemsArray, allFoodItems: &items)
         } else {
-            moveItemsToKitchen(actionItemsArray)
+            PersistenceController.shared.moveItemsToKitchen(itemsToMove: actionItemsArray)
         }
         triggerRefresh.toggle()
     }
+    
     
     private func refreshPage() {
         let tempItems = toggleItems
@@ -134,6 +135,7 @@ struct provisionsList: View {
         }
     }
     
+    
     private func selectAll(_ bool: Bool) {
         for (key,_) in toggleItems {
             toggleItems[key] = bool
@@ -141,17 +143,12 @@ struct provisionsList: View {
     }
 }
 
+
 #Preview {
     struct PreviewWrapper: View {
-        
         var body: some View {
-            
-            provisionsList(
-                deleteItems: { _ in },
-                items: .constant([]),
-                moveItemsToKitchen: { _ in }, 
-                ownedItems: false)
-            
+            provisionsList(items: .constant([]),
+                           ownedItems: false)
         }
     }
     

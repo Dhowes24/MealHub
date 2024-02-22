@@ -18,26 +18,26 @@ struct ProvisionsView: View {
                 Spacer()
             }
             .padding(.horizontal, 16)
-            .onTapGesture {
-                viewModel.deleteAll()
-            }
             
             ListToggle(listToggle: $viewModel.myKitchenShowing, optionOne: "Kitchen", optionTwo: "Grocery List")
             
             Group {
                 addItemInput(
                     optionOne: "Kitchen",
-                    optionTwo: "Grocery List", optionOneSelected: viewModel.myKitchenShowing,
+                    optionTwo: "Grocery List", 
+                    optionOneSelected: viewModel.myKitchenShowing,
                     itemName: $viewModel.newItemName,
                     addItemFunction: viewModel.addItem,
                     disabled: viewModel.newItemName.isEmpty
                 )
                 
                 if viewModel.myKitchenShowing {
-                    provisionsList(deleteItems: viewModel.deleteItems, items: $viewModel.items, moveItemsToKitchen: viewModel.moveItemsToKitchen, ownedItems: true)
+                    provisionsList(items: $viewModel.items,
+                                   ownedItems: true)
                     
                 } else {
-                    provisionsList(deleteItems: viewModel.deleteItems, items: $viewModel.items, moveItemsToKitchen: viewModel.moveItemsToKitchen, ownedItems: false)
+                    provisionsList(items: $viewModel.items,
+                                   ownedItems: false)
                 }
             }
             .padding(.horizontal, 16)
