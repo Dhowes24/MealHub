@@ -20,7 +20,7 @@ struct WeekReviewView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "arrow.backward")
+                SFSymbols.arrow.getDirection(direction: "backward")
                     .frame(width: 24, height: 24)
                     .onTapGesture {
                         showTabBar.toggle()
@@ -50,7 +50,7 @@ struct WeekReviewView: View {
                             
                             HStack {
                                 Text("\(dateRow.formatted(.dateTime.weekday())), \(dateRow.formatted(.dateTime.day().month()))")
-                                    .foregroundStyle(darkGrey)
+                                    .foregroundStyle(brandColors.darkGrey)
                                     .font(.customSystem(size: 12, weight: .semibold))
                                     .frame(width: 75, height: 15, alignment: .leading)
                                     .padding(.top, 8)

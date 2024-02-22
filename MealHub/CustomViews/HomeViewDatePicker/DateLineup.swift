@@ -22,7 +22,7 @@ struct DateLineup: View {
             Spacer()
             
             Group {
-                Image(systemName: "chevron.left")
+                SFSymbols.chevron.getDirection(direction: "left")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 6, height: 10)
@@ -39,7 +39,7 @@ struct DateLineup: View {
             Group {
                 Text("Next")
                     .font(.customSystem(size: 14, weight: .bold))
-                Image(systemName: "chevron.right")
+                SFSymbols.chevron.getDirection(direction: "right")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 6, height: 10)

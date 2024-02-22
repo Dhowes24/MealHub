@@ -27,11 +27,11 @@ struct ProfileOption: View {
                             .font(.customSystem(size: 16, weight: .semibold))
                         Text(profileOptionDetails.subText)
                             .font(.customSystem(size: 13, weight: .regular))
-                            .foregroundStyle(darkGrey)
+                            .foregroundStyle(brandColors.darkGrey)
                     }
                     Spacer()
                     
-                    Image(systemName: "chevron.right")
+                    SFSymbols.chevron.getDirection(direction: "right")
                 }
                 .padding(.vertical, 16)
                 

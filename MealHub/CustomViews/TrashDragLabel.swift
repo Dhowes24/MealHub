@@ -15,7 +15,7 @@ struct TrashLabel: View {
             .resizable()
             .scaledToFit()
             .frame(width: 20)
-            .foregroundColor(offWhite)
+            .foregroundColor(brandColors.offWhite)
             .background(
                 Rectangle()
                     .fill(.red)

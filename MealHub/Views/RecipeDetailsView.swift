@@ -24,7 +24,8 @@ struct RecipeDetailsView: View {
                 
                 Spacer()
                 
-                Image(systemName: viewModel.saved ? "heart.fill" : "heart")
+                
+                SFSymbols.heart.fill(viewModel.saved)
                     .frame(width: 24, height: 24)
                     .onTapGesture {
                         if let recipeInfo = viewModel.recipeInfo {
@@ -69,7 +70,7 @@ struct RecipeDetailsView: View {
                         
                         VStack (alignment: .leading, spacing: 8) {
                             HStack {
-                                Image(systemName: "person.2")
+                                SFSymbols.personTwo
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 24)
@@ -80,7 +81,7 @@ struct RecipeDetailsView: View {
                             }
                             
                             HStack {
-                                Image(systemName: "clock")
+                                SFSymbols.clock
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 24)

@@ -18,7 +18,7 @@ struct FilterSearch: View {
         Group {
             HStack(alignment: .center) {
                 HStack {
-                    Image(systemName: "magnifyingglass")
+                    SFSymbols.magnifyingGlass
                         .frame(width: 24, height: 24)
                         .padding(.horizontal, 8)
                     
@@ -32,7 +32,7 @@ struct FilterSearch: View {
                     self.isKeyboardVisible = false
                 }
                 
-                Image(systemName: filtersShowing ? "chevron.down" : "chevron.up")
+                SFSymbols.chevron.getDirection(direction: filtersShowing ? "down" : "up")
                     .frame(width: 24, height: 24)
                     .onTapGesture {
                         withAnimation {

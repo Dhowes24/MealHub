@@ -27,7 +27,7 @@ struct FilterSearchOption: View {
                 
                     Text(subtext)
                         .font(.customSystem(size: 13, weight: .regular))
-                        .foregroundStyle(darkGrey)
+                        .foregroundStyle(brandColors.darkGrey)
                         .frame(width: 290, height: 16, alignment: .leading)
             }
             

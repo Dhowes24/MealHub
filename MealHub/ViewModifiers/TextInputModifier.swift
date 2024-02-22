@@ -14,10 +14,10 @@ struct TextInputModifier: ViewModifier {
             .padding(8)
             .background(
                 RoundedRectangle(cornerRadius: 5.0)
-                    .fill(offWhite)
+                    .fill(brandColors.offWhite)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(customGrey, lineWidth: 1)
+                            .stroke(brandColors.customGrey, lineWidth: 1)
                     )
             )
     }

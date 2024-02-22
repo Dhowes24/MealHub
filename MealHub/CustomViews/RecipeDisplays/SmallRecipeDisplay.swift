@@ -31,7 +31,7 @@ struct SmallRecipeDisplay: View {
                 Button(action: {
                     path.append(recipeDisplayModel)
                 }, label: {
-                    Image(systemName: "chevron.right")
+                    SFSymbols.chevron.getDirection(direction: "right")
                         .frame(width: 24, height: 24)
                 })
                 .buttonStyle(.plain)

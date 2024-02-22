@@ -23,18 +23,20 @@ struct ProvisionsList: View {
                     .padding(.vertical, 16)
                 
                 Spacer()
-                     
-                Image(systemName: selectAllBool ? "checkmark.square.fill" : "square")
+                
+                SFSymbols.checkmarkSquare.fill(selectAllBool)
                     .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(selectAllBool ? brandGreen : .gray)
+                    .frame(width: 20, height:20)
+                    .foregroundColor(selectAllBool ? brandColors.green : .gray)
                     .font(.system(size: 20, weight: .bold, design: .default))
                 
             }
             .frame(height: 55)
             .onTapGesture {
-                selectAllBool.toggle()
-                selectAll(selectAllBool)
+                withAnimation {
+                    selectAllBool.toggle()
+                    selectAll(selectAllBool)
+                }
             }
             
             ScrollView(showsIndicators: false) {

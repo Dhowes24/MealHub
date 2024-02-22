@@ -17,10 +17,10 @@ struct ResourceOptionView: View {
                 HStack {
                     ZStack {
                         Circle()
-                            .foregroundColor(brandPurple)
+                            .foregroundColor(brandColors.purple)
                             .frame(width: 48)
                         
-                        Image(systemName: "bell")
+                        SFSymbols.bell
                             .resizable()
                             .frame(width: 21, height: 24)
                     }
@@ -32,7 +32,7 @@ struct ResourceOptionView: View {
                         
                         Text(subText)
                             .font(.customSystem(size: 16, weight: .regular))
-                            .foregroundStyle(darkGrey)
+                            .foregroundStyle(brandColors.darkGrey)
                     }
                 }
                 .padding(.bottom, 8)
@@ -40,7 +40,7 @@ struct ResourceOptionView: View {
                 HStack {
                     Spacer()
                     
-                    Image(systemName: "arrow.forward")
+                    SFSymbols.arrow.getDirection(direction: "forward")
                 }
                 
             }

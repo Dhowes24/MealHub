@@ -43,10 +43,10 @@ struct CheckboxStyle: ToggleStyle {
             
             Spacer()
             
-            Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+            SFSymbols.checkmarkSquare.fill(configuration.isOn)
                 .resizable()
                 .frame(width: 20, height: 20)
-                .foregroundColor(configuration.isOn ? brandGreen : .gray)
+                .foregroundColor(configuration.isOn ? brandColors.green : .gray)
                 .font(.system(size: 20, weight: .bold, design: .default))
                 .onTapGesture {
                     configuration.isOn.toggle()

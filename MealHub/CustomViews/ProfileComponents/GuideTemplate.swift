@@ -29,7 +29,7 @@ struct GuideTemplate: View {
                     HStack{
                         Text(articleInfo.subTitle)
                             .font(.customSystem(size: 16))
-                            .foregroundStyle(darkGrey)
+                            .foregroundStyle(brandColors.darkGrey)
                         
                         Spacer()
                     }
@@ -63,11 +63,11 @@ struct GuideTemplate: View {
                             }
                             .background(
                                 RoundedRectangle(cornerRadius: 16.0)
-                                    .foregroundColor(lightGrey)
+                                    .foregroundColor(brandColors.lightGrey)
                             )
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16.0)
-                                    .stroke(customGrey)
+                                    .stroke(brandColors.customGrey)
                             )
                         }
                     }

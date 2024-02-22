@@ -10,7 +10,7 @@ import SwiftUI
 struct SeparatorLine: View {
     var body: some View {
             Rectangle()
-                .fill(customGrey)
+            .fill(brandColors.customGrey)
                 .frame(minWidth: 0,maxWidth: .infinity,minHeight: 1,maxHeight: 1,alignment: .center)
     }
 }

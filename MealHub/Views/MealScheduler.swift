@@ -21,7 +21,7 @@ struct MealScheduler: View {
             VStack{
                 VStack {
                     HStack {
-                        Image(systemName: "arrow.backward")
+                        SFSymbols.arrow.getDirection(direction: "backward")
                             .frame(width: 24, height: 24)
                             .onTapGesture {
                                 dismiss()

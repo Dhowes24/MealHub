@@ -24,7 +24,7 @@ struct TimeSelector: View {
                             .font(.customSystem(size: 16, weight: .semibold))
                             .frame(width: 100)
                         
-                        Image(systemName: "pencil")
+                        SFSymbols.pencil
                             .resizable()
                             .scaledToFit()
                             .frame(width: 10)
@@ -47,7 +47,7 @@ struct TimeSelector: View {
                         
                         Spacer()
                         
-                        Image(systemName: timeSelectorObject.isDisclosed ? "chevron.up" : "chevron.down")
+                        SFSymbols.chevron.getDirection(direction: timeSelectorObject.isDisclosed ? "up" : "down")
                             .frame(width: 24, height: 24)
                             .onTapGesture {
                                 withAnimation {

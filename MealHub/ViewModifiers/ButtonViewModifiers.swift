@@ -14,7 +14,7 @@ struct BlackButton: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.customSystem(size: 14, weight: .bold))
-            .foregroundStyle(textPink)
+            .foregroundStyle(brandColors.textPink)
             .background(                
                 Capsule()
                     .frame(width: width, height: height)

@@ -53,7 +53,7 @@ struct LongRecipeThumbnail: View {
                                     .clipShape(
                                         RoundedRectangle(cornerRadius: 16.0)
                                     )
-                                    .background(customGrey)
+                                    .background(brandColors.customGrey)
                             }
                         )
                         
@@ -63,8 +63,9 @@ struct LongRecipeThumbnail: View {
                                 .frame(width: 25, height: 25)
                                 .offset(x:25, y:-25)
                             
-                            Image(systemName: selected ? "checkmark.circle.fill" : "checkmark.circle")
-                                .foregroundStyle(selected ? brandGreen : darkGrey)
+                            
+                            SFSymbols.checkmarkCircle.fill(selected)
+                                .foregroundStyle(selected ? brandColors.green : brandColors.darkGrey)
                                 .frame(width: 25, height: 25)
                                 .offset(x:25, y:-25)
                         }
@@ -75,7 +76,7 @@ struct LongRecipeThumbnail: View {
                             .font(.customSystem(size: 16, weight: .regular))
                         if(!homeTab) {
                             Text(meal.mealTime ?? "Unknown")
-                                .foregroundStyle(darkGrey)
+                                .foregroundStyle(brandColors.darkGrey)
                                 .font(.customSystem(size: 12, weight: .semibold))
                         }
                         
@@ -96,7 +97,7 @@ struct LongRecipeThumbnail: View {
     }
 }
 
-
+//
 //#Preview {
 //    struct PreviewWrapper: View {
 //        @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>

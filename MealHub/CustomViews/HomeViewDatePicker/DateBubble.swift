@@ -18,12 +18,12 @@ struct DateBubble: View {
             ZStack{
                 if day.formatted(.dateTime.day().month()) == Date().formatted(.dateTime.day().month()) {
                     Circle()
-                        .strokeBorder(brandGreen, lineWidth: 2)
-                        .background(Circle().fill(day == selectedDate ? brandOrange : brandWarm))
+                        .strokeBorder(brandColors.green, lineWidth: 2)
+                        .background(Circle().fill(day == selectedDate ? brandColors.orange : brandColors.warm))
                         .frame(width: 40, height: 40)
                 } else {
                     Circle()
-                        .fill(day == selectedDate ? brandOrange : day.withinTwoWeeks() ? brandWarm : disabledWarm)
+                        .fill(day == selectedDate ? brandColors.orange : day.withinTwoWeeks() ? brandColors.warm : brandColors.disabledwarm)
                         .frame(width: 40, height: 40)
                 }
                 

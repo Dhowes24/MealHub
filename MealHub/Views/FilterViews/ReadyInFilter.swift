@@ -29,7 +29,7 @@ struct ReadyInFilter: View {
                         HStack {
                             Text("\(element.key.description) minutes")
                                 .font(.customSystem(size: 14, weight: .bold))
-                                .foregroundStyle(offWhite)
+                                .foregroundStyle(brandColors.offWhite)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 13)
                                 .background(
@@ -44,7 +44,7 @@ struct ReadyInFilter: View {
                                 .padding(.vertical, 13)
                                 .overlay(
                                     Capsule()
-                                        .stroke(customGrey, lineWidth: 1)
+                                        .stroke(brandColors.customGrey, lineWidth: 1)
                                 )
                         }
                     }

@@ -41,7 +41,7 @@ struct SubViewHeader: View {
 
     var body: some View {
         HStack {
-            Image(systemName: "arrow.backward")
+            SFSymbols.arrow.getDirection(direction: "backward")
                 .frame(width: 24, height: 24)
                 .onTapGesture {
                     dismiss()

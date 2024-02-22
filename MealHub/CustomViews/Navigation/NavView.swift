@@ -15,17 +15,17 @@ struct NavView: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    Label("Home", image: selectedTab == 0 ? "custom.home.active" : "custom.home.inactive")
+                    selectedTab == 0 ? navigationLabels.homeActive : navigationLabels.homeInactive
                 }
                 .tag(0)
             ProvisionsView()
                 .tabItem {
-                    Label("Provisions", image: "custom.provisions")
+                    navigationLabels.provisions
                 }
                 .tag(1)
             ProfileView()
                 .tabItem {
-                    Label("Profile", systemImage: "person.fill")
+                    navigationLabels.profile
                 }
                 .tag(2)
         }
