@@ -11,7 +11,6 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @FetchRequest(sortDescriptors: []) var meals: FetchedResults<RecipeCD>
-    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         NavigationStack(path: $viewModel.path) {
@@ -97,7 +96,7 @@ struct HomeView: View {
                 
                 Button(action: {
                     if viewModel.editMode {
-                        viewModel.deleteScheduledMeal(moc: moc)
+                        PersistenceController.shared.deleteSelectedHomeViewMeals(selectedMeals: &viewModel.selectedRecipes)
                         viewModel.editMode = false
                     } else {
                         viewModel.path.append(1)

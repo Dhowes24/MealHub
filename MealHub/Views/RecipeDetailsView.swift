@@ -9,7 +9,6 @@ import Combine
 import SwiftUI
 
 struct RecipeDetailsView: View {
-    @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var savedRecipes: FetchedResults<SavedRecipes>
     @StateObject private var viewModel: ViewModel
     

@@ -12,7 +12,6 @@ struct SavedRecipesView: View {
     let columns = [
         GridItem(.adaptive(minimum: 160))
     ]
-    @Environment(\.managedObjectContext) var moc
     @Binding var path: NavigationPath
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SavedRecipes.dateSaved, ascending: false)]) var savedRecipes: FetchedResults<SavedRecipes>
     @State private var showTabBar: Bool  = false

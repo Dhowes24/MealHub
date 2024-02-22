@@ -33,7 +33,7 @@ struct PersistenceController {
         backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         backgroundContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         backgroundContext.parent = self.mainContext
-
+        
     }
     
     func saveData() {
@@ -101,4 +101,16 @@ struct PersistenceController {
         }
     }
     
+    
+    func deleteSelectedHomeViewMeals(selectedMeals: inout [RecipeCD]) {
+        withAnimation {
+            selectedMeals.forEach { meal in
+                selectedMeals.removeAll { RecipeCD in
+                    RecipeCD == meal
+                }
+                mainContext.delete(meal)
+                saveData()
+            }
+        }
+    }
 }

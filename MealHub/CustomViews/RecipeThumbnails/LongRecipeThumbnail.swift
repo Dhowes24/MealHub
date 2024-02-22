@@ -12,7 +12,6 @@ struct LongRecipeThumbnail: View {
     @Binding var editMode: Bool
     var homeTab: Bool = false
     var meal: RecipeCD
-    @Environment(\.managedObjectContext) var moc
     @Binding var path: NavigationPath
     @State var selected: Bool = false
     @Binding var selectedRecipes: [RecipeCD]

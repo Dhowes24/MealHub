@@ -21,18 +21,6 @@ import SwiftUI
         self.selectedDate = dateLineup[0]
     }
     
-    func deleteScheduledMeal(moc: NSManagedObjectContext) {
-        withAnimation {
-            selectedRecipes.forEach { meal in
-                selectedRecipes.removeAll { RecipeCD in
-                    RecipeCD == meal
-                }
-                moc.delete(meal)
-                try? moc.save()
-            }
-        }
-    }
-    
     func getDateLineup(startDate: Date) -> [Date] {
         var dates: [Date] = []
         let calendar = Calendar.current
