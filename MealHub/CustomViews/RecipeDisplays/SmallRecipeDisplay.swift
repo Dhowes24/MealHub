@@ -24,6 +24,7 @@ struct SmallRecipeDisplay: View {
                 
                 Text(recipeDisplayViewModel.groupName)
                     .font(.customSystem(size: 24, weight: .semibold))
+                
                 Spacer()
                 
                 Button(action: {
@@ -43,7 +44,7 @@ struct SmallRecipeDisplay: View {
                 HStack(spacing: 20) {
                     
                     if recipeDisplayViewModel.nothingFound {
-                        Text("Sorry! It looks like we could not find any results. \nTry changing up your food preferences above ^")
+                        Text("Sorry! It looks like we could not find any results. \nTry changing up your food preferences above")
                         
                     } else {
                         ForEach(recipeDisplayViewModel.recipeList) {recipe in
@@ -65,10 +66,6 @@ struct SmallRecipeDisplay: View {
 
 #Preview {
     SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
-        fetchRecipes: { _, _, _, completion in
-            let sampleRecipes = [Recipe(id: 1, title: "Sample Recipe", image: "sample.jpg")]
-            completion(sampleRecipes)
-        },
         groupName: "Lunch-Friendly",
         queryType: "Lunch",
         selectedDate: Date()), path: .constant(NavigationPath()))

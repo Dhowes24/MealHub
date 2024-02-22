@@ -8,7 +8,6 @@
 import Foundation
 
 @MainActor class RecipeDisplayViewModel: ObservableObject {
-    var fetchRecipes: @MainActor (String, String, Int, @escaping ([Recipe]) -> Void) -> Void
     var groupName: String
     @Published var nothingFound: Bool = false
     var queryType: String
@@ -17,7 +16,6 @@ import Foundation
     var selectedDate: Date
 
     init(recipeDisplayModel: RecipeDisplayModel) {
-        self.fetchRecipes = recipeDisplayModel.fetchRecipes
         self.groupName = recipeDisplayModel.groupName
         self.queryType = recipeDisplayModel.queryType
         self.randomOffset = Int.random(in: 1...300).description
@@ -25,19 +23,31 @@ import Foundation
     }
     
     func loadRecipes(returnNumber: Int = 6) {
-        fetchRecipes(queryType, randomOffset, returnNumber) { list in
-            DispatchQueue.main.async { [self] in
-                self.recipeList = list
-                self.nothingFound = self.recipeList.isEmpty
+        Task{
+            NetworkManager.shared.fetchRecipes(queryType: queryType, offset: randomOffset, returnNumber: 10) { recipes, error in
+                if let recipes {
+                    DispatchQueue.main.async {
+                        self.recipeList = recipes
+                        self.nothingFound = recipes.isEmpty
+                    }
+                } else if let error = error {
+                    print("Error occurred: \(error)")
+                }
             }
         }
     }
     
     func loadAdditionalRecipes(returnNumber: Int = 6) {
-        fetchRecipes(queryType, Int.random(in: 1...300).description, returnNumber) { list in
-            DispatchQueue.main.async { [self] in
-                self.recipeList += list
-                self.nothingFound = self.recipeList.isEmpty
+        Task{
+            NetworkManager.shared.fetchRecipes(queryType: queryType, offset: Int.random(in: 1...300).description, returnNumber: 10) { recipes, error in
+                if let recipes {
+                    DispatchQueue.main.async {
+                        self.recipeList += recipes
+                        self.nothingFound = self.recipeList.isEmpty
+                    }
+                } else if let error = error {
+                    print("Error occurred: \(error)")
+                }
             }
         }
     }

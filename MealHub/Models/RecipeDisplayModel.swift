@@ -9,7 +9,6 @@ import Foundation
 
 struct RecipeDisplayModel: Identifiable, Hashable {
     var id = UUID()
-    var fetchRecipes: @MainActor (String, String, Int, @escaping ([Recipe]) -> Void) -> Void
     var groupName: String
     var queryType: String
     var selectedDate: Date

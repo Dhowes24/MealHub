@@ -22,11 +22,6 @@ extension MenuView {
             self.selectedDate = selectedDate
         }
         
-        private lazy var downloadSession: URLSession = {
-            let configuration = URLSessionConfiguration.default
-            return URLSession(configuration: configuration, delegate: nil, delegateQueue: .main)
-        }()
-        
         //Test Data Function
         //------------------------------------------------------------------------------------------
         //        func fetchRecipes(queryType: String, offset: String, returnNumber: Int,  completion: @escaping ([Recipe]) -> Void) {
@@ -59,86 +54,6 @@ extension MenuView {
         //            }
         //        }
         
-        //Live Data Function
-        //------------------------------------------------------------------------------------------
-        nonisolated func fetchRecipes(queryType: String, offset: String, returnNumber: Int,  completion: @escaping ([Recipe]) -> Void) {
-            let queryString = buildSearchRecipes(queryType: queryType, returnNumber: returnNumber, offset: offset)
-            
-            let request = NSMutableURLRequest(url: NSURL(string: queryString)! as URL,
-                                              cachePolicy: .useProtocolCachePolicy,
-                                              timeoutInterval: 10.0)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = headers
-            
-            let session = URLSession.shared
-            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                if let error = error {
-                    print("Error in data task:", error)
-                    completion([])
-                } else {
-                    if let decodedResponse = try? JSONDecoder().decode(SearchRecipesResults.self, from: data!) {
-                        var returnRecipeList = decodedResponse.results
-                        
-                        if returnRecipeList.count < returnNumber && offset != "0" {
-                            self.fetchRecipes(queryType: queryType, offset: "0", returnNumber: returnNumber, completion: completion)
-                        }
-                        
-                        else if returnRecipeList.count < returnNumber{
-                            let returnNumber = (returnNumber - returnRecipeList.count).description
-                            
-                            self.fetchRandomRecipes(
-                                tags: [queryType],
-                                returnNumber: returnNumber) { [weak self] list in
-                                    guard self != nil else { return }
-                                    
-                                    DispatchQueue.main.async {
-                                        returnRecipeList += list
-                                        
-                                        completion(returnRecipeList)
-                                    }
-                                }
-                        }
-                        
-                        completion(returnRecipeList)
-                    } else {
-                        print("Error between Data Model and JSON schema")
-                        completion([])
-                    }
-                }
-            })
-            dataTask.resume()
-        }
         
-        nonisolated func fetchRandomRecipes(tags:[String], returnNumber: String, completion: @escaping ([Recipe]) -> Void) {
-            
-            var tagsArray = tags
-            let diet = decodeUserDefaults("Dietary Need").filter { $0.value == true }.keys
-            let intolerances = decodeUserDefaults("Intolerances").filter { $0.value == true }.keys
-            tagsArray.append(contentsOf: diet)
-            tagsArray.append(contentsOf: intolerances)
-            
-            let queryString = buildGetRandomRecipes(tags: tagsArray, returnNumber: returnNumber)
-            
-            let request = NSMutableURLRequest(url: NSURL(string: queryString)! as URL,
-                                              cachePolicy: .useProtocolCachePolicy,
-                                              timeoutInterval: 10.0)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = headers
-            
-            let session = URLSession.shared
-            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                if let error = error {
-                    print("Error in data task:", error)
-                    completion([])
-                } else {
-                    if let decodedResponse = try? JSONDecoder().decode(GetRandomRecipes.self, from: data!) {
-                        completion(decodedResponse.recipes)
-                    } else {
-                        completion([])
-                    }
-                }
-            })
-            dataTask.resume()
-        }
     }
 }

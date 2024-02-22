@@ -45,30 +45,26 @@ struct MenuView: View {
                             
                             LargeRecipeDisplay(
                                 recipeDisplayModel: RecipeDisplayModel(
-                                    fetchRecipes: viewModel.fetchRecipes,
                                     groupName: "Search For: \(viewModel.searchCriteria)",
                                     queryType: "\(viewModel.searchCriteria)",
                                     selectedDate: viewModel.selectedDate),
-                                path: $viewModel.path, 
+                                path: $viewModel.path,
                                 specificSearch: true)
                             
                         } else {
                             SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
-                                fetchRecipes: viewModel.fetchRecipes,
                                 groupName: "Breakfast Foods",
                                 queryType: "breakfast",
                                 selectedDate: viewModel.selectedDate),
                                                path: $viewModel.path)
 
                             SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
-                                fetchRecipes: viewModel.fetchRecipes,
                                 groupName: "Lunch-friendly",
                                 queryType: "lunch",
                                 selectedDate: viewModel.selectedDate),
                                                path: $viewModel.path)
 
                             SmallRecipeDisplay(recipeDisplayModel: RecipeDisplayModel(
-                                fetchRecipes: viewModel.fetchRecipes,
                                 groupName: "Dinner Meals",
                                 queryType: "dinner",
                                 selectedDate: viewModel.selectedDate),
