@@ -86,12 +86,11 @@ enum DeviceTypes {
 
 
 enum brandColors {
+    
     static let pink: Color = Color.init(hex: 0xE9BAD5)
     static let purple: Color = Color.init(hex: 0xA078B4)
-    static let warm: Color = Color.init(hex: 0xFEF7D7)
     static let orange: Color = Color.init(hex: 0xEFAD5C)
     static let disabledwarm: Color = Color.init(hex: 0xC4C1BC)
-    static let green: Color = Color.init(hex: 0x036E5B)
 
     static let textPink: Color = Color.init(hex: 0xFCDAE2)
 
@@ -99,6 +98,46 @@ enum brandColors {
     static let lightGrey: Color = Color.init(hex: 0xF6F7F8)
     static let customGrey: Color = Color.init(hex: 0xC6CCD4)
     static let darkGrey: Color = Color.init(hex: 0x919191)
+    
+    enum warm {
+        static func scheme(_ scheme: ColorScheme) -> Color {
+            switch scheme {
+            case .light:
+                return Color.init(hex: 0xFEF7D7)
+            case .dark:
+                return Color.init(hex: 0xfceb9c)
+            @unknown default:
+                return Color.init(hex: 0xFEF7D7)
+            }
+        }
+    }
+    
+    enum green {
+        static func scheme(_ scheme: ColorScheme) -> Color {
+            switch scheme {
+            case .light:
+                return Color.init(hex: 0x036E5B)
+            case .dark:
+                return Color.init(hex: 0x00CC44)
+            @unknown default:
+                return Color.init(hex: 0x036E5B)
+            }
+        }
+    }
+    
+    enum tint {
+        static func scheme(_ scheme: ColorScheme) -> Color {
+            switch scheme {
+            case .light:
+                return .black
+            case .dark:
+                return .white
+            @unknown default:
+                return .black
+            }
+        }
+    }
+    
 }
 
 

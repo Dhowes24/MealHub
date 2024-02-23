@@ -17,7 +17,7 @@ struct ResourceOptionView: View {
                 HStack {
                     ZStack {
                         Circle()
-                            .foregroundColor(brandColors.purple)
+                            .foregroundColor(brandColors.orange)
                             .frame(width: 48)
                         
                         SFSymbols.bell

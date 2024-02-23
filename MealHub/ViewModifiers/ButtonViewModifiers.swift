@@ -8,14 +8,20 @@
 import Foundation
 import SwiftUI
 
-struct BlackButton: ViewModifier {
+enum buttonType {
+    case primary, secondary, tertiary
+}
+
+struct PrimaryButton: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+    
     var width: CGFloat
     var height: CGFloat
     func body(content: Content) -> some View {
         content
             .font(.customSystem(size: 14, weight: .bold))
-            .foregroundStyle(brandColors.textPink)
-            .background(                
+            .foregroundStyle(colorScheme == .light ? brandColors.textPink : .black)
+            .background(
                 Capsule()
                     .frame(width: width, height: height)
             )
@@ -24,24 +30,28 @@ struct BlackButton: ViewModifier {
 }
 
 
-struct WhiteButton: ViewModifier {
+struct SecondaryButton: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+
     var width: CGFloat
     var height: CGFloat
     func body(content: Content) -> some View {
         content
             .font(.customSystem(size: 14, weight: .bold))
-            .foregroundStyle(.black)
+            .foregroundStyle(colorScheme == .light ? .black : .white)
             .frame(width: width, height: height)
             .overlay(
                 Capsule()
-                    .stroke(.black, lineWidth: 1)
+                    .stroke(colorScheme == .light ? .black : .white, lineWidth: 1)
             )
-            .background(Capsule().fill(.white))
+            .background(Capsule().fill(colorScheme == .light ? .white : .black))
     }
 }
 
 
-struct GreyButton: ViewModifier {
+struct TertiaryButton: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+
     func body(content: Content) -> some View {
         content
             .font(.customSystem(size: 11, weight: .bold))
@@ -52,16 +62,14 @@ struct GreyButton: ViewModifier {
 
 
 extension View {
-    func button(color: String, width: CGFloat = 350, height: CGFloat = 60) -> some View {
-        switch color {
-        case "black" :
-            return AnyView(modifier(BlackButton(width: width, height: height)))
-        case "white" :
-            return AnyView(modifier(WhiteButton(width: width, height: height)))
-        case "grey" :
-            return AnyView(modifier(GreyButton()))
-        default:
-            return AnyView(modifier(BlackButton(width: width, height: height)))
+    func button(type: buttonType, width: CGFloat = 350, height: CGFloat = 60) -> some View {
+        switch type {
+        case .primary :
+            return AnyView(modifier(PrimaryButton(width: width, height: height)))
+        case .secondary :
+            return AnyView(modifier(SecondaryButton(width: width, height: height)))
+        case .tertiary :
+            return AnyView(modifier(TertiaryButton()))
         }
     }
 }

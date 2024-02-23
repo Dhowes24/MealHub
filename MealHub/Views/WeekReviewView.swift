@@ -86,7 +86,7 @@ struct WeekReviewView: View {
             dismiss()
         }, label: {
             Text("Back")
-                .button(color: "white")
+                .button(type: .secondary)
                 .padding(.bottom, 38)
         })
         .buttonStyle(.plain)

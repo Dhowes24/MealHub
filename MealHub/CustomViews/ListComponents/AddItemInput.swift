@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddItemInput: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var optionOne: String
     var optionTwo: String
     var optionOneSelected: Bool
@@ -28,7 +30,7 @@ struct AddItemInput: View {
             }, label: {
                 Text("Add")
                     .font(.customSystem(size: 14, weight: .bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(colorScheme == .light ? .white : .black)
                     .background(
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                             .frame(width: 50, height: 30)

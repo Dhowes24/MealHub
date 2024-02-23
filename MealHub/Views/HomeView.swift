@@ -39,7 +39,7 @@ struct HomeView: View {
                         }, label: {
                             Text(viewModel.editMode ? "Cancel" : "Edit")
                                 .frame(width: 50, height: 25)
-                                .button(color: "grey")
+                                .button(type: .tertiary)
                         })
                         .buttonStyle(.plain)
                         
@@ -50,7 +50,7 @@ struct HomeView: View {
                         }, label: {
                             Text("See week view")
                                 .frame(width: 100, height: 25)
-                                .button(color: "grey")
+                                .button(type: .tertiary)
                         })
                         .buttonStyle(.plain)
                     }
@@ -103,7 +103,7 @@ struct HomeView: View {
                     }
                 }, label: {
                     Text(viewModel.editMode ? "Delete selected items" : viewModel.selectedDate.withinTwoWeeks() ?  "Plan your meal" : "Date unavailable for planning")
-                        .button(color: "black")
+                        .button(type: .primary)
                         .padding(.bottom, 38)
                 })
                 .buttonStyle(.plain)

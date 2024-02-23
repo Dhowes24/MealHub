@@ -9,6 +9,8 @@ import SwiftUI
 import WaterfallGrid
 
 struct FilterSearch: View {
+    @Environment(\.colorScheme) var colorScheme
+
     @State private var filtersShowing: Bool = false
     @Binding var isKeyboardVisible: Bool
     @Binding var path: NavigationPath
@@ -23,6 +25,7 @@ struct FilterSearch: View {
                         .padding(.horizontal, 8)
                     
                     TextField("Looking for something specific?", text: $search)
+                        .font(.customSystem(size: 16, weight: .semibold))
                 }
                 .SearchInputMod()
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in

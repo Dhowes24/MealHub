@@ -36,7 +36,7 @@ struct FoodProfileOption: View {
             NavigationLink(destination: chooseView()) {
                 Text("Edit")
                     .frame(width: 45, height: 24)
-                    .button(color: "grey")
+                    .button(type: .tertiary)
             }
             .buttonStyle(.plain)
         }

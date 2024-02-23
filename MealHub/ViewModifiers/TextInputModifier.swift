@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 
 struct TextInputModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+
     func body(content: Content) -> some View {
         content
             .padding(8)
             .background(
                 RoundedRectangle(cornerRadius: 5.0)
-                    .fill(brandColors.offWhite)
+                    .fill(colorScheme == .light ? brandColors.offWhite : .black)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(brandColors.customGrey, lineWidth: 1)
@@ -32,12 +34,18 @@ extension View {
 
 
 struct SearchInputModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+
     func body(content: Content) -> some View {
         content
             .padding(8)
             .background(
                 RoundedRectangle(cornerRadius: 180.0)
-                    .fill(Color.init(hex: 0xE2E5E9))
+                    .fill(colorScheme == .light ? brandColors.offWhite : .black)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 180.0)
+                            .stroke(brandColors.customGrey, lineWidth: 1)
+                    )
             )
     }
 }

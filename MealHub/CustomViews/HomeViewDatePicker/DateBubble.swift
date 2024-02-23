@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DateBubble: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var day: Date
     var selectedDate: Date
     var updatedSelectedDate: @MainActor (Date) -> Void
@@ -18,12 +20,12 @@ struct DateBubble: View {
             ZStack{
                 if day.formatted(.dateTime.day().month()) == Date().formatted(.dateTime.day().month()) {
                     Circle()
-                        .strokeBorder(brandColors.green, lineWidth: 2)
-                        .background(Circle().fill(day == selectedDate ? brandColors.orange : brandColors.warm))
+                        .strokeBorder(brandColors.green.scheme(colorScheme), lineWidth: 2)
+                        .background(Circle().fill(day == selectedDate ? brandColors.orange : brandColors.warm.scheme(colorScheme)))
                         .frame(width: 40, height: 40)
                 } else {
                     Circle()
-                        .fill(day == selectedDate ? brandColors.orange : day.withinTwoWeeks() ? brandColors.warm : brandColors.disabledwarm)
+                        .fill(day == selectedDate ? brandColors.orange : day.withinTwoWeeks() ? brandColors.warm.scheme(colorScheme) : brandColors.disabledwarm)
                         .frame(width: 40, height: 40)
                 }
                 
@@ -46,5 +48,5 @@ struct DateBubble: View {
 
 
 #Preview {
-    DateBubble(day: Date(), selectedDate: Date(), updatedSelectedDate: {_ in})
+    DateBubble(day: Date(), selectedDate: Date()+1, updatedSelectedDate: {_ in})
 }

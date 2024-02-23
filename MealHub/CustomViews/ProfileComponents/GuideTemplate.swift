@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GuideTemplate: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var articleInfo: ArticleInformation
     @GestureState private var zoom = 1.0
     
@@ -34,7 +36,7 @@ struct GuideTemplate: View {
                         Spacer()
                     }
                     if articleInfo.articleBlocks.isEmpty {
-                        Image("EatingPlan")
+                        Image(colorScheme == .light ? "EatingPlanLight" : "EatingPlanDark")
                             .resizable()
                             .scaledToFit()
                             .frame(maxWidth: .infinity)
@@ -63,7 +65,7 @@ struct GuideTemplate: View {
                             }
                             .background(
                                 RoundedRectangle(cornerRadius: 16.0)
-                                    .foregroundColor(brandColors.lightGrey)
+                                    .foregroundColor(colorScheme == .light ? brandColors.lightGrey : .black)
                             )
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16.0)
