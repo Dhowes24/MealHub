@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ListToggle: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var colored: Bool = false
     @Binding var listToggle: Bool
     @Namespace private var animation
@@ -21,11 +23,11 @@ struct ListToggle: View {
                 ZStack() {
                     Text(optionOne)
                         .fontWeight(listToggle ? .bold : .regular)
-                        .foregroundStyle(colored ? .green : .black)
+                        .foregroundStyle(colored ? .green : colorScheme == .light ? .black: .white)
                     
                     if listToggle {
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(colored ? .green : .black)
+                            .foregroundColor(colored ? .green : colorScheme == .light ? .black: .white)
                             .frame(width: 100, height: 2)
                             .offset(y:20)
                             .matchedGeometryEffect(id: "Selector", in: animation)
@@ -37,12 +39,12 @@ struct ListToggle: View {
                 ZStack() {
                     Text(optionTwo)
                         .fontWeight(listToggle ? .regular : .bold)
-                        .foregroundStyle(colored ? .red : .black)
+                        .foregroundStyle(colored ? .red : colorScheme == .light ? .black: .white)
 
                     
                     if !listToggle {
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(colored ? .red : .black)
+                            .foregroundColor(colored ? .red : colorScheme == .light ? .black: .white)
                             .frame(width: 100, height: 2)
                             .offset(y:20)
                             .matchedGeometryEffect(id: "Selector", in: animation)

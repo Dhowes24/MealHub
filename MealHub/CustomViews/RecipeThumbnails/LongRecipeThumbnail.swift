@@ -9,6 +9,8 @@ import CoreData
 import SwiftUI
 
 struct LongRecipeThumbnail: View {
+    @Environment(\.colorScheme) var colorScheme
+
     @Binding var editMode: Bool
     var homeTab: Bool = false
     var meal: RecipeCD
@@ -59,13 +61,13 @@ struct LongRecipeThumbnail: View {
                         
                         if editMode {
                             Circle()
-                                .foregroundStyle(.white)
+                                .foregroundStyle(colorScheme == .light ? .white : .black)
                                 .frame(width: 25, height: 25)
                                 .offset(x:25, y:-25)
                             
                             
                             SFSymbols.checkmarkCircle.fill(selected)
-                                .foregroundStyle(selected ? brandColors.green : brandColors.darkGrey)
+                                .foregroundStyle(selected ? brandColors.green.scheme(colorScheme) : brandColors.darkGrey)
                                 .frame(width: 25, height: 25)
                                 .offset(x:25, y:-25)
                         }

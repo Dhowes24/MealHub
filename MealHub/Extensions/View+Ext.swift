@@ -36,6 +36,8 @@ struct RoundedCorner: Shape {
 }
 
 struct CheckboxStyle: ToggleStyle {
+    @Environment(\.colorScheme) var colorScheme
+    
     
     func makeBody(configuration: Self.Configuration) -> some View {
         return HStack {
@@ -46,7 +48,7 @@ struct CheckboxStyle: ToggleStyle {
             SFSymbols.checkmarkSquare.fill(configuration.isOn)
                 .resizable()
                 .frame(width: 20, height: 20)
-                .foregroundColor(configuration.isOn ? brandColors.green : .gray)
+                .foregroundColor(configuration.isOn ? brandColors.green.scheme(colorScheme) : .gray)
                 .font(.system(size: 20, weight: .bold, design: .default))
                 .onTapGesture {
                     configuration.isOn.toggle()

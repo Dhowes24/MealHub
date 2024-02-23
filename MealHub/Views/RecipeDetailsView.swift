@@ -127,7 +127,7 @@ struct RecipeDetailsView: View {
                     SeparatorLine()
                     
                     Text("Schedule this meal")
-                        .button(color: "black")
+                        .button(type: .primary)
                         .onTapGesture {
                             viewModel.showingScheduler.toggle()
                         }

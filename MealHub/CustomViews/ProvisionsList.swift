@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProvisionsList: View {
+    @Environment(\.colorScheme) var colorScheme
+
     @Binding var items: [FoodItem]
     @State var ownedItems: Bool
     @State private var selectAllBool: Bool = false
@@ -27,7 +29,7 @@ struct ProvisionsList: View {
                 SFSymbols.checkmarkSquare.fill(selectAllBool)
                     .resizable()
                     .frame(width: 20, height:20)
-                    .foregroundColor(selectAllBool ? brandColors.green : .gray)
+                    .foregroundColor(selectAllBool ? brandColors.green.scheme(colorScheme) : .gray)
                     .font(.system(size: 20, weight: .bold, design: .default))
                 
             }
@@ -61,7 +63,7 @@ struct ProvisionsList: View {
                     moveOrDeleteItems()
                 }, label: {
                     Text("Delete Selected Items")
-                        .button(color: "black", width: ownedItems ? CGFloat(350) : CGFloat(165))
+                        .button(type: .primary, width: ownedItems ? CGFloat(350) : CGFloat(165))
                 })
                 .buttonStyle(.plain)
                 .disabled(!itemsSelected())
@@ -72,7 +74,7 @@ struct ProvisionsList: View {
                         moveOrDeleteItems(deleting: false)
                     }, label: {
                         Text("Add Items to Kitchen")
-                            .button(color: "white", width: CGFloat(165))
+                            .button(type: .secondary, width: CGFloat(165))
                     })
                     .buttonStyle(.plain)
                     .disabled(!itemsSelected())

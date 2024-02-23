@@ -66,7 +66,7 @@ struct IncludeExcludeFilter: View {
             Spacer()
             
             Text("Done")
-                .button(color: "black")
+                .button(type: .primary)
                 .onTapGesture {
                     withAnimation {
                         dismiss()

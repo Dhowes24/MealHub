@@ -96,7 +96,7 @@ struct MealScheduler: View {
                     path = NavigationPath()
                 }, label: {
                     Text("Done")
-                        .button(color: "black")
+                        .button(type: .primary)
                 })
                 .buttonStyle(.plain)
                 .disabled(noTimesSelected())

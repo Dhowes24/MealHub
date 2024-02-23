@@ -10,6 +10,7 @@ import WrappingHStack
 struct ReadyInFilter: View {
     @Binding var dict: [String: Bool]
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) var colorScheme
     
     
     var body: some View {
@@ -29,7 +30,7 @@ struct ReadyInFilter: View {
                         HStack {
                             Text("\(element.key.description) minutes")
                                 .font(.customSystem(size: 14, weight: .bold))
-                                .foregroundStyle(brandColors.offWhite)
+                                .foregroundStyle(colorScheme == .light ? brandColors.offWhite : .black)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 13)
                                 .background(
