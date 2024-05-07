@@ -1,7 +1,7 @@
 # MealHub
 
 ## Description
-The MealHub IOS mobile app:  
+The MealHub iOS mobile app:  
 The app allows users to schedule recipes for themselves to cook from a provided array of meal recipes, recommended based on the user's dietary preferences and current ingredients owned in their kitchen. 
 
 Utilizing the CoreData and Userdefaults frameworks the application keeps track of the user's dietary preferences, restrictions, intolerances, favorited recipes, kitchen ingredients, and grocery list items while allowing users to schedule meals on their calendar to create a dietary regimen.
@@ -22,7 +22,7 @@ Using asynchronous URLSession fetch requests the application pulls data from the
 Following a professional UI/UX designer's specifications MealHub uses the SwiftUI framework to create an intuitive and user-friendly design, ensuring a seamless and enjoyable experience for users of all levels. 
 
 
-## Available on App Store for IPhone
+## Available on App Store for iPhone
 https://apps.apple.com/us/app/mealhub/id6477729202
 
 
