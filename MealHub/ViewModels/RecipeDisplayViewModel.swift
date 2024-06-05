@@ -32,6 +32,7 @@ import Foundation
                         self.nothingFound = recipes.isEmpty
                     }
                 } else if let error = error {
+                    self.nothingFound = true
                     print("Error occurred: \(error)")
                 }
             }
@@ -48,6 +49,7 @@ import Foundation
                         self.nothingFound = self.recipeList.isEmpty
                     }
                 } else if let error = error {
+                    self.nothingFound = true
                     print("Error occurred: \(error)")
                 }
             }

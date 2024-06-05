@@ -132,7 +132,9 @@ struct RecipeDetailsView: View {
                             viewModel.showingScheduler.toggle()
                         }
                         .sheet(isPresented: $viewModel.showingScheduler, content: {
-                            MealScheduler(path: $viewModel.path, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)), selectedDate: viewModel.selectedDate)
+                            let date = viewModel.selectedDate.withinTwoWeeks() ? viewModel.selectedDate : Date()
+                            
+                            MealScheduler(path: $viewModel.path, recipe: (Recipe(id: recipeInfo.id, title: recipeInfo.title, image: recipeInfo.image)), selectedDate: date)
                         })
                 } else {
                     if viewModel.pullError {

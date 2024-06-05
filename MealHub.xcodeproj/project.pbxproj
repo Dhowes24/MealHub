@@ -18,6 +18,7 @@
 		1E484FD22B65CC8C008360A2 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FD12B65CC8C008360A2 /* ResourcesView.swift */; };
 		1E484FD72B66BD10008360A2 /* ResourceOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FD62B66BD10008360A2 /* ResourceOptionView.swift */; };
 		1E484FDE2B697536008360A2 /* PreferencesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FDD2B697536008360A2 /* PreferencesFunctions.swift */; };
+		1E6018392BB85C6900E68E1F /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6018382BB85C6900E68E1F /* HomeViewTests.swift */; };
 		1E6DF6282B6DBED500C5D74B /* NavigationStackViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DF6272B6DBED500C5D74B /* NavigationStackViewModifier.swift */; };
 		1E6DF62D2B6DE9DD00C5D74B /* GuideTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DF62C2B6DE9DD00C5D74B /* GuideTemplate.swift */; };
 		1E6DF6302B6DF41F00C5D74B /* ArticleInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DF62F2B6DF41F00C5D74B /* ArticleInformationModel.swift */; };
@@ -132,6 +133,7 @@
 		1E484FD12B65CC8C008360A2 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 		1E484FD62B66BD10008360A2 /* ResourceOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceOptionView.swift; sourceTree = "<group>"; };
 		1E484FDD2B697536008360A2 /* PreferencesFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesFunctions.swift; sourceTree = "<group>"; };
+		1E6018382BB85C6900E68E1F /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		1E6DF6272B6DBED500C5D74B /* NavigationStackViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackViewModifier.swift; sourceTree = "<group>"; };
 		1E6DF62C2B6DE9DD00C5D74B /* GuideTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTemplate.swift; sourceTree = "<group>"; };
 		1E6DF62F2B6DF41F00C5D74B /* ArticleInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInformationModel.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				6B7388252A2FC66F00EBCE7B /* Food_HomeTests.swift */,
+				1E6018382BB85C6900E68E1F /* HomeViewTests.swift */,
 			);
 			path = MealHubTests;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7388262A2FC66F00EBCE7B /* Food_HomeTests.swift in Sources */,
+				1E6018392BB85C6900E68E1F /* HomeViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,7 +1019,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = DerekHowes.MealHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -1055,7 +1059,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = DerekHowes.MealHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

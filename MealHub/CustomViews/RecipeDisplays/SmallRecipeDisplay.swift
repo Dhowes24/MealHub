@@ -22,7 +22,6 @@ struct SmallRecipeDisplay: View {
     var body: some View {
         Group {
             HStack {
-                
                 Text(recipeDisplayViewModel.groupName)
                     .font(.customSystem(size: 24, weight: .semibold))
                 
@@ -35,7 +34,6 @@ struct SmallRecipeDisplay: View {
                         .frame(width: 24, height: 24)
                 })
                 .buttonStyle(.plain)
-                
             }
             .frame(height: 30)
             .padding(.bottom, 24)
