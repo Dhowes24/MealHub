@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WaterfallGrid
 
 struct FilterSearch: View {
     @Environment(\.colorScheme) var colorScheme

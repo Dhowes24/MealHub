@@ -22,6 +22,7 @@
 		1E6DF6282B6DBED500C5D74B /* NavigationStackViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DF6272B6DBED500C5D74B /* NavigationStackViewModifier.swift */; };
 		1E6DF62D2B6DE9DD00C5D74B /* GuideTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DF62C2B6DE9DD00C5D74B /* GuideTemplate.swift */; };
 		1E6DF6302B6DF41F00C5D74B /* ArticleInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DF62F2B6DF41F00C5D74B /* ArticleInformationModel.swift */; };
+		1E7F6AEF2C1126D90045ABB7 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7F6AEE2C1126D90045ABB7 /* WrappingHStack */; };
 		1EB43ADC2B6D545E005D0886 /* LargeRecipeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43ADB2B6D545E005D0886 /* LargeRecipeDisplay.swift */; };
 		1EB43AE02B6D6C1B005D0886 /* RecipeDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43ADF2B6D6C1B005D0886 /* RecipeDisplayModel.swift */; };
 		1EB43AE22B6D6C4E005D0886 /* RecipeDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB43AE12B6D6C4E005D0886 /* RecipeDisplayViewModel.swift */; };
@@ -47,7 +48,6 @@
 		1EE49BA92B742305000D0F68 /* Archivo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75F92AF839910082CC4E /* Archivo-ExtraBold.ttf */; };
 		1EE49BAA2B742308000D0F68 /* Archivo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FA2AF839910082CC4E /* Archivo-Light.ttf */; };
 		1EE49BAB2B74230A000D0F68 /* Archivo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F75FB2AF839910082CC4E /* Archivo-Thin.ttf */; };
-		1EE49BAE2B7479C5000D0F68 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE49BAD2B7479C5000D0F68 /* WrappingHStack */; };
 		6B1811232B3240EB00D81FAB /* HomeMealSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1811222B3240EB00D81FAB /* HomeMealSection.swift */; };
 		6B5F76052AF83FB80082CC4E /* Noto in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F76042AF83FB70082CC4E /* Noto */; };
 		6B5F76082AF842A60082CC4E /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F76072AF842A60082CC4E /* Logo.swift */; };
@@ -57,7 +57,6 @@
 		6B5F762B2B19257D0082CC4E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F762A2B19257D0082CC4E /* HomeViewModel.swift */; };
 		6B5F762D2B1928DA0082CC4E /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F762C2B1928DA0082CC4E /* Headers.swift */; };
 		6B5F76302B1929420082CC4E /* DateBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F762F2B1929420082CC4E /* DateBubble.swift */; };
-		6B737B072B5A2DFB00468581 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 6B737B062B5A2DFB00468581 /* WaterfallGrid */; };
 		6B7388142A2FC66E00EBCE7B /* MealHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7388132A2FC66E00EBCE7B /* MealHubApp.swift */; };
 		6B7388182A2FC66F00EBCE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7388172A2FC66F00EBCE7B /* Assets.xcassets */; };
 		6B73881C2A2FC66F00EBCE7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B73881B2A2FC66F00EBCE7B /* Preview Assets.xcassets */; };
@@ -230,8 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EE49BAE2B7479C5000D0F68 /* WrappingHStack in Frameworks */,
-				6B737B072B5A2DFB00468581 /* WaterfallGrid in Frameworks */,
+				1E7F6AEF2C1126D90045ABB7 /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,8 +622,7 @@
 			);
 			name = MealHub;
 			packageProductDependencies = (
-				6B737B062B5A2DFB00468581 /* WaterfallGrid */,
-				1EE49BAD2B7479C5000D0F68 /* WrappingHStack */,
+				1E7F6AEE2C1126D90045ABB7 /* WrappingHStack */,
 			);
 			productName = "Food@Home";
 			productReference = 6B7388102A2FC66E00EBCE7B /* MealHub.app */;
@@ -1222,15 +1219,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1EE49BAD2B7479C5000D0F68 /* WrappingHStack */ = {
+		1E7F6AEE2C1126D90045ABB7 /* WrappingHStack */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1EE49BAC2B7479C5000D0F68 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
-		};
-		6B737B062B5A2DFB00468581 /* WaterfallGrid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6B737B052B5A2DFB00468581 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
-			productName = WaterfallGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
 

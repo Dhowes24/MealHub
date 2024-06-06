@@ -41,6 +41,7 @@ import SwiftUI
     
     
     func updateWeekLineup(direction: Int) {
+        let direction = direction > 0 ? 1 : -1
         let calendar = Calendar.current
         if let newDate = calendar.date(byAdding: .day, value: 7 * direction, to: dateLineup[0]) {
             dateLineup = getDateLineup(startDate: newDate)
