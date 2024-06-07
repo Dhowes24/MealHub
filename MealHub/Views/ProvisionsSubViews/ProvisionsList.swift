@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ProvisionsList: View {
     @Environment(\.colorScheme) var colorScheme
-
-    @Binding var items: [FoodItem]
+    
+    @State var viewModel: ProvisionsViewModel
+    
+    //    @Binding var items: [FoodItem]
     @State var ownedItems: Bool
     @State private var selectAllBool: Bool = false
     @State private var toggleItems: [FoodItem : Bool] = [:]
     @State var triggerRefresh: Bool = false
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -37,7 +39,7 @@ struct ProvisionsList: View {
             .onTapGesture {
                 withAnimation {
                     selectAllBool.toggle()
-                    selectAll(selectAllBool)
+                    viewModel.selectAll(selectAllBool,toggleItems: &toggleItems)
                 }
             }
             
@@ -60,90 +62,41 @@ struct ProvisionsList: View {
             
             HStack(spacing: 20) {
                 Button(action: {
-                    moveOrDeleteItems()
+                    viewModel.moveOrDeleteItems(toggleItems: &toggleItems)
                 }, label: {
                     Text("Delete Selected Items")
                         .button(type: .primary, width: ownedItems ? CGFloat(350) : CGFloat(165))
                 })
                 .buttonStyle(.plain)
-                .disabled(!itemsSelected())
+                .disabled(!viewModel.itemsSelected(toggleItems: toggleItems))
                 .padding(.bottom, 38)
-                                
+                
                 if !ownedItems {
                     Button(action: {
-                        moveOrDeleteItems(deleting: false)
+                        viewModel.moveOrDeleteItems(deleting: false, toggleItems: &toggleItems)
                     }, label: {
                         Text("Add Items to Kitchen")
                             .button(type: .secondary, width: CGFloat(165))
                     })
                     .buttonStyle(.plain)
-                    .disabled(!itemsSelected())
+                    .disabled(!viewModel.itemsSelected(toggleItems: toggleItems))
                     .padding(.bottom, 38)
                 }
             }
         }
         .onChange(of: triggerRefresh) { _ in
-            refreshPage()
+            viewModel.refreshPage(ownedItems: ownedItems, toggleItems: &toggleItems)
         }
-        .onChange(of: items) { _ in
-            refreshPage()
+        .onChange(of: viewModel.items) { _ in
+            viewModel.refreshPage(ownedItems: ownedItems, toggleItems: &toggleItems)
         }
         .onChange(of: toggleItems) { _ in
-            selectAllBool = allItemsSelected()
+            selectAllBool = viewModel.allItemsSelected(toggleItems: toggleItems)
         }
         .onAppear(perform: {
-            let filteredItems = items.filter { $0.owned == ownedItems}
+            let filteredItems = viewModel.items.filter { $0.owned == ownedItems}
             toggleItems = Dictionary(uniqueKeysWithValues: filteredItems.map { ($0, false) })
         })
-    }
-    
-    
-    private func allItemsSelected() -> Bool {
-        !toggleItems.values.contains { Bool in Bool == false }
-    }
-    
-    
-    private func itemsSelected() -> Bool {
-        toggleItems.values.contains { Bool in Bool == true }
-    }
-    
-    
-    @MainActor private func moveOrDeleteItems( deleting: Bool = true ) {
-        var actionItemsArray: [FoodItem] = []
-        
-        toggleItems.forEach { (key: FoodItem, value: Bool) in
-            if toggleItems[key] ?? false {
-                actionItemsArray.append(key)
-            }
-        }
-        if deleting {
-            PersistenceController.shared.deleteFoodItems(itemsToDelete: actionItemsArray, allFoodItems: &items)
-        } else {
-            PersistenceController.shared.moveItemsToKitchen(itemsToMove: actionItemsArray)
-        }
-        triggerRefresh.toggle()
-    }
-    
-    
-    private func refreshPage() {
-        let tempItems = toggleItems
-        toggleItems.removeAll()
-        
-        let filteredItems = items.filter { $0.owned == ownedItems }
-        filteredItems.forEach { item in
-            if tempItems.keys.contains(item) {
-                toggleItems[item] = tempItems[item]
-            } else {
-                toggleItems[item] = false
-            }
-        }
-    }
-    
-    
-    private func selectAll(_ bool: Bool) {
-        for (key,_) in toggleItems {
-            toggleItems[key] = bool
-        }
     }
 }
 
@@ -151,8 +104,10 @@ struct ProvisionsList: View {
 #Preview {
     struct PreviewWrapper: View {
         var body: some View {
-            ProvisionsList(items: .constant([]),
-                           ownedItems: false)
+            ProvisionsList(
+                viewModel: ProvisionsViewModel(),
+                ownedItems: false
+            )
         }
     }
     

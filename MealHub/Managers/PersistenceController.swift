@@ -13,22 +13,22 @@ struct PersistenceController {
     
     static let shared = PersistenceController()
     
-    let persistentContainer: NSPersistentContainer
+    var persistentContainer: NSPersistentContainer
     let backgroundContext: NSManagedObjectContext
     let mainContext: NSManagedObjectContext
     
-    private init() {
-        persistentContainer = NSPersistentContainer(name: "CoreDataModel")
+    private init(persistentContainer: NSPersistentContainer = NSPersistentContainer(name: "CoreDataModel")) {
+        self.persistentContainer = persistentContainer
         let description = persistentContainer.persistentStoreDescriptions.first
         description?.type = NSSQLiteStoreType
         
-        persistentContainer.loadPersistentStores { description, error in
+        self.persistentContainer.loadPersistentStores { description, error in
             guard error == nil else {
                 fatalError("was unable to load store \(error!)")
             }
         }
         
-        mainContext = persistentContainer.viewContext
+        mainContext = self.persistentContainer.viewContext
         
         backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         backgroundContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy

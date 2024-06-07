@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ProvisionsView: View {
-    @ObservedObject private var viewModel: ProvisionsViewModel = ProvisionsViewModel()
-    
+    @StateObject private var viewModel: ProvisionsViewModel = ProvisionsViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,7 +25,7 @@ struct ProvisionsView: View {
             Group {
                 AddItemInput(
                     optionOne: "Kitchen",
-                    optionTwo: "Grocery List", 
+                    optionTwo: "Grocery List",
                     optionOneSelected: viewModel.myKitchenShowing,
                     itemName: $viewModel.newItemName,
                     addItemFunction: viewModel.addItem,
@@ -34,11 +33,16 @@ struct ProvisionsView: View {
                 )
                 
                 if viewModel.myKitchenShowing {
-                    ProvisionsList(items: $viewModel.items,
-                                   ownedItems: true)
-                } else {
-                    ProvisionsList(items: $viewModel.items,
-                                   ownedItems: false)
+                    ProvisionsList(
+                        viewModel: viewModel,
+                        ownedItems: true
+                    )
+                }
+                else {
+                    ProvisionsList(
+                        viewModel: viewModel,
+                        ownedItems: false
+                    )
                 }
             }
             .padding(.horizontal, 16)
