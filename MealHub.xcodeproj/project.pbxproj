@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E2B59652C1167AC00D28F20 /* ProvisionsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B59642C1167AC00D28F20 /* ProvisionsViewTests.swift */; };
 		1E2B59682C1346DB00D28F20 /* TimeSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B59672C1346DA00D28F20 /* TimeSelectorTests.swift */; };
+		1E2B596A2C136BC700D28F20 /* TimeSelectorViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B59692C136BC600D28F20 /* TimeSelectorViewModifier.swift */; };
 		1E484FBE2B608B42008360A2 /* DietaryNeedFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FBD2B608B42008360A2 /* DietaryNeedFilter.swift */; };
 		1E484FC02B608D4C008360A2 /* ToggleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FBF2B608D4C008360A2 /* ToggleListItem.swift */; };
 		1E484FC22B616EF3008360A2 /* CuisineFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FC12B616EF3008360A2 /* CuisineFilter.swift */; };
@@ -125,6 +126,7 @@
 /* Begin PBXFileReference section */
 		1E2B59642C1167AC00D28F20 /* ProvisionsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionsViewTests.swift; sourceTree = "<group>"; };
 		1E2B59672C1346DA00D28F20 /* TimeSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectorTests.swift; sourceTree = "<group>"; };
+		1E2B59692C136BC600D28F20 /* TimeSelectorViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewModifier.swift; sourceTree = "<group>"; };
 		1E484FBD2B608B42008360A2 /* DietaryNeedFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryNeedFilter.swift; sourceTree = "<group>"; };
 		1E484FBF2B608D4C008360A2 /* ToggleListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleListItem.swift; sourceTree = "<group>"; };
 		1E484FC12B616EF3008360A2 /* CuisineFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineFilter.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				6B5F760B2AF9AEFF0082CC4E /* TextInputModifier.swift */,
 				6B5F76092AF84D6C0082CC4E /* ButtonViewModifiers.swift */,
 				1E6DF6272B6DBED500C5D74B /* NavigationStackViewModifier.swift */,
+				1E2B59692C136BC600D28F20 /* TimeSelectorViewModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				6B75CE462B20F5E100323037 /* TimeSelector.swift in Sources */,
 				6B7388522A30F66C00EBCE7B /* Constants.swift in Sources */,
 				6B75CE402B1AD47D00323037 /* SeparatorLine.swift in Sources */,
+				1E2B596A2C136BC700D28F20 /* TimeSelectorViewModifier.swift in Sources */,
 				6BCC0EC12B5DEA88006369C1 /* IncludeExcludeFilter.swift in Sources */,
 				1E484FC72B65C592008360A2 /* FoodProfileOption.swift in Sources */,
 				6BFD5B872B4F261E00834FA7 /* FoodItem+CoreDataProperties.swift in Sources */,
