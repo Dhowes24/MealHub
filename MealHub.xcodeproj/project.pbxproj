@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E2B59652C1167AC00D28F20 /* ProvisionsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B59642C1167AC00D28F20 /* ProvisionsViewTests.swift */; };
+		1E2B59682C1346DB00D28F20 /* TimeSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B59672C1346DA00D28F20 /* TimeSelectorTests.swift */; };
 		1E484FBE2B608B42008360A2 /* DietaryNeedFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FBD2B608B42008360A2 /* DietaryNeedFilter.swift */; };
 		1E484FC02B608D4C008360A2 /* ToggleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FBF2B608D4C008360A2 /* ToggleListItem.swift */; };
 		1E484FC22B616EF3008360A2 /* CuisineFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E484FC12B616EF3008360A2 /* CuisineFilter.swift */; };
@@ -123,6 +124,7 @@
 
 /* Begin PBXFileReference section */
 		1E2B59642C1167AC00D28F20 /* ProvisionsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionsViewTests.swift; sourceTree = "<group>"; };
+		1E2B59672C1346DA00D28F20 /* TimeSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectorTests.swift; sourceTree = "<group>"; };
 		1E484FBD2B608B42008360A2 /* DietaryNeedFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryNeedFilter.swift; sourceTree = "<group>"; };
 		1E484FBF2B608D4C008360A2 /* ToggleListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleListItem.swift; sourceTree = "<group>"; };
 		1E484FC12B616EF3008360A2 /* CuisineFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineFilter.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 				6B7388252A2FC66F00EBCE7B /* Food_HomeTests.swift */,
 				1E6018382BB85C6900E68E1F /* HomeViewTests.swift */,
 				1E2B59642C1167AC00D28F20 /* ProvisionsViewTests.swift */,
+				1E2B59672C1346DA00D28F20 /* TimeSelectorTests.swift */,
 			);
 			path = MealHubTests;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7388262A2FC66F00EBCE7B /* Food_HomeTests.swift in Sources */,
+				1E2B59682C1346DB00D28F20 /* TimeSelectorTests.swift in Sources */,
 				1E6018392BB85C6900E68E1F /* HomeViewTests.swift in Sources */,
 				1E2B59652C1167AC00D28F20 /* ProvisionsViewTests.swift in Sources */,
 			);

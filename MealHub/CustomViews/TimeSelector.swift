@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct TimeSelector: View {
-    @State var delete: Bool = false
-    @State private var dragAmount = CGSize.zero
-    let firstSelector: Bool = false
-    let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
-    let specificDateSelect: () -> [Date]
-    @Binding var timeSelectorObject: TimeSelectorObject
+    @ObservedObject var viewModel: TimeSelectorViewModel
+    
+    
+    init(specificDateSelect: @escaping () -> [Date], timeSelectorObject: Binding<TimeSelectorObject>) {
+        self.viewModel = TimeSelectorViewModel(
+            specificDateSelect: specificDateSelect,
+            timeSelectorObject: timeSelectorObject
+        )
+    }
+    
     
     var body: some View {
         VStack {
             Group{
                 HStack {
                     Group {
-                        Text ("\(timeSelectorObject.date.formatted(.dateTime.day().month())), \(timeSelectorObject.date.formatted(.dateTime.weekday()))")
+                        Text ("\(viewModel.timeSelectorObject.date.formatted(.dateTime.day().month())), \(viewModel.timeSelectorObject.date.formatted(.dateTime.weekday()))")
                             .font(.customSystem(size: 16, weight: .semibold))
                             .frame(width: 100)
                         
@@ -33,7 +37,7 @@ struct TimeSelector: View {
                     .overlay{
                         DatePicker(
                             "",
-                            selection: $timeSelectorObject.date,
+                            selection: $viewModel.timeSelectorObject.date,
                             in: Date()...Date().addingTimeInterval(TimeInterval(86400 * 13)),
                             displayedComponents: [.date]
                         )
@@ -43,15 +47,15 @@ struct TimeSelector: View {
                     Spacer()
                     
                     HStack {
-                        Text(selectedTimes())
+                        Text(viewModel.selectedTimes())
                         
                         Spacer()
                         
-                        SFSymbols.chevron.getDirection(direction: timeSelectorObject.isDisclosed ? "up" : "down")
+                        SFSymbols.chevron.getDirection(direction: viewModel.timeSelectorObject.isDisclosed ? "up" : "down")
                             .frame(width: 24, height: 24)
                             .onTapGesture {
                                 withAnimation {
-                                    timeSelectorObject.isDisclosed.toggle()
+                                    viewModel.timeSelectorObject.isDisclosed.toggle()
                                 }
                             }
                     }
@@ -72,20 +76,20 @@ struct TimeSelector: View {
                         .frame(width: 100, height: 1)
                     
                     VStack() {
-                        ForEach(mealTimeArray, id: \.self) { time in
+                        ForEach(viewModel.mealTimeArray, id: \.self) { time in
                             HStack {
-                                Toggle(isOn: binding(for: time)) {
+                                Toggle(isOn: viewModel.binding(for: time)) {
                                     Text(time)
                                 }
                                 .toggleStyle(CheckboxStyle())
-                                .disabled(!timeSelectorObject.isDisclosed)
+                                .disabled(!viewModel.timeSelectorObject.isDisclosed)
                                 
                                 Spacer()
                             }
                             .padding(.leading, 15)
                         }
                     }
-                    .frame(width: 200, height: timeSelectorObject.isDisclosed ? nil : 0, alignment: .top)
+                    .frame(width: 200, height: viewModel.timeSelectorObject.isDisclosed ? nil : 0, alignment: .top)
                     .clipped()
                 }
                 
@@ -98,26 +102,8 @@ struct TimeSelector: View {
         
         Spacer()
     }
-    
-    private func binding(for key: String) -> Binding<Bool> {
-        return Binding(get: {
-            return timeSelectorObject.mealTimes[key] ?? false
-        }, set: {
-            timeSelectorObject.mealTimes[key] = $0
-        })
-    }
-    
-    private func selectedTimes() -> String {
-        let trueKeys = timeSelectorObject.mealTimes.filter { $0.value == true }.map { $0.key }
-        return (trueKeys.isEmpty ? "Select meal times" : trueKeys.joined(separator: ", "))
-    }
-    
-    func areTimesSelected() -> Bool {
-        return timeSelectorObject.mealTimes.contains(where: { (_, selected) in
-            return selected
-        })
-    }
 }
+
 
 #Preview {
     struct PreviewWrapper: View {
@@ -127,6 +113,44 @@ struct TimeSelector: View {
         }
     }
     return PreviewWrapper()
+}
+
+
+@MainActor class TimeSelectorViewModel: ObservableObject {
+    @Published var delete: Bool = false
+    @Published private var dragAmount = CGSize.zero
+    let firstSelector: Bool = false
+    let mealTimeArray = ["Breakfast", "Lunch", "Snack", "Dinner"]
+    let specificDateSelect: () -> [Date]
+    @Binding var timeSelectorObject: TimeSelectorObject
+    
+    
+    init(specificDateSelect: @escaping () -> [Date], timeSelectorObject: Binding<TimeSelectorObject>) {
+        self.specificDateSelect = specificDateSelect
+        self._timeSelectorObject = timeSelectorObject
+    }
+    
+    
+    func binding(for key: String) -> Binding<Bool> {
+        return Binding(get: {
+            return self.timeSelectorObject.mealTimes[key] ?? false
+        }, set: {
+            self.timeSelectorObject.mealTimes[key] = $0
+        })
+    }
+    
+    
+    func selectedTimes() -> String {
+        let trueKeys = timeSelectorObject.mealTimes.filter { $0.value == true }.map { $0.key }
+        return (trueKeys.isEmpty ? "Select meal times" : trueKeys.joined(separator: ", "))
+    }
+    
+    
+    func areTimesSelected() -> Bool {
+        return timeSelectorObject.mealTimes.contains(where: { (_, selected) in
+            return selected
+        })
+    }
 }
 
 
